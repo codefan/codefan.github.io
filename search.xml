@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>从 Express 到 Hexo - 我的博客迁移之路</title>
+      <link href="/2026/03/18/%E4%BB%8E-Express-%E5%88%B0-Hexo-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B9%8B%E8%B7%AF/"/>
+      <url>/2026/03/18/%E4%BB%8E-Express-%E5%88%B0-Hexo-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B9%8B%E8%B7%AF/</url>
+      
+        <content type="html"><![CDATA[<h1 id="从-Express-到-Hexo-我的博客迁移之路"><a href="#从-Express-到-Hexo-我的博客迁移之路" class="headerlink" title="从 Express 到 Hexo - 我的博客迁移之路"></a>从 Express 到 Hexo - 我的博客迁移之路</h1><p>今天是我的个人博客正式开通的日子。我想记录一下这次博客系统的选型和搭建过程。</p><hr><h2 id="🤔-为什么搭建博客"><a href="#🤔-为什么搭建博客" class="headerlink" title="🤔 为什么搭建博客"></a>🤔 为什么搭建博客</h2><p>作为一名有 20 多年经验的软件工程师，我一直想有一个自己的技术分享平台。 reasons:</p><ol><li><strong>记录技术成长</strong> - 把工作中的经验和踩过的坑记录下来</li><li><strong>知识沉淀</strong> - 系统整理自己的技术体系</li><li><strong>分享交流</strong> - 和其他开发者交流学习</li><li><strong>个人品牌</strong> - 建立自己的技术影响力</li></ol><hr><h2 id="🎯-技术选型"><a href="#🎯-技术选型" class="headerlink" title="🎯 技术选型"></a>🎯 技术选型</h2><p>在搭建博客之前，我面临两个选择：</p><h3 id="方案-A：动态博客（Express-数据库）"><a href="#方案-A：动态博客（Express-数据库）" class="headerlink" title="方案 A：动态博客（Express + 数据库）"></a>方案 A：动态博客（Express + 数据库）</h3><p><strong>技术栈</strong>：</p><ul><li>Node.js + Express</li><li>PostgreSQL 数据库</li><li>后台管理系统</li></ul><p><strong>优点</strong>：</p><ul><li>可以在线写文章</li><li>有完整的后台管理</li><li>支持用户系统</li></ul><p><strong>缺点</strong>：</p><ul><li>需要服务器</li><li>需要维护数据库</li><li>有成本（约¥50-100&#x2F;月）</li></ul><h3 id="方案-B：静态博客（Hexo-GitHub-Pages）"><a href="#方案-B：静态博客（Hexo-GitHub-Pages）" class="headerlink" title="方案 B：静态博客（Hexo + GitHub Pages）"></a>方案 B：静态博客（Hexo + GitHub Pages）</h3><p><strong>技术栈</strong>：</p><ul><li>Hexo 静态网站生成器</li><li>GitHub Pages 托管</li><li>Markdown 写作</li></ul><p><strong>优点</strong>：</p><ul><li>完全免费</li><li>无需维护服务器</li><li>速度快，CDN 加速</li></ul><p><strong>缺点</strong>：</p><ul><li>需要本地写文章</li><li>没有后台管理</li><li>功能相对简单</li></ul><hr><h2 id="✅-最终选择"><a href="#✅-最终选择" class="headerlink" title="✅ 最终选择"></a>✅ 最终选择</h2><p>经过考虑，我选择了 <strong>方案 B（Hexo）</strong>，原因是：</p><ol><li><strong>零成本启动</strong> - 初期不想投入太多</li><li><strong>专注内容</strong> - 不想花时间维护服务器</li><li><strong>简单够用</strong> - 个人写作不需要复杂功能</li><li><strong>可升级</strong> - 未来需要时可以迁移到动态博客</li></ol><hr><h2 id="🚀-搭建过程"><a href="#🚀-搭建过程" class="headerlink" title="🚀 搭建过程"></a>🚀 搭建过程</h2><h3 id="1-安装-Hexo"><a href="#1-安装-Hexo" class="headerlink" title="1. 安装 Hexo"></a>1. 安装 Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><h3 id="2-初始化博客"><a href="#2-初始化博客" class="headerlink" title="2. 初始化博客"></a>2. 初始化博客</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><h3 id="3-配置-GitHub-部署"><a href="#3-配置-GitHub-部署" class="headerlink" title="3. 配置 GitHub 部署"></a>3. 配置 GitHub 部署</h3><p>修改 <code>_config.yml</code>：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:codefan/codefan.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure><h3 id="4-创建第一篇文章"><a href="#4-创建第一篇文章" class="headerlink" title="4. 创建第一篇文章"></a>4. 创建第一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">&quot;Hello World&quot;</span></span><br></pre></td></tr></table></figure><h3 id="5-部署上线"><a href="#5-部署上线" class="headerlink" title="5. 部署上线"></a>5. 部署上线</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure><p>就这么简单！几分钟后，博客就上线了。</p><hr><h2 id="📝-写作体验"><a href="#📝-写作体验" class="headerlink" title="📝 写作体验"></a>📝 写作体验</h2><p>使用 Hexo 写作是一种很棒的体验：</p><ul><li><strong>Markdown 格式</strong> - 专注内容，不用管样式</li><li><strong>本地编辑</strong> - 用喜欢的编辑器（我用 VSCode）</li><li><strong>版本控制</strong> - 所有文章都有 Git 历史记录</li><li><strong>快速部署</strong> - 一条命令就上线</li></ul><hr><h2 id="🔮-未来计划"><a href="#🔮-未来计划" class="headerlink" title="🔮 未来计划"></a>🔮 未来计划</h2><p>接下来我会在博客分享：</p><ol><li><strong>技术文章</strong> - 工作中遇到的问题和解决方案</li><li><strong>架构设计</strong> - 多年积累的系统设计经验</li><li><strong>项目管理</strong> - 从程序员到技术管理的心得</li><li><strong>生活随笔</strong> - 工作之外的思考</li></ol><hr><h2 id="💡-给想搭建博客的朋友"><a href="#💡-给想搭建博客的朋友" class="headerlink" title="💡 给想搭建博客的朋友"></a>💡 给想搭建博客的朋友</h2><p>如果你也想搭建个人博客，我的建议是：</p><blockquote><p><strong>先开始，再优化</strong></p></blockquote><p>不要纠结于技术选型、主题美化这些细节。最重要的是：</p><ol><li><strong>尽快上线</strong> - 先有一个能用的版本</li><li><strong>持续写作</strong> - 内容才是博客的核心</li><li><strong>按需升级</strong> - 真正用到时再考虑扩展</li></ol><hr><h2 id="🎉-结语"><a href="#🎉-结语" class="headerlink" title="🎉 结语"></a>🎉 结语</h2><p>博客已经上线了，地址是：<a href="https://codefan.github.io/">https://codefan.github.io</a></p><p>欢迎常来坐坐，一起交流技术，分享经验！</p><hr><p><em>2026 年 3 月 18 日 于南京</em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客，Hexo </tag>
+            
+            <tag> 技术分享 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World - 我的博客开通了</title>
       <link href="/2026/03/18/Hello-World-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86/"/>
       <url>/2026/03/18/Hello-World-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86/</url>
