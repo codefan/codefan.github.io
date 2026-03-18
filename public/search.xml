@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>从 Express 到 Hexo - 我的博客迁移之路</title>
+      <link href="/2026/03/18/%E4%BB%8E-Express-%E5%88%B0-Hexo-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B9%8B%E8%B7%AF/"/>
+      <url>/2026/03/18/%E4%BB%8E-Express-%E5%88%B0-Hexo-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B9%8B%E8%B7%AF/</url>
+      
+        <content type="html"><![CDATA[<h1 id="从-Express-到-Hexo-我的博客迁移之路"><a href="#从-Express-到-Hexo-我的博客迁移之路" class="headerlink" title="从 Express 到 Hexo - 我的博客迁移之路"></a>从 Express 到 Hexo - 我的博客迁移之路</h1><p>今天是我的个人博客正式开通的日子。我想记录一下这次博客系统的选型和搭建过程。</p><hr><h2 id="🤔-为什么搭建博客"><a href="#🤔-为什么搭建博客" class="headerlink" title="🤔 为什么搭建博客"></a>🤔 为什么搭建博客</h2><p>作为一名有 20 多年经验的软件工程师，我一直想有一个自己的技术分享平台。 reasons:</p><ol><li><strong>记录技术成长</strong> - 把工作中的经验和踩过的坑记录下来</li><li><strong>知识沉淀</strong> - 系统整理自己的技术体系</li><li><strong>分享交流</strong> - 和其他开发者交流学习</li><li><strong>个人品牌</strong> - 建立自己的技术影响力</li></ol><hr><h2 id="🎯-技术选型"><a href="#🎯-技术选型" class="headerlink" title="🎯 技术选型"></a>🎯 技术选型</h2><p>在搭建博客之前，我面临两个选择：</p><h3 id="方案-A：动态博客（Express-数据库）"><a href="#方案-A：动态博客（Express-数据库）" class="headerlink" title="方案 A：动态博客（Express + 数据库）"></a>方案 A：动态博客（Express + 数据库）</h3><p><strong>技术栈</strong>：</p><ul><li>Node.js + Express</li><li>PostgreSQL 数据库</li><li>后台管理系统</li></ul><p><strong>优点</strong>：</p><ul><li>可以在线写文章</li><li>有完整的后台管理</li><li>支持用户系统</li></ul><p><strong>缺点</strong>：</p><ul><li>需要服务器</li><li>需要维护数据库</li><li>有成本（约¥50-100&#x2F;月）</li></ul><h3 id="方案-B：静态博客（Hexo-GitHub-Pages）"><a href="#方案-B：静态博客（Hexo-GitHub-Pages）" class="headerlink" title="方案 B：静态博客（Hexo + GitHub Pages）"></a>方案 B：静态博客（Hexo + GitHub Pages）</h3><p><strong>技术栈</strong>：</p><ul><li>Hexo 静态网站生成器</li><li>GitHub Pages 托管</li><li>Markdown 写作</li></ul><p><strong>优点</strong>：</p><ul><li>完全免费</li><li>无需维护服务器</li><li>速度快，CDN 加速</li></ul><p><strong>缺点</strong>：</p><ul><li>需要本地写文章</li><li>没有后台管理</li><li>功能相对简单</li></ul><hr><h2 id="✅-最终选择"><a href="#✅-最终选择" class="headerlink" title="✅ 最终选择"></a>✅ 最终选择</h2><p>经过考虑，我选择了 <strong>方案 B（Hexo）</strong>，原因是：</p><ol><li><strong>零成本启动</strong> - 初期不想投入太多</li><li><strong>专注内容</strong> - 不想花时间维护服务器</li><li><strong>简单够用</strong> - 个人写作不需要复杂功能</li><li><strong>可升级</strong> - 未来需要时可以迁移到动态博客</li></ol><hr><h2 id="🚀-搭建过程"><a href="#🚀-搭建过程" class="headerlink" title="🚀 搭建过程"></a>🚀 搭建过程</h2><h3 id="1-安装-Hexo"><a href="#1-安装-Hexo" class="headerlink" title="1. 安装 Hexo"></a>1. 安装 Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><h3 id="2-初始化博客"><a href="#2-初始化博客" class="headerlink" title="2. 初始化博客"></a>2. 初始化博客</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><h3 id="3-配置-GitHub-部署"><a href="#3-配置-GitHub-部署" class="headerlink" title="3. 配置 GitHub 部署"></a>3. 配置 GitHub 部署</h3><p>修改 <code>_config.yml</code>：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:codefan/codefan.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure><h3 id="4-创建第一篇文章"><a href="#4-创建第一篇文章" class="headerlink" title="4. 创建第一篇文章"></a>4. 创建第一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">&quot;Hello World&quot;</span></span><br></pre></td></tr></table></figure><h3 id="5-部署上线"><a href="#5-部署上线" class="headerlink" title="5. 部署上线"></a>5. 部署上线</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure><p>就这么简单！几分钟后，博客就上线了。</p><hr><h2 id="📝-写作体验"><a href="#📝-写作体验" class="headerlink" title="📝 写作体验"></a>📝 写作体验</h2><p>使用 Hexo 写作是一种很棒的体验：</p><ul><li><strong>Markdown 格式</strong> - 专注内容，不用管样式</li><li><strong>本地编辑</strong> - 用喜欢的编辑器（我用 VSCode）</li><li><strong>版本控制</strong> - 所有文章都有 Git 历史记录</li><li><strong>快速部署</strong> - 一条命令就上线</li></ul><hr><h2 id="🔮-未来计划"><a href="#🔮-未来计划" class="headerlink" title="🔮 未来计划"></a>🔮 未来计划</h2><p>接下来我会在博客分享：</p><ol><li><strong>技术文章</strong> - 工作中遇到的问题和解决方案</li><li><strong>架构设计</strong> - 多年积累的系统设计经验</li><li><strong>项目管理</strong> - 从程序员到技术管理的心得</li><li><strong>生活随笔</strong> - 工作之外的思考</li></ol><hr><h2 id="💡-给想搭建博客的朋友"><a href="#💡-给想搭建博客的朋友" class="headerlink" title="💡 给想搭建博客的朋友"></a>💡 给想搭建博客的朋友</h2><p>如果你也想搭建个人博客，我的建议是：</p><blockquote><p><strong>先开始，再优化</strong></p></blockquote><p>不要纠结于技术选型、主题美化这些细节。最重要的是：</p><ol><li><strong>尽快上线</strong> - 先有一个能用的版本</li><li><strong>持续写作</strong> - 内容才是博客的核心</li><li><strong>按需升级</strong> - 真正用到时再考虑扩展</li></ol><hr><h2 id="🎉-结语"><a href="#🎉-结语" class="headerlink" title="🎉 结语"></a>🎉 结语</h2><p>博客已经上线了，地址是：<a href="https://codefan.github.io/">https://codefan.github.io</a></p><p>欢迎常来坐坐，一起交流技术，分享经验！</p><hr><p><em>2026 年 3 月 18 日 于南京</em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客，Hexo </tag>
+            
+            <tag> 技术分享 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World - 我的博客开通了</title>
+      <link href="/2026/03/18/Hello-World-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86/"/>
+      <url>/2026/03/18/Hello-World-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86/</url>
+      
+        <content type="html"><![CDATA[<h2 id="🎉-我的博客开通了！"><a href="#🎉-我的博客开通了！" class="headerlink" title="🎉 我的博客开通了！"></a>🎉 我的博客开通了！</h2><p>你好，我是杨淮生。今天是我的个人博客正式开通的日子。</p><hr><h2 id="📖-关于这个博客"><a href="#📖-关于这个博客" class="headerlink" title="📖 关于这个博客"></a>📖 关于这个博客</h2><p>这个博客是我多年技术生涯的一个新起点。作为一名拥有 20 多年经验的软件工程师，我经历过：</p><ul><li>从 C++ 到 Java 的技术栈变迁</li><li>从 C&#x2F;S 架构到 B&#x2F;S 架构的演进</li><li>从单体应用到微服务的转型</li><li>从本地部署到云原生的跨越</li></ul><p>在这里，我会记录：</p><ol><li><strong>技术实践</strong> - 工作中遇到的真实问题和解决方案</li><li><strong>架构思考</strong> - 对软件设计的理解和心得</li><li><strong>学习笔记</strong> - 持续学习过程中的记录</li><li><strong>生活随笔</strong> - 工作之外的思考和感悟</li></ol><hr><h2 id="🚀-技术栈"><a href="#🚀-技术栈" class="headerlink" title="🚀 技术栈"></a>🚀 技术栈</h2><p>这个博客使用 <a href="https://hexo.io/">Hexo</a> 静态网站生成器构建，托管在 <a href="https://pages.github.com/">GitHub Pages</a> 上。</p><ul><li><strong>生成器</strong>: Hexo</li><li><strong>主题</strong>: Landscape (后续会优化)</li><li><strong>托管</strong>: GitHub Pages</li><li><strong>域名</strong>: <a href="https://codefan.github.io/">https://codefan.github.io</a></li></ul><p>选择静态博客的原因很简单：</p><ul><li>✅ 完全免费</li><li>✅ 无需维护服务器</li><li>✅ 速度快</li><li>✅ 专注于内容写作</li></ul><hr><h2 id="📝-后续计划"><a href="#📝-后续计划" class="headerlink" title="📝 后续计划"></a>📝 后续计划</h2><p>接下来我会陆续发布一些文章，包括：</p><ul><li>软件架构设计经验</li><li>企业级项目开发心得</li><li>技术管理实践</li><li>以及更多…</li></ul><hr><h2 id="🙏-感谢"><a href="#🙏-感谢" class="headerlink" title="🙏 感谢"></a>🙏 感谢</h2><p>感谢你的访问！如果你有任何问题或建议，欢迎通过以下方式联系我：</p><ul><li>📧 邮箱：<a href="mailto:&#x63;&#111;&#100;&#101;&#102;&#x61;&#110;&#64;&#115;&#105;&#110;&#97;&#46;&#x63;&#x6f;&#x6d;">&#x63;&#111;&#100;&#101;&#102;&#x61;&#110;&#64;&#115;&#105;&#110;&#97;&#46;&#x63;&#x6f;&#x6d;</a></li><li>💬 GitHub: <a href="https://github.com/codefan">github.com&#x2F;codefan</a></li></ul><p>期待与你交流！</p><hr><p><em>杨淮生 于 南京</em><br><em>2026 年 3 月 18 日</em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客，开篇 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2026/03/18/hello-world/"/>
+      <url>/2026/03/18/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
