@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hello World - 我的博客开通了</title>
+      <link href="/2026/03/18/Hello-World-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86/"/>
+      <url>/2026/03/18/Hello-World-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86/</url>
+      
+        <content type="html"><![CDATA[<h2 id="🎉-我的博客开通了！"><a href="#🎉-我的博客开通了！" class="headerlink" title="🎉 我的博客开通了！"></a>🎉 我的博客开通了！</h2><p>你好，我是杨淮生。今天是我的个人博客正式开通的日子。</p><hr><h2 id="📖-关于这个博客"><a href="#📖-关于这个博客" class="headerlink" title="📖 关于这个博客"></a>📖 关于这个博客</h2><p>这个博客是我多年技术生涯的一个新起点。作为一名拥有 20 多年经验的软件工程师，我经历过：</p><ul><li>从 C++ 到 Java 的技术栈变迁</li><li>从 C&#x2F;S 架构到 B&#x2F;S 架构的演进</li><li>从单体应用到微服务的转型</li><li>从本地部署到云原生的跨越</li></ul><p>在这里，我会记录：</p><ol><li><strong>技术实践</strong> - 工作中遇到的真实问题和解决方案</li><li><strong>架构思考</strong> - 对软件设计的理解和心得</li><li><strong>学习笔记</strong> - 持续学习过程中的记录</li><li><strong>生活随笔</strong> - 工作之外的思考和感悟</li></ol><hr><h2 id="🚀-技术栈"><a href="#🚀-技术栈" class="headerlink" title="🚀 技术栈"></a>🚀 技术栈</h2><p>这个博客使用 <a href="https://hexo.io/">Hexo</a> 静态网站生成器构建，托管在 <a href="https://pages.github.com/">GitHub Pages</a> 上。</p><ul><li><strong>生成器</strong>: Hexo</li><li><strong>主题</strong>: Landscape (后续会优化)</li><li><strong>托管</strong>: GitHub Pages</li><li><strong>域名</strong>: <a href="https://codefan.github.io/">https://codefan.github.io</a></li></ul><p>选择静态博客的原因很简单：</p><ul><li>✅ 完全免费</li><li>✅ 无需维护服务器</li><li>✅ 速度快</li><li>✅ 专注于内容写作</li></ul><hr><h2 id="📝-后续计划"><a href="#📝-后续计划" class="headerlink" title="📝 后续计划"></a>📝 后续计划</h2><p>接下来我会陆续发布一些文章，包括：</p><ul><li>软件架构设计经验</li><li>企业级项目开发心得</li><li>技术管理实践</li><li>以及更多…</li></ul><hr><h2 id="🙏-感谢"><a href="#🙏-感谢" class="headerlink" title="🙏 感谢"></a>🙏 感谢</h2><p>感谢你的访问！如果你有任何问题或建议，欢迎通过以下方式联系我：</p><ul><li>📧 邮箱：<a href="mailto:&#x63;&#111;&#100;&#101;&#102;&#x61;&#110;&#64;&#115;&#105;&#110;&#97;&#46;&#x63;&#x6f;&#x6d;">&#x63;&#111;&#100;&#101;&#102;&#x61;&#110;&#64;&#115;&#105;&#110;&#97;&#46;&#x63;&#x6f;&#x6d;</a></li><li>💬 GitHub: <a href="https://github.com/codefan">github.com&#x2F;codefan</a></li></ul><p>期待与你交流！</p><hr><p><em>杨淮生 于 南京</em><br><em>2026 年 3 月 18 日</em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客，开篇 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2026/03/18/hello-world/"/>
+      <url>/2026/03/18/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
