@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 杨淮生的博客
-subtitle: 我的码农生涯
-description: 一名拥有 20 多年经验的高级软件工程师，专注于软件架构设计与企业级应用开发。
-keywords: 杨淮生，博客，软件工程师，Java,C++, 架构设计，南京
+title: 信息竞赛数学教程
+subtitle: 从初中数学到信竞高手
+description: 面向信息学竞赛的数学基础教程，涵盖代数、几何、数论、组合数学、概率统计等核心内容。循序渐进，通俗易懂，助力初中生攻克高中数学！
+keywords: 信息竞赛，NOIP，数学教程，算法竞赛，编程数学，C++
 author: 杨淮生
 language: zh-CN
 timezone: Asia/Shanghai
@@ -87,6 +87,26 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: landscape
+
+# Math Support (hexo-math)
+math:
+  engine: 'mathjax'
+  mathjax:
+    config:
+      tex:
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      options:
+        renderActions:
+          addMenu: [0, '', '']
+
+# Mermaid Support (hexo-filter-mermaid)
+mermaid:
+  enable: true
+  version: '9'  # 使用 Mermaid 9.x
+  options:
+    theme: 'default'
+    logLevel: 'error'
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
