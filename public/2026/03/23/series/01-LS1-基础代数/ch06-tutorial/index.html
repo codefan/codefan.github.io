@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>[教程] 06-函数的图像变换 | 信息竞赛数学教程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="🎮 情景引入 想象你在玩一个2D 平台跳跃游戏，主角站在原点 (0, 0)： 场景 1：主角向右移动 3 个单位 123原位置：(0, 0)新位置：(3, 0)变换：x → x - 3（向右平移）  场景 2：主角跳起来，向上移动 2 个单位 123原位置：(0, 0)新位置：(0, 2)变换：y → y - 2（向上平移）  场景 3：主角照镜子（左右翻转） 123原位置：(2, 1)镜像：(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[教程] 06-函数的图像变换">
+<meta property="og:url" content="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch06-tutorial/index.html">
+<meta property="og:site_name" content="信息竞赛数学教程">
+<meta property="og:description" content="🎮 情景引入 想象你在玩一个2D 平台跳跃游戏，主角站在原点 (0, 0)： 场景 1：主角向右移动 3 个单位 123原位置：(0, 0)新位置：(3, 0)变换：x → x - 3（向右平移）  场景 2：主角跳起来，向上移动 2 个单位 123原位置：(0, 0)新位置：(0, 2)变换：y → y - 2（向上平移）  场景 3：主角照镜子（左右翻转） 123原位置：(2, 1)镜像：(">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-23T07:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-23T07:00:00.000Z">
+<meta property="article:author" content="杨淮生">
+<meta property="article:tag" content="LS-1">
+<meta property="article:tag" content="教程，代数，函数，图像变换">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="信息竞赛数学教程" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">信息竞赛数学教程</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">从初中数学到信竞高手</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://codefan.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-series/01-LS1-基础代数/ch06-tutorial" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch06-tutorial/" class="article-date">
+  <time class="dt-published" datetime="2026-03-23T07:00:00.000Z" itemprop="datePublished">2026-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E6%95%B0/">代数</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      [教程] 06-函数的图像变换
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="🎮-情景引入"><a href="#🎮-情景引入" class="headerlink" title="🎮 情景引入"></a>🎮 情景引入</h2><blockquote>
+<p>想象你在玩一个<strong>2D 平台跳跃游戏</strong>，主角站在原点 (0, 0)：</p>
+<p><strong>场景 1</strong>：主角向右移动 3 个单位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">原位置：(0, 0)</span><br><span class="line">新位置：(3, 0)</span><br><span class="line">变换：x → x - 3（向右平移）</span><br></pre></td></tr></table></figure>
+
+<p><strong>场景 2</strong>：主角跳起来，向上移动 2 个单位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">原位置：(0, 0)</span><br><span class="line">新位置：(0, 2)</span><br><span class="line">变换：y → y - 2（向上平移）</span><br></pre></td></tr></table></figure>
+
+<p><strong>场景 3</strong>：主角照镜子（左右翻转）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">原位置：(2, 1)</span><br><span class="line">镜像：(-2, 1)</span><br><span class="line">变换：x → -x（关于 y 轴对称）</span><br></pre></td></tr></table></figure>
+
+<p><strong>场景 4</strong>：主角变大 2 倍</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">原位置：(1, 1)</span><br><span class="line">新位置：(2, 2)</span><br><span class="line">变换：(x, y) → (2x, 2y)（放大）</span><br></pre></td></tr></table></figure>
+
+<p><strong>信竞中的应用</strong>：图像变换在图形学、几何问题、坐标变换中无处不在！</p>
+</blockquote>
+<hr>
+<h2 id="📖-直观理解"><a href="#📖-直观理解" class="headerlink" title="📖 直观理解"></a>📖 直观理解</h2><h3 id="1-函数图像的四种基本变换"><a href="#1-函数图像的四种基本变换" class="headerlink" title="1. 函数图像的四种基本变换"></a>1. 函数图像的四种基本变换</h3><!-- mermaid 图表已移除，见下方描述 -->
+<p>graph TD<br>    A[图像变换] –&gt; B1[平移变换]<br>    A –&gt; B2[对称变换]<br>    A –&gt; B3[伸缩变换]<br>    A –&gt; B4[翻转变换]</p>
+<pre><code>B1 --&gt; C1[&quot;左右/上下移动&quot;]
+B2 --&gt; C2[&quot;关于轴/原点对称&quot;]
+B3 --&gt; C3[&quot;横向/纵向拉伸&quot;]
+B4 --&gt; C4[&quot;沿轴翻转&quot;]
+</code></pre>
+<h3 id="2-平移变换"><a href="#2-平移变换" class="headerlink" title="2. 平移变换"></a>2. 平移变换</h3><p><strong>左右平移</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">y = f(x) → y = f(x - a)</span><br><span class="line"></span><br><span class="line">a &gt; 0: 向右平移 a 个单位</span><br><span class="line">a &lt; 0: 向左平移 |a| 个单位</span><br><span class="line"></span><br><span class="line">口诀：左加右减</span><br></pre></td></tr></table></figure>
+
+<p><strong>上下平移</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">y = f(x) → y = f(x) + b</span><br><span class="line"></span><br><span class="line">b &gt; 0: 向上平移 b 个单位</span><br><span class="line">b &lt; 0: 向下平移 |b| 个单位</span><br><span class="line"></span><br><span class="line">口诀：上加下减</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">y = x²</span><br><span class="line"></span><br><span class="line">y = (x - 2)²    → 向右平移 2 个单位</span><br><span class="line">y = x² + 3      → 向上平移 3 个单位</span><br><span class="line">y = (x - 2)² + 3 → 先右移 2，再上移 3</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-对称变换"><a href="#3-对称变换" class="headerlink" title="3. 对称变换"></a>3. 对称变换</h3><p><strong>关于 y 轴对称</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">y = f(x) → y = f(-x)</span><br><span class="line"></span><br><span class="line">左右翻转</span><br></pre></td></tr></table></figure>
+
+<p><strong>关于 x 轴对称</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">y = f(x) → y = -f(x)</span><br><span class="line"></span><br><span class="line">上下翻转</span><br></pre></td></tr></table></figure>
+
+<p><strong>关于原点对称</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">y = f(x) → y = -f(-x)</span><br><span class="line"></span><br><span class="line">旋转 180°</span><br></pre></td></tr></table></figure>
+
+<p><strong>关于直线 y &#x3D; x 对称</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">y = f(x) → x = f(y) 或 y = f⁻¹(x)</span><br><span class="line"></span><br><span class="line">反函数</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-伸缩变换"><a href="#4-伸缩变换" class="headerlink" title="4. 伸缩变换"></a>4. 伸缩变换</h3><p><strong>横向伸缩</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">y = f(x) → y = f(ωx)</span><br><span class="line"></span><br><span class="line">ω &gt; 1: 横向压缩为原来的 1/ω</span><br><span class="line">0 &lt; ω &lt; 1: 横向拉伸为原来的 1/ω</span><br></pre></td></tr></table></figure>
+
+<p><strong>纵向伸缩</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">y = f(x) → y = Af(x)</span><br><span class="line"></span><br><span class="line">A &gt; 1: 纵向拉伸为原来的 A 倍</span><br><span class="line">0 &lt; A &lt; 1: 纵向压缩为原来的 A 倍</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="📐-数学定义"><a href="#📐-数学定义" class="headerlink" title="📐 数学定义"></a>📐 数学定义</h2><h3 id="变换公式总结"><a href="#变换公式总结" class="headerlink" title="变换公式总结"></a>变换公式总结</h3><table>
+<thead>
+<tr>
+<th>变换类型</th>
+<th>原函数</th>
+<th>变换后</th>
+<th>几何意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>左右平移</strong></td>
+<td>y &#x3D; f(x)</td>
+<td>y &#x3D; f(x - a)</td>
+<td>向右 (a&gt;0) 或向左 (a&lt;0)</td>
+</tr>
+<tr>
+<td><strong>上下平移</strong></td>
+<td>y &#x3D; f(x)</td>
+<td>y &#x3D; f(x) + b</td>
+<td>向上 (b&gt;0) 或向下 (b&lt;0)</td>
+</tr>
+<tr>
+<td><strong>y 轴对称</strong></td>
+<td>y &#x3D; f(x)</td>
+<td>y &#x3D; f(-x)</td>
+<td>左右翻转</td>
+</tr>
+<tr>
+<td><strong>x 轴对称</strong></td>
+<td>y &#x3D; f(x)</td>
+<td>y &#x3D; -f(x)</td>
+<td>上下翻转</td>
+</tr>
+<tr>
+<td><strong>原点对称</strong></td>
+<td>y &#x3D; f(x)</td>
+<td>y &#x3D; -f(-x)</td>
+<td>旋转 180°</td>
+</tr>
+<tr>
+<td><strong>横向伸缩</strong></td>
+<td>y &#x3D; f(x)</td>
+<td>y &#x3D; f(ωx)</td>
+<td>ω&gt;1 压缩，0&lt;ω&lt;1 拉伸</td>
+</tr>
+<tr>
+<td><strong>纵向伸缩</strong></td>
+<td>y &#x3D; f(x)</td>
+<td>y &#x3D; Af(x)</td>
+<td>A&gt;1 拉伸，0&lt;A&lt;1 压缩</td>
+</tr>
+</tbody></table>
+<h3 id="复合变换"><a href="#复合变换" class="headerlink" title="复合变换"></a>复合变换</h3><p>多个变换可以<strong>复合</strong>，注意<strong>顺序</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">y = f(x)</span><br><span class="line"></span><br><span class="line">1. 向右平移 2：y = f(x - 2)</span><br><span class="line">2. 向上平移 3：y = f(x - 2) + 3</span><br><span class="line">3. 横向压缩 2 倍：y = f(2x - 2) + 3</span><br><span class="line">4. 纵向拉伸 2 倍：y = 2f(2x - 2) + 3</span><br></pre></td></tr></table></figure>
+
+<p><strong>一般形式</strong>：<br>$$<br>y &#x3D; A \cdot f(\omega x + \phi) + h<br>$$</p>
+<p>其中：</p>
+<ul>
+<li>A：纵向伸缩（A&gt;1 拉伸，0&lt;A&lt;1 压缩）</li>
+<li>ω：横向伸缩（ω&gt;1 压缩，0&lt;ω&lt;1 拉伸）</li>
+<li>φ：左右平移（φ&gt;0 向左，φ&lt;0 向右）</li>
+<li>h：上下平移（h&gt;0 向上，h&lt;0 向下）</li>
+</ul>
+<hr>
+<h2 id="💻-代码实现"><a href="#💻-代码实现" class="headerlink" title="💻 代码实现"></a>💻 代码实现</h2><h3 id="坐标变换"><a href="#坐标变换" class="headerlink" title="坐标变换"></a>坐标变换</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 点的结构</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Point</span> &#123;</span><br><span class="line">    <span class="type">double</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数示例：y = x²</span></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">f</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 平移变换</span></span><br><span class="line"><span class="function">Point <span class="title">translate</span><span class="params">(Point p, <span class="type">double</span> dx, <span class="type">double</span> dy)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;p.x + dx, p.y + dy&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 关于 y 轴对称</span></span><br><span class="line"><span class="function">Point <span class="title">reflect_y</span><span class="params">(Point p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;-p.x, p.y&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 关于 x 轴对称</span></span><br><span class="line"><span class="function">Point <span class="title">reflect_x</span><span class="params">(Point p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;p.x, -p.y&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 关于原点对称</span></span><br><span class="line"><span class="function">Point <span class="title">reflect_origin</span><span class="params">(Point p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;-p.x, -p.y&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 横向伸缩</span></span><br><span class="line"><span class="function">Point <span class="title">scale_x</span><span class="params">(Point p, <span class="type">double</span> omega)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;p.x / omega, p.y&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 纵向伸缩</span></span><br><span class="line"><span class="function">Point <span class="title">scale_y</span><span class="params">(Point p, <span class="type">double</span> A)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;p.x, p.y * A&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 复合变换：y = A * f(omega * x + phi) + h</span></span><br><span class="line"><span class="function">Point <span class="title">transform</span><span class="params">(Point p, <span class="type">double</span> A, <span class="type">double</span> omega, <span class="type">double</span> phi, <span class="type">double</span> h)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> x_new = (p.x - phi) / omega;</span><br><span class="line">    <span class="type">double</span> y_new = A * <span class="built_in">f</span>(omega * p.x + phi) + h;</span><br><span class="line">    <span class="keyword">return</span> &#123;x_new, y_new&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Point p = &#123;<span class="number">2</span>, <span class="number">4</span>&#125;;  <span class="comment">// y = x² 上的点</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 向右平移 2，向上平移 3</span></span><br><span class="line">    Point p1 = <span class="built_in">translate</span>(p, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;平移后：(&quot;</span> &lt;&lt; p<span class="number">1.</span>x &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; p<span class="number">1.</span>y &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 关于 y 轴对称</span></span><br><span class="line">    Point p2 = <span class="built_in">reflect_y</span>(p);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;y 轴对称：(&quot;</span> &lt;&lt; p<span class="number">2.</span>x &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; p<span class="number">2.</span>y &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 纵向拉伸 2 倍</span></span><br><span class="line">    Point p3 = <span class="built_in">scale_y</span>(p, <span class="number">2</span>);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;纵向拉伸 2 倍：(&quot;</span> &lt;&lt; p<span class="number">3.</span>x &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; p<span class="number">3.</span>y &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="绘制变换后的图像"><a href="#绘制变换后的图像" class="headerlink" title="绘制变换后的图像"></a>绘制变换后的图像</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 绘制函数图像的 ASCII 示意图</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">plot_function</span><span class="params">(<span class="type">double</span> (*func)(<span class="type">double</span>), <span class="type">double</span> x_min, <span class="type">double</span> x_max, </span></span></span><br><span class="line"><span class="params"><span class="function">                   <span class="type">int</span> width = <span class="number">40</span>, <span class="type">int</span> height = <span class="number">20</span>)</span> </span>&#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">char</span>&gt;&gt; <span class="built_in">canvas</span>(height, <span class="built_in">vector</span>&lt;<span class="type">char</span>&gt;(width, <span class="string">&#x27; &#x27;</span>));</span><br><span class="line">    </span><br><span class="line">    <span class="type">double</span> x_step = (x_max - x_min) / (width - <span class="number">1</span>);</span><br><span class="line">    <span class="type">double</span> y_min = <span class="number">0</span>, y_max = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 计算 y 范围</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; width; i++) &#123;</span><br><span class="line">        <span class="type">double</span> x = x_min + i * x_step;</span><br><span class="line">        <span class="type">double</span> y = <span class="built_in">func</span>(x);</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span> || y &lt; y_min) y_min = y;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span> || y &gt; y_max) y_max = y;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="type">double</span> y_step = (y_max - y_min) / (height - <span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 绘制</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; width; i++) &#123;</span><br><span class="line">        <span class="type">double</span> x = x_min + i * x_step;</span><br><span class="line">        <span class="type">double</span> y = <span class="built_in">func</span>(x);</span><br><span class="line">        <span class="type">int</span> row = height - <span class="number">1</span> - (<span class="type">int</span>)((y - y_min) / y_step * (height - <span class="number">1</span>));</span><br><span class="line">        <span class="type">int</span> col = i;</span><br><span class="line">        <span class="keyword">if</span> (row &gt;= <span class="number">0</span> &amp;&amp; row &lt; height &amp;&amp; col &gt;= <span class="number">0</span> &amp;&amp; col &lt; width) &#123;</span><br><span class="line">            canvas[row][col] = <span class="string">&#x27;*&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 输出</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; height; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; width; j++) &#123;</span><br><span class="line">            cout &lt;&lt; canvas[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🏆-信竞应用"><a href="#🏆-信竞应用" class="headerlink" title="🏆 信竞应用"></a>🏆 信竞应用</h2><h3 id="1-坐标变换在几何中的应用"><a href="#1-坐标变换在几何中的应用" class="headerlink" title="1. 坐标变换在几何中的应用"></a>1. 坐标变换在几何中的应用</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 旋转坐标</span></span><br><span class="line"><span class="function">Point <span class="title">rotate</span><span class="params">(Point p, <span class="type">double</span> angle)</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> rad = angle * M_PI / <span class="number">180.0</span>;</span><br><span class="line">    <span class="type">double</span> cos_a = <span class="built_in">cos</span>(rad);</span><br><span class="line">    <span class="type">double</span> sin_a = <span class="built_in">sin</span>(rad);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        p.x * cos_a - p.y * sin_a,</span><br><span class="line">        p.x * sin_a + p.y * cos_a</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 缩放坐标</span></span><br><span class="line"><span class="function">Point <span class="title">scale</span><span class="params">(Point p, <span class="type">double</span> sx, <span class="type">double</span> sy)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;p.x * sx, p.y * sy&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-二次函数图像变换"><a href="#2-二次函数图像变换" class="headerlink" title="2. 二次函数图像变换"></a>2. 二次函数图像变换</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二次函数顶点式：y = a(x - h)² + k</span></span><br><span class="line"><span class="comment">// 顶点：(h, k)</span></span><br><span class="line"><span class="comment">// 开口方向：a &gt; 0 向上，a &lt; 0 向下</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Quadratic</span> &#123;</span><br><span class="line">    <span class="type">double</span> a, h, k;  <span class="comment">// y = a(x - h)² + k</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">eval</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a * (x - h) * (x - h) + k;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 从一般式转换</span></span><br><span class="line">    <span class="function"><span class="type">static</span> Quadratic <span class="title">from_general</span><span class="params">(<span class="type">double</span> a, <span class="type">double</span> b, <span class="type">double</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="type">double</span> h = -b / (<span class="number">2</span> * a);</span><br><span class="line">        <span class="type">double</span> k = a * h * h + b * h + c;</span><br><span class="line">        <span class="keyword">return</span> &#123;a, h, k&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-三角函数图像变换"><a href="#3-三角函数图像变换" class="headerlink" title="3. 三角函数图像变换"></a>3. 三角函数图像变换</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正弦函数：y = A * sin(ωx + φ) + h</span></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">sine_wave</span><span class="params">(<span class="type">double</span> x, <span class="type">double</span> A, <span class="type">double</span> omega, <span class="type">double</span> phi, <span class="type">double</span> h)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> A * <span class="built_in">sin</span>(omega * x + phi) + h;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 参数含义：</span></span><br><span class="line"><span class="comment">// A: 振幅</span></span><br><span class="line"><span class="comment">// ω: 角频率（周期 T = 2π/ω）</span></span><br><span class="line"><span class="comment">// φ: 初相</span></span><br><span class="line"><span class="comment">// h: 垂直偏移</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-分形图形（递归变换）"><a href="#4-分形图形（递归变换）" class="headerlink" title="4. 分形图形（递归变换）"></a>4. 分形图形（递归变换）</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 科赫雪花的生成（递归 + 坐标变换）</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">koch_curve</span><span class="params">(Point p1, Point p2, <span class="type">int</span> depth)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (depth == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 绘制线段 p1-p2</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 三等分点</span></span><br><span class="line">    Point q1 = &#123;(<span class="number">2</span> * p<span class="number">1.</span>x + p<span class="number">2.</span>x) / <span class="number">3</span>, (<span class="number">2</span> * p<span class="number">1.</span>y + p<span class="number">2.</span>y) / <span class="number">3</span>&#125;;</span><br><span class="line">    Point q2 = &#123;(p<span class="number">1.</span>x + <span class="number">2</span> * p<span class="number">2.</span>x) / <span class="number">3</span>, (p<span class="number">1.</span>y + <span class="number">2</span> * p<span class="number">2.</span>y) / <span class="number">3</span>&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 构造等边三角形的顶点</span></span><br><span class="line">    <span class="type">double</span> dx = q<span class="number">2.</span>x - q<span class="number">1.</span>x;</span><br><span class="line">    <span class="type">double</span> dy = q<span class="number">2.</span>y - q<span class="number">1.</span>y;</span><br><span class="line">    Point peak = &#123;</span><br><span class="line">        (q<span class="number">1.</span>x + q<span class="number">2.</span>x) / <span class="number">2</span> - dy * <span class="built_in">sqrt</span>(<span class="number">3</span>) / <span class="number">2</span>,</span><br><span class="line">        (q<span class="number">1.</span>y + q<span class="number">2.</span>y) / <span class="number">2</span> + dx * <span class="built_in">sqrt</span>(<span class="number">3</span>) / <span class="number">2</span></span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 递归</span></span><br><span class="line">    <span class="built_in">koch_curve</span>(p1, q1, depth - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">koch_curve</span>(q1, peak, depth - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">koch_curve</span>(peak, q2, depth - <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">koch_curve</span>(q2, p2, depth - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🔗-相关题目"><a href="#🔗-相关题目" class="headerlink" title="🔗 相关题目"></a>🔗 相关题目</h2><blockquote>
+<p>⚠️ 以下题目为经典题型，具体题号请验证后使用</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>题目名称</th>
+<th>来源</th>
+<th>难度</th>
+<th>知识点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数学题</td>
+<td>函数图像平移</td>
+<td>课本习题</td>
+<td>⭐</td>
+<td>平移变换</td>
+</tr>
+<tr>
+<td>数学题</td>
+<td>函数图像对称</td>
+<td>课本习题</td>
+<td>⭐⭐</td>
+<td>对称变换</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>坐标变换</td>
+<td>洛谷</td>
+<td>⭐⭐</td>
+<td>几何变换</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>二次函数顶点</td>
+<td>AtCoder</td>
+<td>⭐⭐⭐</td>
+<td>顶点式</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>三角函数图像</td>
+<td>Codeforces</td>
+<td>⭐⭐⭐⭐</td>
+<td>正弦波</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>分形图形</td>
+<td>洛谷</td>
+<td>⭐⭐⭐⭐⭐</td>
+<td>递归变换</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="📚-拓展阅读"><a href="#📚-拓展阅读" class="headerlink" title="📚 拓展阅读"></a>📚 拓展阅读</h2><h3 id="进阶知识（选学）"><a href="#进阶知识（选学）" class="headerlink" title="进阶知识（选学）"></a>进阶知识（选学）</h3><ol>
+<li><p><strong>矩阵变换</strong></p>
+<ul>
+<li>平移、旋转、缩放都可以用矩阵表示</li>
+<li>计算机图形学的基础</li>
+</ul>
+</li>
+<li><p><strong>仿射变换</strong></p>
+<ul>
+<li>保持平行性的变换</li>
+<li>包括平移、旋转、缩放、剪切</li>
+</ul>
+</li>
+<li><p><strong>傅里叶变换</strong></p>
+<ul>
+<li>将函数分解为正弦波的叠加</li>
+<li>信号处理的核心工具</li>
+</ul>
+</li>
+</ol>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>《高中数学必修一》- 人教 A 版 - 第 3 章 函数</li>
+<li>《算法竞赛入门经典》- 刘汝佳 - 第 4 章 几何</li>
+<li><a target="_blank" rel="noopener" href="https://oi-wiki.org/geometry/2d/">OI Wiki - 计算几何</a></li>
+</ul>
+<hr>
+<h2 id="🔜-下一篇"><a href="#🔜-下一篇" class="headerlink" title="🔜 下一篇"></a>🔜 下一篇</h2><p>[练习] 函数图像变换分析</p>
+<hr>
+<p><strong>本系列</strong>: <a href="/series/math-tutorial/">信息竞赛数学教程</a><br><strong>上一篇</strong>: [练习] 函数奇偶性判定<br><strong>下一篇</strong>: [练习] 函数图像变换分析</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch06-tutorial/" data-id="cmn301uqh0019hi5e61wv64to" data-title="[教程] 06-函数的图像变换" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LS-1/" rel="tag">LS-1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">教程，代数，函数，图像变换</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch06-practice/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          [练习] 06-函数图像变换分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch05-practice/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">[练习] 05-函数奇偶性判定</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%A3%E6%95%B0/">代数</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E9%9A%8F%E7%AC%94/">技术随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LS-1/" rel="tag">LS-1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo/" rel="tag">博客，Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BC%80%E7%AF%87/" rel="tag">博客，开篇</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，三角函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag">教程，代数，不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，二次函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" rel="tag">教程，代数，函数，单调性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">教程，代数，函数，图像变换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" rel="tag">教程，代数，函数，奇偶性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，函数，幂函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E9%9B%B6%E7%82%B9/" rel="tag">教程，代数，函数，零点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，对数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，指数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" rel="tag">教程，代数，逻辑，充要条件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">教程，代数，集合，逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，三角函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag">练习，代数，不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，二次函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" rel="tag">练习，代数，函数，单调性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">练习，代数，函数，图像变换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" rel="tag">练习，代数，函数，奇偶性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，函数，幂函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，对数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，指数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" rel="tag">练习，代数，逻辑，充要条件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">练习，代数，集合，逻辑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/LS-1/" style="font-size: 20px;">LS-1</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo/" style="font-size: 10px;">博客，Hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BC%80%E7%AF%87/" style="font-size: 10px;">博客，开篇</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" style="font-size: 10px;">技术分享</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" style="font-size: 16.67px;">教程，代数，三角函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 13.33px;">教程，代数，不等式</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，二次函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" style="font-size: 10px;">教程，代数，函数，单调性</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" style="font-size: 10px;">教程，代数，函数，图像变换</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" style="font-size: 10px;">教程，代数，函数，奇偶性</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，函数，幂函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E9%9B%B6%E7%82%B9/" style="font-size: 10px;">教程，代数，函数，零点</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，对数函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，指数函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">教程，代数，逻辑，充要条件</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" style="font-size: 10px;">教程，代数，集合，逻辑</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" style="font-size: 16.67px;">练习，代数，三角函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 13.33px;">练习，代数，不等式</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，二次函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" style="font-size: 10px;">练习，代数，函数，单调性</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" style="font-size: 10px;">练习，代数，函数，图像变换</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" style="font-size: 10px;">练习，代数，函数，奇偶性</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，函数，幂函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，对数函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，指数函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">练习，代数，逻辑，充要条件</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" style="font-size: 10px;">练习，代数，集合，逻辑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">三月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/03/24/series/MATH-TUTORIAL-INDEX/">信息竞赛数学教程 - 课程索引</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/24/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch16-practice/">[练习] 16-三角函数的图像与性质</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/24/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch16-tutorial/">[教程] 16-三角函数的图像与性质</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch15-practice/">[练习] 15-诱导公式</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch15-tutorial/">[教程] 15-诱导公式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 杨淮生<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

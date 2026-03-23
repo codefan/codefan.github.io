@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>[教程] 04-函数的单调性 | 信息竞赛数学教程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="🎮 情景引入 想象你在玩一个爬塔游戏，塔有 100 层： 场景 1：每层高度相同 12345楼层 → 累计高度  1   →    3 米  2   →    6 米  3   →    9 米  ... 楼层越高，高度越高 → 单调递增 场景 2：有些层是地下室（负高度） 12345楼层 → 累计高度 -2   →   -6 米 -1   →   -3 米  0   →    0 米  1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[教程] 04-函数的单调性">
+<meta property="og:url" content="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch04-tutorial/index.html">
+<meta property="og:site_name" content="信息竞赛数学教程">
+<meta property="og:description" content="🎮 情景引入 想象你在玩一个爬塔游戏，塔有 100 层： 场景 1：每层高度相同 12345楼层 → 累计高度  1   →    3 米  2   →    6 米  3   →    9 米  ... 楼层越高，高度越高 → 单调递增 场景 2：有些层是地下室（负高度） 12345楼层 → 累计高度 -2   →   -6 米 -1   →   -3 米  0   →    0 米  1">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-23T05:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-23T05:00:00.000Z">
+<meta property="article:author" content="杨淮生">
+<meta property="article:tag" content="LS-1">
+<meta property="article:tag" content="教程，代数，函数，单调性">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="信息竞赛数学教程" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">信息竞赛数学教程</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">从初中数学到信竞高手</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://codefan.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-series/01-LS1-基础代数/ch04-tutorial" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch04-tutorial/" class="article-date">
+  <time class="dt-published" datetime="2026-03-23T05:00:00.000Z" itemprop="datePublished">2026-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E6%95%B0/">代数</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      [教程] 04-函数的单调性
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="🎮-情景引入"><a href="#🎮-情景引入" class="headerlink" title="🎮 情景引入"></a>🎮 情景引入</h2><blockquote>
+<p>想象你在玩一个<strong>爬塔游戏</strong>，塔有 100 层：</p>
+<p><strong>场景 1</strong>：每层高度相同</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">楼层 → 累计高度</span><br><span class="line">  1   →    3 米</span><br><span class="line">  2   →    6 米</span><br><span class="line">  3   →    9 米</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+<p>楼层越高，高度越高 → <strong>单调递增</strong></p>
+<p><strong>场景 2</strong>：有些层是地下室（负高度）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">楼层 → 累计高度</span><br><span class="line"> -2   →   -6 米</span><br><span class="line"> -1   →   -3 米</span><br><span class="line">  0   →    0 米</span><br><span class="line">  1   →    3 米</span><br></pre></td></tr></table></figure>
+<p>仍然是楼层越高，高度越高 → <strong>全程单调递增</strong></p>
+<p><strong>场景 3</strong>：塔中间有空中花园（高度不变）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">楼层 → 累计高度</span><br><span class="line">  10  →   30 米</span><br><span class="line">  11  →   30 米  ← 空中花园</span><br><span class="line">  12  →   30 米  ← 空中花园</span><br><span class="line">  13  →   33 米</span><br></pre></td></tr></table></figure>
+<p>高度不降低，但可能不变 → <strong>单调不减</strong></p>
+<p><strong>信竞中的应用</strong>：单调性是二分查找、三分法、贪心算法的基础！</p>
+</blockquote>
+<hr>
+<h2 id="📖-直观理解"><a href="#📖-直观理解" class="headerlink" title="📖 直观理解"></a>📖 直观理解</h2><h3 id="1-什么是单调性？"><a href="#1-什么是单调性？" class="headerlink" title="1. 什么是单调性？"></a>1. 什么是单调性？</h3><p><strong>单调性</strong>描述函数值随自变量变化的<strong>趋势</strong>：</p>
+<!-- mermaid 图表已移除，见下方描述 -->
+<p>graph TD<br>    A[单调性] –&gt; B1[单调递增]<br>    A –&gt; B2[单调递减]<br>    A –&gt; B3[常数函数]</p>
+<pre><code>B1 --&gt; C1[&quot;x 增大，f(x) 增大&quot;]
+B2 --&gt; C2[&quot;x 增大，f(x) 减小&quot;]
+B3 --&gt; C3[&quot;x 增大，f(x) 不变&quot;]
+</code></pre>
+<p><strong>图像特征</strong>：</p>
+<ul>
+<li><strong>单调递增</strong>：从左到右，图像<strong>上升</strong></li>
+<li><strong>单调递减</strong>：从左到右，图像<strong>下降</strong></li>
+<li><strong>常数函数</strong>：从左到右，图像<strong>水平</strong></li>
+</ul>
+<h3 id="2-严格单调-vs-非严格单调"><a href="#2-严格单调-vs-非严格单调" class="headerlink" title="2. 严格单调 vs 非严格单调"></a>2. 严格单调 vs 非严格单调</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+<th>图像特征</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>严格递增</strong></td>
+<td>x₁ &lt; x₂ → f(x₁) &lt; f(x₂)</td>
+<td>严格上升</td>
+<td>f(x) &#x3D; x</td>
+</tr>
+<tr>
+<td><strong>单调不减</strong></td>
+<td>x₁ &lt; x₂ → f(x₁) ≤ f(x₂)</td>
+<td>上升或水平</td>
+<td>f(x) &#x3D; ⌊x⌋</td>
+</tr>
+<tr>
+<td><strong>严格递减</strong></td>
+<td>x₁ &lt; x₂ → f(x₁) &gt; f(x₂)</td>
+<td>严格下降</td>
+<td>f(x) &#x3D; -x</td>
+</tr>
+<tr>
+<td><strong>单调不增</strong></td>
+<td>x₁ &lt; x₂ → f(x₁) ≥ f(x₂)</td>
+<td>下降或水平</td>
+<td>f(x) &#x3D; ⌈-x⌉</td>
+</tr>
+</tbody></table>
+<p><strong>示例对比</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">严格递增：f(x) = x² (x &gt; 0)</span><br><span class="line">  x:  1  2  3  4</span><br><span class="line">f(x): 1  4  9  16  ✓ 严格增大</span><br><span class="line"></span><br><span class="line">单调不减：f(x) = ⌊x⌋ (取整函数)</span><br><span class="line">  x:  1.1  1.9  2.1  2.9</span><br><span class="line">f(x):  1    1    2    2   ✓ 不减，但有相等</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-单调区间"><a href="#3-单调区间" class="headerlink" title="3. 单调区间"></a>3. 单调区间</h3><p>函数可能在<strong>不同区间</strong>有不同的单调性：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">f(x) = x²</span><br><span class="line"></span><br><span class="line">在 (-∞, 0] 上：单调递减</span><br><span class="line">在 [0, +∞) 上：单调递增</span><br><span class="line"></span><br><span class="line">     y</span><br><span class="line">     |     /</span><br><span class="line">     |    /</span><br><span class="line">     |   /</span><br><span class="line">    _\  /</span><br><span class="line">     \/</span><br><span class="line">     |</span><br><span class="line">-----+----- x</span><br></pre></td></tr></table></figure>
+
+<p><strong>关键点</strong>：x &#x3D; 0 是<strong>单调性改变</strong>的分界点（极值点）。</p>
+<hr>
+<h2 id="📐-数学定义"><a href="#📐-数学定义" class="headerlink" title="📐 数学定义"></a>📐 数学定义</h2><h3 id="单调性的严格定义"><a href="#单调性的严格定义" class="headerlink" title="单调性的严格定义"></a>单调性的严格定义</h3><p>设函数 f(x) 的定义域为 I，区间 D ⊆ I：</p>
+<p><strong>1. 单调递增（严格）</strong></p>
+<p>如果对于 D 上任意两个值 x₁, x₂，当 x₁ &lt; x₂ 时，都有 f(x₁) &lt; f(x₂)，则称 f(x) 在 D 上<strong>单调递增</strong>。</p>
+<p>$$<br>\forall x_1, x_2 \in D, x_1 &lt; x_2 \Rightarrow f(x_1) &lt; f(x_2)<br>$$</p>
+<p><strong>2. 单调不减</strong></p>
+<p>如果对于 D 上任意两个值 x₁, x₂，当 x₁ &lt; x₂ 时，都有 f(x₁) ≤ f(x₂)，则称 f(x) 在 D 上<strong>单调不减</strong>。</p>
+<p>$$<br>\forall x_1, x_2 \in D, x_1 &lt; x_2 \Rightarrow f(x_1) \leq f(x_2)<br>$$</p>
+<p><strong>3. 单调递减（严格）</strong></p>
+<p>如果对于 D 上任意两个值 x₁, x₂，当 x₁ &lt; x₂ 时，都有 f(x₁) &gt; f(x₂)，则称 f(x) 在 D 上<strong>单调递减</strong>。</p>
+<p>$$<br>\forall x_1, x_2 \in D, x_1 &lt; x_2 \Rightarrow f(x_1) &gt; f(x_2)<br>$$</p>
+<p><strong>4. 单调不增</strong></p>
+<p>如果对于 D 上任意两个值 x₁, x₂，当 x₁ &lt; x₂ 时，都有 f(x₁) ≥ f(x₂)，则称 f(x) 在 D 上<strong>单调不增</strong>。</p>
+<p>$$<br>\forall x_1, x_2 \in D, x_1 &lt; x_2 \Rightarrow f(x_1) \geq f(x_2)<br>$$</p>
+<h3 id="单调性的判定方法"><a href="#单调性的判定方法" class="headerlink" title="单调性的判定方法"></a>单调性的判定方法</h3><p><strong>方法 1：定义法</strong></p>
+<ol>
+<li>任取 x₁, x₂ ∈ D，且 x₁ &lt; x₂</li>
+<li>计算 f(x₁) - f(x₂) 或 f(x₁)&#x2F;f(x₂)</li>
+<li>判断符号，得出结论</li>
+</ol>
+<p><strong>示例</strong>：证明 f(x) &#x3D; 2x + 1 在 R 上单调递增</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">证明：</span><br><span class="line">任取 x₁, x₂ ∈ R，且 x₁ &lt; x₂</span><br><span class="line"></span><br><span class="line">f(x₁) - f(x₂) = (2x₁ + 1) - (2x₂ + 1)</span><br><span class="line">              = 2(x₁ - x₂)</span><br><span class="line"></span><br><span class="line">因为 x₁ &lt; x₂，所以 x₁ - x₂ &lt; 0</span><br><span class="line">所以 2(x₁ - x₂) &lt; 0</span><br><span class="line">即 f(x₁) &lt; f(x₂)</span><br><span class="line"></span><br><span class="line">因此 f(x) = 2x + 1 在 R 上单调递增</span><br></pre></td></tr></table></figure>
+
+<p><strong>方法 2：导数法</strong>（后续章节学习）</p>
+<ul>
+<li>f’(x) &gt; 0 → 单调递增</li>
+<li>f’(x) &lt; 0 → 单调递减</li>
+</ul>
+<p><strong>方法 3：图像法</strong></p>
+<p>观察函数图像的升降趋势。</p>
+<h3 id="常见函数的单调性"><a href="#常见函数的单调性" class="headerlink" title="常见函数的单调性"></a>常见函数的单调性</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>解析式</th>
+<th>单调区间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一次函数</td>
+<td>f(x) &#x3D; kx + b</td>
+<td>k &gt; 0: R 上递增<br>k &lt; 0: R 上递减</td>
+</tr>
+<tr>
+<td>二次函数</td>
+<td>f(x) &#x3D; ax² + bx + c</td>
+<td>a &gt; 0: (-∞, -b&#x2F;2a] 递减，[-b&#x2F;2a, +∞) 递增<br>a &lt; 0: 相反</td>
+</tr>
+<tr>
+<td>反比例函数</td>
+<td>f(x) &#x3D; k&#x2F;x</td>
+<td>k &gt; 0: (-∞, 0) 和 (0, +∞) 递减<br>k &lt; 0: 相反</td>
+</tr>
+<tr>
+<td>指数函数</td>
+<td>f(x) &#x3D; a^x</td>
+<td>a &gt; 1: R 上递增<br>0 &lt; a &lt; 1: R 上递减</td>
+</tr>
+<tr>
+<td>对数函数</td>
+<td>f(x) &#x3D; logₐ(x)</td>
+<td>a &gt; 1: (0, +∞) 上递增<br>0 &lt; a &lt; 1: (0, +∞) 上递减</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="💻-代码实现"><a href="#💻-代码实现" class="headerlink" title="💻 代码实现"></a>💻 代码实现</h2><h3 id="判断函数单调性"><a href="#判断函数单调性" class="headerlink" title="判断函数单调性"></a>判断函数单调性</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例函数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">f</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * x + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断函数在给定区间上是否单调递增</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">is_increasing</span><span class="params">(<span class="type">int</span> (*func)(<span class="type">int</span>), <span class="type">int</span> left, <span class="type">int</span> right)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> x = left; x &lt; right; x++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">func</span>(x) &gt;= <span class="built_in">func</span>(x + <span class="number">1</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断函数在给定区间上是否单调递减</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">is_decreasing</span><span class="params">(<span class="type">int</span> (*func)(<span class="type">int</span>), <span class="type">int</span> left, <span class="type">int</span> right)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> x = left; x &lt; right; x++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">func</span>(x) &lt;= <span class="built_in">func</span>(x + <span class="number">1</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断函数的单调性类型</span></span><br><span class="line"><span class="function">string <span class="title">check_monotonicity</span><span class="params">(<span class="type">int</span> (*func)(<span class="type">int</span>), <span class="type">int</span> left, <span class="type">int</span> right)</span> </span>&#123;</span><br><span class="line">    <span class="type">bool</span> inc = <span class="built_in">is_increasing</span>(func, left, right);</span><br><span class="line">    <span class="type">bool</span> dec = <span class="built_in">is_decreasing</span>(func, left, right);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (inc &amp;&amp; dec) <span class="keyword">return</span> <span class="string">&quot;常数函数&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span> (inc) <span class="keyword">return</span> <span class="string">&quot;单调递增&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span> (dec) <span class="keyword">return</span> <span class="string">&quot;单调递减&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;非单调&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">check_monotonicity</span>(f, <span class="number">-100</span>, <span class="number">100</span>) &lt;&lt; endl;</span><br><span class="line">    <span class="comment">// 输出：单调递增</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二分查找（利用单调性）"><a href="#二分查找（利用单调性）" class="headerlink" title="二分查找（利用单调性）"></a>二分查找（利用单调性）</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在单调递增序列中查找目标值</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">binary_search</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> left = <span class="number">0</span>, right = nums.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">        <span class="type">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;  <span class="comment">// 找到</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;  <span class="comment">// 目标在右半部分</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right = mid - <span class="number">1</span>;  <span class="comment">// 目标在左半部分</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;  <span class="comment">// 未找到</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 二分查找的变体：查找第一个 &gt;= target 的位置</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lower_bound</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> left = <span class="number">0</span>, right = nums.<span class="built_in">size</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="type">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right = mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 二分查找的变体：查找第一个 &gt; target 的位置</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">upper_bound</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> left = <span class="number">0</span>, right = nums.<span class="built_in">size</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="type">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[mid] &lt;= target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right = mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="三分法（求单峰函数极值）"><a href="#三分法（求单峰函数极值）" class="headerlink" title="三分法（求单峰函数极值）"></a>三分法（求单峰函数极值）</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 三分法求单峰函数的最大值</span></span><br><span class="line"><span class="comment">// 前提：函数先增后减（单峰）</span></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">ternary_search</span><span class="params">(<span class="type">double</span> (*f)(<span class="type">double</span>), <span class="type">double</span> left, <span class="type">double</span> right)</span> </span>&#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">double</span> EPS = <span class="number">1e-9</span>;  <span class="comment">// 精度</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (right - left &gt; EPS) &#123;</span><br><span class="line">        <span class="type">double</span> m1 = left + (right - left) / <span class="number">3</span>;</span><br><span class="line">        <span class="type">double</span> m2 = right - (right - left) / <span class="number">3</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">f</span>(m1) &lt; <span class="built_in">f</span>(m2)) &#123;</span><br><span class="line">            <span class="comment">// 最大值在 [m1, right]</span></span><br><span class="line">            left = m1;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 最大值在 [left, m2]</span></span><br><span class="line">            right = m2;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> left;  <span class="comment">// 返回极值点</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例：求 f(x) = -x² + 4x 的最大值</span></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">f</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> -x * x + <span class="number">4</span> * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">double</span> max_x = <span class="built_in">ternary_search</span>(f, <span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line">    <span class="type">double</span> max_val = <span class="built_in">f</span>(max_x);</span><br><span class="line">    </span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;最大值点：x = &quot;</span> &lt;&lt; max_x &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;最大值：f(x) = &quot;</span> &lt;&lt; max_val &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单调栈：维护一个单调递增/递减的栈</span></span><br><span class="line"><span class="comment">// 应用：求每个元素左边/右边第一个比它大/小的元素</span></span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">next_greater_element</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">result</span><span class="params">(n, <span class="number">-1</span>)</span></span>;  <span class="comment">// 默认 -1（不存在）</span></span><br><span class="line">    stack&lt;<span class="type">int</span>&gt; stk;  <span class="comment">// 存储下标</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="comment">// 维护单调递减栈</span></span><br><span class="line">        <span class="keyword">while</span> (!stk.<span class="built_in">empty</span>() &amp;&amp; nums[i] &gt; nums[stk.<span class="built_in">top</span>()]) &#123;</span><br><span class="line">            result[stk.<span class="built_in">top</span>()] = nums[i];</span><br><span class="line">            stk.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        stk.<span class="built_in">push</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例：</span></span><br><span class="line"><span class="comment">// 输入：[2, 1, 2, 4, 3]</span></span><br><span class="line"><span class="comment">// 输出：[2, 2, 4, -1, -1]</span></span><br><span class="line"><span class="comment">// 解释：2 右边第一个比它大的是 2，1 右边第一个比它大的是 2，...</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🏆-信竞应用"><a href="#🏆-信竞应用" class="headerlink" title="🏆 信竞应用"></a>🏆 信竞应用</h2><h3 id="1-二分答案（利用单调性）"><a href="#1-二分答案（利用单调性）" class="headerlink" title="1. 二分答案（利用单调性）"></a>1. 二分答案（利用单调性）</h3><p><strong>核心思想</strong>：如果问题具有单调性，可以二分答案。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例题：最小的最大边权</span></span><br><span class="line"><span class="comment">// 问题：选择 k 条边，使得最大边权最小</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> max_weight, <span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; weights, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 判断是否能选出 k 条边，权值都不超过 max_weight</span></span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> w : weights) &#123;</span><br><span class="line">        <span class="keyword">if</span> (w &lt;= max_weight) &#123;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count &gt;= k;  <span class="comment">// 单调性：max_weight 越大，越容易满足</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">binary_search_answer</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; weights, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> left = <span class="number">0</span>, right = <span class="number">1e9</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="type">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(mid, weights, k)) &#123;</span><br><span class="line">            right = mid;  <span class="comment">// 满足条件，尝试更小的值</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;  <span class="comment">// 不满足，需要更大的值</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-贪心算法（利用单调性）"><a href="#2-贪心算法（利用单调性）" class="headerlink" title="2. 贪心算法（利用单调性）"></a>2. 贪心算法（利用单调性）</h3><p><strong>活动选择问题</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Activity</span> &#123;</span><br><span class="line">    <span class="type">int</span> start, finish;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 按结束时间排序（单调性）</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">compare_activities</span><span class="params">(<span class="type">const</span> Activity&amp; a, <span class="type">const</span> Activity&amp; b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.finish &lt; b.finish;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">max_activities</span><span class="params">(vector&lt;Activity&gt;&amp; activities)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">sort</span>(activities.<span class="built_in">begin</span>(), activities.<span class="built_in">end</span>(), compare_activities);</span><br><span class="line">    </span><br><span class="line">    <span class="type">int</span> count = <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> last_finish = activities[<span class="number">0</span>].finish;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; activities.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="comment">// 贪心：选择第一个不冲突的活动</span></span><br><span class="line">        <span class="keyword">if</span> (activities[i].start &gt;= last_finish) &#123;</span><br><span class="line">            count++;</span><br><span class="line">            last_finish = activities[i].finish;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-单调队列优化-DP"><a href="#3-单调队列优化-DP" class="headerlink" title="3. 单调队列优化 DP"></a>3. 单调队列优化 DP</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 滑动窗口最大值</span></span><br><span class="line"><span class="comment">// 问题：求长度为 k 的滑动窗口中的最大值</span></span><br><span class="line"></span><br><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">max_sliding_window</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">    deque&lt;<span class="type">int</span>&gt; dq;  <span class="comment">// 存储下标，维护单调递减</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; result;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="comment">// 移除超出窗口的元素</span></span><br><span class="line">        <span class="keyword">while</span> (!dq.<span class="built_in">empty</span>() &amp;&amp; dq.<span class="built_in">front</span>() &lt;= i - k) &#123;</span><br><span class="line">            dq.<span class="built_in">pop_front</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 维护单调递减</span></span><br><span class="line">        <span class="keyword">while</span> (!dq.<span class="built_in">empty</span>() &amp;&amp; nums[dq.<span class="built_in">back</span>()] &lt;= nums[i]) &#123;</span><br><span class="line">            dq.<span class="built_in">pop_back</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        dq.<span class="built_in">push_back</span>(i);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 记录结果</span></span><br><span class="line">        <span class="keyword">if</span> (i &gt;= k - <span class="number">1</span>) &#123;</span><br><span class="line">            result.<span class="built_in">push_back</span>(nums[dq.<span class="built_in">front</span>()]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-最长上升子序列（LIS）"><a href="#4-最长上升子序列（LIS）" class="headerlink" title="4. 最长上升子序列（LIS）"></a>4. 最长上升子序列（LIS）</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// O(n²) 解法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lis_n2</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(n, <span class="number">1</span>)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] &lt; nums[i]) &#123;</span><br><span class="line">                dp[i] = <span class="built_in">max</span>(dp[i], dp[j] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> *<span class="built_in">max_element</span>(dp.<span class="built_in">begin</span>(), dp.<span class="built_in">end</span>());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// O(n log n) 解法（利用单调性）</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lis_nlogn</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; tails;  <span class="comment">// tails[i] 表示长度为 i+1 的 LIS 的最小结尾元素</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> x : nums) &#123;</span><br><span class="line">        <span class="comment">// 二分查找第一个 &gt;= x 的位置</span></span><br><span class="line">        <span class="keyword">auto</span> it = <span class="built_in">lower_bound</span>(tails.<span class="built_in">begin</span>(), tails.<span class="built_in">end</span>(), x);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (it == tails.<span class="built_in">end</span>()) &#123;</span><br><span class="line">            tails.<span class="built_in">push_back</span>(x);  <span class="comment">// x 比所有结尾都大</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            *it = x;  <span class="comment">// 替换，保持单调性</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> tails.<span class="built_in">size</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🔗-相关题目"><a href="#🔗-相关题目" class="headerlink" title="🔗 相关题目"></a>🔗 相关题目</h2><blockquote>
+<p>⚠️ 以下题目为经典题型，具体题号请验证后使用</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>题目名称</th>
+<th>来源</th>
+<th>难度</th>
+<th>知识点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数学题</td>
+<td>函数单调性判断</td>
+<td>课本习题</td>
+<td>⭐</td>
+<td>单调性定义</td>
+</tr>
+<tr>
+<td>数学题</td>
+<td>求单调区间</td>
+<td>课本习题</td>
+<td>⭐⭐</td>
+<td>区间分析</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>二分查找</td>
+<td>洛谷</td>
+<td>⭐⭐</td>
+<td>单调性应用</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>三分法求极值</td>
+<td>洛谷</td>
+<td>⭐⭐⭐</td>
+<td>单峰函数</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>单调栈</td>
+<td>AtCoder</td>
+<td>⭐⭐⭐</td>
+<td>栈应用</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>LIS</td>
+<td>Codeforces</td>
+<td>⭐⭐⭐⭐</td>
+<td>单调性优化</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="📚-拓展阅读"><a href="#📚-拓展阅读" class="headerlink" title="📚 拓展阅读"></a>📚 拓展阅读</h2><h3 id="进阶知识（选学）"><a href="#进阶知识（选学）" class="headerlink" title="进阶知识（选学）"></a>进阶知识（选学）</h3><ol>
+<li><p><strong>凸函数与凹函数</strong></p>
+<ul>
+<li>凸函数：f’’(x) ≥ 0，图像向下凸</li>
+<li>凹函数：f’’(x) ≤ 0，图像向上凸</li>
+<li>凸函数有唯一极小值</li>
+</ul>
+</li>
+<li><p><strong>对勾函数</strong></p>
+<ul>
+<li>f(x) &#x3D; x + a&#x2F;x (a &gt; 0)</li>
+<li>在 (0, √a) 递减，在 (√a, +∞) 递增</li>
+<li>最小值在 x &#x3D; √a 处</li>
+</ul>
+</li>
+<li><p><strong>复合函数的单调性</strong></p>
+<ul>
+<li>同增异减：内外函数单调性相同则增，相反则减</li>
+</ul>
+</li>
+</ol>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>《算法竞赛入门经典》- 刘汝佳 - 第 8 章 二分法</li>
+<li>《高中数学必修一》- 人教 A 版 - 第 3 章 函数</li>
+<li><a target="_blank" rel="noopener" href="https://oi-wiki.org/basic/binary/">OI Wiki - 二分</a></li>
+<li><a target="_blank" rel="noopener" href="https://oi-wiki.org/ds/monotonous-stack/">OI Wiki - 单调栈</a></li>
+</ul>
+<hr>
+<h2 id="🔜-下一篇"><a href="#🔜-下一篇" class="headerlink" title="🔜 下一篇"></a>🔜 下一篇</h2><p>[练习] 函数单调性分析</p>
+<hr>
+<p><strong>本系列</strong>: <a href="/series/math-tutorial/">信息竞赛数学教程</a><br><strong>上一篇</strong>: [练习] 函数概念与表示<br><strong>下一篇</strong>: [练习] 函数单调性分析</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch04-tutorial/" data-id="cmn301uq8000vhi5e5dodauc4" data-title="[教程] 04-函数的单调性" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LS-1/" rel="tag">LS-1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" rel="tag">教程，代数，函数，单调性</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch04-practice/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          [练习] 04-函数单调性分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch03-practice/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">[练习] 03-函数概念与表示</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%A3%E6%95%B0/">代数</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E9%9A%8F%E7%AC%94/">技术随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LS-1/" rel="tag">LS-1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo/" rel="tag">博客，Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BC%80%E7%AF%87/" rel="tag">博客，开篇</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，三角函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag">教程，代数，不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，二次函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" rel="tag">教程，代数，函数，单调性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">教程，代数，函数，图像变换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" rel="tag">教程，代数，函数，奇偶性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，函数，幂函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E9%9B%B6%E7%82%B9/" rel="tag">教程，代数，函数，零点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，对数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，指数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" rel="tag">教程，代数，逻辑，充要条件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">教程，代数，集合，逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，三角函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag">练习，代数，不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，二次函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" rel="tag">练习，代数，函数，单调性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">练习，代数，函数，图像变换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" rel="tag">练习，代数，函数，奇偶性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，函数，幂函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，对数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，指数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" rel="tag">练习，代数，逻辑，充要条件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">练习，代数，集合，逻辑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/LS-1/" style="font-size: 20px;">LS-1</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo/" style="font-size: 10px;">博客，Hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BC%80%E7%AF%87/" style="font-size: 10px;">博客，开篇</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" style="font-size: 10px;">技术分享</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" style="font-size: 16.67px;">教程，代数，三角函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 13.33px;">教程，代数，不等式</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，二次函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" style="font-size: 10px;">教程，代数，函数，单调性</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" style="font-size: 10px;">教程，代数，函数，图像变换</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" style="font-size: 10px;">教程，代数，函数，奇偶性</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，函数，幂函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E9%9B%B6%E7%82%B9/" style="font-size: 10px;">教程，代数，函数，零点</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，对数函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，指数函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">教程，代数，逻辑，充要条件</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" style="font-size: 10px;">教程，代数，集合，逻辑</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" style="font-size: 16.67px;">练习，代数，三角函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 13.33px;">练习，代数，不等式</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，二次函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" style="font-size: 10px;">练习，代数，函数，单调性</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" style="font-size: 10px;">练习，代数，函数，图像变换</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" style="font-size: 10px;">练习，代数，函数，奇偶性</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，函数，幂函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，对数函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，指数函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">练习，代数，逻辑，充要条件</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" style="font-size: 10px;">练习，代数，集合，逻辑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">三月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/03/24/series/MATH-TUTORIAL-INDEX/">信息竞赛数学教程 - 课程索引</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/24/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch16-practice/">[练习] 16-三角函数的图像与性质</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/24/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch16-tutorial/">[教程] 16-三角函数的图像与性质</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch15-practice/">[练习] 15-诱导公式</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch15-tutorial/">[教程] 15-诱导公式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 杨淮生<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
