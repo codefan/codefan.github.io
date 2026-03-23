@@ -122,13 +122,21 @@
 <p><strong>信竞中的应用</strong>：图像变换在图形学、几何问题、坐标变换中无处不在！</p>
 </blockquote>
 <hr>
-<h2 id="📖-直观理解"><a href="#📖-直观理解" class="headerlink" title="📖 直观理解"></a>📖 直观理解</h2><h3 id="1-函数图像的四种基本变换"><a href="#1-函数图像的四种基本变换" class="headerlink" title="1. 函数图像的四种基本变换"></a>1. 函数图像的四种基本变换</h3><!-- mermaid 图表已移除，见下方描述 -->
-<p>graph TD<br>    A[图像变换] –&gt; B1[平移变换]<br>    A –&gt; B2[对称变换]<br>    A –&gt; B3[伸缩变换]<br>    A –&gt; B4[翻转变换]</p>
-<pre><code>B1 --&gt; C1[&quot;左右/上下移动&quot;]
-B2 --&gt; C2[&quot;关于轴/原点对称&quot;]
-B3 --&gt; C3[&quot;横向/纵向拉伸&quot;]
-B4 --&gt; C4[&quot;沿轴翻转&quot;]
-</code></pre>
+<h2 id="📖-直观理解"><a href="#📖-直观理解" class="headerlink" title="📖 直观理解"></a>📖 直观理解</h2><h3 id="1-函数图像的四种基本变换"><a href="#1-函数图像的四种基本变换" class="headerlink" title="1. 函数图像的四种基本变换"></a>1. 函数图像的四种基本变换</h3><div class="mermaid">
+  graph TD
+    A[图像变换] --> B1[平移变换]
+    A --> B2[对称变换]
+    A --> B3[伸缩变换]
+    A --> B4[翻转变换]
+    
+    B1 --> C1["左右/上下移动"]
+    B2 --> C2["关于轴/原点对称"]
+    B3 --> C3["横向/纵向拉伸"]
+    B4 --> C4["沿轴翻转"]
+</div>
+
+
+
 <h3 id="2-平移变换"><a href="#2-平移变换" class="headerlink" title="2. 平移变换"></a>2. 平移变换</h3><p><strong>左右平移</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">y = f(x) → y = f(x - a)</span><br><span class="line"></span><br><span class="line">a &gt; 0: 向右平移 a 个单位</span><br><span class="line">a &lt; 0: 向左平移 |a| 个单位</span><br><span class="line"></span><br><span class="line">口诀：左加右减</span><br></pre></td></tr></table></figure>
 
@@ -325,7 +333,7 @@ B4 --&gt; C4[&quot;沿轴翻转&quot;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch06-tutorial/" data-id="cmn301uqh0019hi5e61wv64to" data-title="[教程] 06-函数的图像变换" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch06-tutorial/" data-id="cmn323xur0019ys5ed0at697l" data-title="[教程] 06-函数的图像变换" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

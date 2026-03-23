@@ -135,16 +135,23 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">一个三角形是等边三角形，当且仅当它是等角三角形</span><br><span class="line"></span><br><span class="line">&quot;等边&quot; 是 &quot;等角&quot; 的充要条件</span><br><span class="line">- 等边 → 等角 ✅</span><br><span class="line">- 等角 → 等边 ✅</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-集合视角理解"><a href="#2-集合视角理解" class="headerlink" title="2. 集合视角理解"></a>2. 集合视角理解</h3><p>用集合的观点看条件关系：</p>
-<!-- mermaid 图表已移除，见下方描述 -->
-<p>graph TD<br>    subgraph 充分条件<br>        A1[A ⊆ B] –&gt; A2[“A 是 B 的充分条件”]<br>    end</p>
-<pre><code>subgraph 必要条件
-    B1[B ⊆ A] --&gt; B2[&quot;A 是 B 的必要条件&quot;]
-end
+<div class="mermaid">
+  graph TD
+    subgraph 充分条件
+        A1[A ⊆ B] --> A2["A 是 B 的充分条件"]
+    end
+    
+    subgraph 必要条件
+        B1[B ⊆ A] --> B2["A 是 B 的必要条件"]
+    end
+    
+    subgraph 充要条件
+        C1[A = B] --> C2["A 是 B 的充要条件"]
+    end
+</div>
 
-subgraph 充要条件
-    C1[A = B] --&gt; C2[&quot;A 是 B 的充要条件&quot;]
-end
-</code></pre>
+
+
 <p><strong>集合解释</strong>：</p>
 <ul>
 <li>若 A ⊆ B，则 “x∈A” 是 “x∈B” 的<strong>充分条件</strong></li>
@@ -368,7 +375,7 @@ end
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch02-tutorial/" data-id="cmn301upz000jhi5e7pzvdhs7" data-title="[教程] 02-充要条件" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch02-tutorial/" data-id="cmn323xua000jys5eb9599j3k" data-title="[教程] 02-充要条件" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

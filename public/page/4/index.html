@@ -118,8 +118,17 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第一行：交集中元素的个数</span><br><span class="line">第二行：并集中元素的个数</span><br></pre></td></tr></table></figure>
 
 <p><strong>解题思路</strong>: </p>
-<!-- mermaid 图表已移除，见下方描述 -->
-<p>graph LR<br>    A[读入数据] –&gt; B[存入 set 去重]<br>    B –&gt; C[计算交集]<br>    B –&gt; D[计算并集]<br>    C –&gt; E[输出结果]<br>    D –&gt; E</p>
+<div class="mermaid">
+  graph LR
+    A[读入数据] --> B[存入 set 去重]
+    B --> C[计算交集]
+    B --> D[计算并集]
+    C --> E[输出结果]
+    D --> E
+</div>
+
+
+
 <ol>
 <li>使用 C++ STL 的 <code>set</code> 自动去重</li>
 <li>用 <code>set_intersection</code> 和 <code>set_union</code> 计算交集和并集</li>
@@ -352,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch01-practice/" data-id="cmn301ups000dhi5eb3wu6iex" data-title="[练习] 01-集合运算与逻辑推理" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch01-practice/" data-id="cmn323xu3000dys5eh08z5h5v" data-title="[练习] 01-集合运算与逻辑推理" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -426,8 +435,17 @@
 <p><strong>信竞中的集合</strong>：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// C++ 中的集合</span></span><br><span class="line">set&lt;<span class="type">int</span>&gt; A = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">set&lt;<span class="type">char</span>&gt; B = &#123;<span class="string">&#x27;R&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;B&#x27;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者用位运算表示集合（状态压缩）</span></span><br><span class="line"><span class="type">int</span> mask = <span class="number">0b11111</span>;  <span class="comment">// 表示集合 &#123;0,1,2,3,4&#125;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="3-集合的关系"><a href="#3-集合的关系" class="headerlink" title="3. 集合的关系"></a>3. 集合的关系</h3><!-- mermaid 图表已移除，见下方描述 -->
-<p>graph TD<br>    subgraph 集合关系<br>        A[子集 A⊆B] –&gt; B1[A 的所有元素都在 B 中]<br>        C[真子集 A⊂B] –&gt; C1[A 是 B 的子集，但 A≠B]<br>        D[相等 A&#x3D;B] –&gt; D1[A 和 B 有完全相同的元素]<br>    end</p>
+<h3 id="3-集合的关系"><a href="#3-集合的关系" class="headerlink" title="3. 集合的关系"></a>3. 集合的关系</h3><div class="mermaid">
+  graph TD
+    subgraph 集合关系
+        A[子集 A⊆B] --> B1[A 的所有元素都在 B 中]
+        C[真子集 A⊂B] --> C1[A 是 B 的子集，但 A≠B]
+        D[相等 A=B] --> D1[A 和 B 有完全相同的元素]
+    end
+</div>
+
+
+
 <p><strong>示例</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A = &#123;1, 2, 3&#125;</span><br><span class="line">B = &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line">C = &#123;1, 2, 3&#125;</span><br><span class="line"></span><br><span class="line">则：A⊆B (A 是 B 的子集)</span><br><span class="line">    A⊂B (A 是 B 的真子集)</span><br><span class="line">    A=C (A 和 C 相等)</span><br></pre></td></tr></table></figure>
 
@@ -435,8 +453,18 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────┐</span><br><span class="line">│      A      │</span><br><span class="line">│   ┌─────┐   │</span><br><span class="line">│   │ A∩B │   │</span><br><span class="line">│   └─────┘   │</span><br><span class="line">│      B      │</span><br><span class="line">└─────────────┘</span><br></pre></td></tr></table></figure>
 
 <p><strong>常见韦恩图</strong>：</p>
-<!-- mermaid 图表已移除，见下方描述 -->
-<p>graph TD<br>    subgraph 韦恩图示例<br>        U1[全集 U] –&gt; A1[A∩B 交集]<br>        U1 –&gt; A2[A∪B 并集]<br>        U1 –&gt; A3[A-B 差集]<br>        U1 –&gt; A4[∁ᵤA 补集]<br>    end</p>
+<div class="mermaid">
+  graph TD
+    subgraph 韦恩图示例
+        U1[全集 U] --> A1[A∩B 交集]
+        U1 --> A2[A∪B 并集]
+        U1 --> A3[A-B 差集]
+        U1 --> A4[∁ᵤA 补集]
+    end
+</div>
+
+
+
 <hr>
 <h2 id="📐-数学定义"><a href="#📐-数学定义" class="headerlink" title="📐 数学定义"></a>📐 数学定义</h2><h3 id="集合的基本运算"><a href="#集合的基本运算" class="headerlink" title="集合的基本运算"></a>集合的基本运算</h3><p><strong>1. 交集 (Intersection)<strong>：两个集合</strong>共有</strong>的元素</p>
 <p>$$<br>A \cap B &#x3D; {x \mid x \in A \text{ 且 } x \in B}<br>$$</p>
@@ -769,7 +797,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch01-tutorial/" data-id="cmn301upu000ehi5eg8508vgf" data-title="[教程] 01-集合、命题与逻辑用语" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch01-tutorial/" data-id="cmn323xu5000eys5e2q288r1c" data-title="[教程] 01-集合、命题与逻辑用语" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -822,7 +850,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://codefan.github.io/2026/03/23/hello-world/" data-id="cmn301up90007hi5ehs4wdw5s" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://codefan.github.io/2026/03/23/hello-world/" data-id="cmn323xtk0007ys5e90hjeazj" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -872,7 +900,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://codefan.github.io/2026/03/18/MyBlog3/" data-id="cmn301uox0003hi5e8kzm4fkw" data-title="我的第一篇在线编辑文章" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://codefan.github.io/2026/03/18/MyBlog3/" data-id="cmn323xt80003ys5eflopeau6" data-title="我的第一篇在线编辑文章" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -1016,7 +1044,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://codefan.github.io/2026/03/18/%E4%BB%8E-Express-%E5%88%B0-Hexo-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B9%8B%E8%B7%AF/" data-id="cmn301upk0008hi5ehk7qbt0t" data-title="从 Express 到 Hexo - 我的博客迁移之路" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://codefan.github.io/2026/03/18/%E4%BB%8E-Express-%E5%88%B0-Hexo-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B9%8B%E8%B7%AF/" data-id="cmn323xtv0008ys5e0qq82zwf" data-title="从 Express 到 Hexo - 我的博客迁移之路" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -1098,7 +1126,7 @@
 <hr>
 <h2 id="🙏-感谢"><a href="#🙏-感谢" class="headerlink" title="🙏 感谢"></a>🙏 感谢</h2><p>感谢你的访问！如果你有任何问题或建议，欢迎通过以下方式联系我：</p>
 <ul>
-<li>📧 邮箱：<a href="mailto:&#99;&#111;&#x64;&#x65;&#102;&#97;&#x6e;&#64;&#115;&#105;&#110;&#97;&#x2e;&#99;&#x6f;&#109;">&#99;&#111;&#x64;&#x65;&#102;&#97;&#x6e;&#64;&#115;&#105;&#110;&#97;&#x2e;&#99;&#x6f;&#109;</a></li>
+<li>📧 邮箱：<a href="mailto:&#x63;&#111;&#100;&#101;&#102;&#97;&#x6e;&#x40;&#115;&#105;&#x6e;&#97;&#46;&#x63;&#x6f;&#x6d;">&#x63;&#111;&#100;&#101;&#102;&#97;&#x6e;&#x40;&#115;&#105;&#x6e;&#97;&#46;&#x63;&#x6f;&#x6d;</a></li>
 <li>💬 GitHub: <a target="_blank" rel="noopener" href="https://github.com/codefan">github.com&#x2F;codefan</a></li>
 </ul>
 <p>期待与你交流！</p>
@@ -1108,7 +1136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://codefan.github.io/2026/03/18/Hello-World-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86/" data-id="cmn301uoq0001hi5ectq20ub4" data-title="Hello World - 我的博客开通了" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://codefan.github.io/2026/03/18/Hello-World-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86/" data-id="cmn323xt10001ys5e3ua17lsj" data-title="Hello World - 我的博客开通了" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

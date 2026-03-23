@@ -124,12 +124,19 @@
 </blockquote>
 <hr>
 <h2 id="📖-直观理解"><a href="#📖-直观理解" class="headerlink" title="📖 直观理解"></a>📖 直观理解</h2><h3 id="1-什么是函数的零点？"><a href="#1-什么是函数的零点？" class="headerlink" title="1. 什么是函数的零点？"></a>1. 什么是函数的零点？</h3><p><strong>零点</strong>：函数图像与 x 轴交点的横坐标</p>
-<!-- mermaid 图表已移除，见下方描述 -->
-<p>graph TD<br>    A[函数零点] –&gt; B1[“几何意义：与 x 轴交点”]<br>    A –&gt; B2[“代数意义：f(x) &#x3D; 0 的解”]<br>    A –&gt; B3[“应用：方程求解”]</p>
-<pre><code>B1 --&gt; C1[&quot;图像穿过 x 轴&quot;]
-B2 --&gt; C2[&quot;解方程&quot;]
-B3 --&gt; C3[&quot;二分法、牛顿法&quot;]
-</code></pre>
+<div class="mermaid">
+  graph TD
+    A[函数零点] --> B1["几何意义：与 x 轴交点"]
+    A --> B2["代数意义：f(x) = 0 的解"]
+    A --> B3["应用：方程求解"]
+    
+    B1 --> C1["图像穿过 x 轴"]
+    B2 --> C2["解方程"]
+    B3 --> C3["二分法、牛顿法"]
+</div>
+
+
+
 <p><strong>示例</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">f(x) = x² - 4</span><br><span class="line"></span><br><span class="line">零点：x = -2 和 x = 2</span><br><span class="line"></span><br><span class="line">因为：f(-2) = 0, f(2) = 0</span><br><span class="line"></span><br><span class="line">图像：</span><br><span class="line">    y</span><br><span class="line">    |     /‾‾\</span><br><span class="line">    |    /    \</span><br><span class="line">____|___/______\____ x</span><br><span class="line">   -2  0       2</span><br><span class="line">      零点！   零点！</span><br></pre></td></tr></table></figure>
 
@@ -268,7 +275,7 @@ B3 --&gt; C3[&quot;二分法、牛顿法&quot;]
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch07-tutorial/" data-id="cmn301uqi001bhi5e7u29chs1" data-title="[教程] 07-零点与函数模型" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch07-tutorial/" data-id="cmn323xus001bys5eh9ha2zqt" data-title="[教程] 07-零点与函数模型" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

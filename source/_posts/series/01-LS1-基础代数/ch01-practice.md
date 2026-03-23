@@ -35,13 +35,14 @@ series_order: 2
 
 **解题思路**: 
 
-<!-- mermaid 图表已移除，见下方描述 -->
+{% mermaid %}
 graph LR
     A[读入数据] --> B[存入 set 去重]
     B --> C[计算交集]
     B --> D[计算并集]
     C --> E[输出结果]
     D --> E
+{% endmermaid %}
 
 
 1. 使用 C++ STL 的 `set` 自动去重

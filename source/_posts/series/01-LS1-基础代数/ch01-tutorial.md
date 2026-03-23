@@ -67,13 +67,14 @@ int mask = 0b11111;  // 表示集合 {0,1,2,3,4}
 
 ### 3. 集合的关系
 
-<!-- mermaid 图表已移除，见下方描述 -->
+{% mermaid %}
 graph TD
     subgraph 集合关系
         A[子集 A⊆B] --> B1[A 的所有元素都在 B 中]
         C[真子集 A⊂B] --> C1[A 是 B 的子集，但 A≠B]
         D[相等 A=B] --> D1[A 和 B 有完全相同的元素]
     end
+{% endmermaid %}
 
 
 **示例**：
@@ -103,7 +104,7 @@ C = {1, 2, 3}
 
 **常见韦恩图**：
 
-<!-- mermaid 图表已移除，见下方描述 -->
+{% mermaid %}
 graph TD
     subgraph 韦恩图示例
         U1[全集 U] --> A1[A∩B 交集]
@@ -111,6 +112,7 @@ graph TD
         U1 --> A3[A-B 差集]
         U1 --> A4[∁ᵤA 补集]
     end
+{% endmermaid %}
 
 
 ---

@@ -6,12 +6,12 @@
   
   <title>[练习] 01-集合运算与逻辑推理 | 信息竞赛数学教程</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="🎯 例题精讲例题 1：集合的交集与并集题目来源: 洛谷 题意分析:  给定两个集合 A 和 B，每个集合包含 n 个整数。请计算：  A ∩ B（交集） A ∪ B（并集）  输入格式: 123第一行：n (1 ≤ n ≤ 10^5)第二行：n 个整数，表示集合 A第三行：n 个整数，表示集合 B  输出格式: 12第一行：交集中元素的个数第二行：并集中元素的个数  解题思路:   graph">
+  <meta name="description" content="🎯 例题精讲例题 1：集合的交集与并集题目来源: 洛谷 题意分析:  给定两个集合 A 和 B，每个集合包含 n 个整数。请计算：  A ∩ B（交集） A ∪ B（并集）  输入格式: 123第一行：n (1 ≤ n ≤ 10^5)第二行：n 个整数，表示集合 A第三行：n 个整数，表示集合 B  输出格式: 12第一行：交集中元素的个数第二行：并集中元素的个数  解题思路:     grap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[练习] 01-集合运算与逻辑推理">
 <meta property="og:url" content="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch01-practice/index.html">
 <meta property="og:site_name" content="信息竞赛数学教程">
-<meta property="og:description" content="🎯 例题精讲例题 1：集合的交集与并集题目来源: 洛谷 题意分析:  给定两个集合 A 和 B，每个集合包含 n 个整数。请计算：  A ∩ B（交集） A ∪ B（并集）  输入格式: 123第一行：n (1 ≤ n ≤ 10^5)第二行：n 个整数，表示集合 A第三行：n 个整数，表示集合 B  输出格式: 12第一行：交集中元素的个数第二行：并集中元素的个数  解题思路:   graph">
+<meta property="og:description" content="🎯 例题精讲例题 1：集合的交集与并集题目来源: 洛谷 题意分析:  给定两个集合 A 和 B，每个集合包含 n 个整数。请计算：  A ∩ B（交集） A ∪ B（并集）  输入格式: 123第一行：n (1 ≤ n ≤ 10^5)第二行：n 个整数，表示集合 A第三行：n 个整数，表示集合 B  输出格式: 12第一行：交集中元素的个数第二行：并集中元素的个数  解题思路:     grap">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-23T02:30:00.000Z">
 <meta property="article:modified_time" content="2026-03-23T02:30:00.000Z">
@@ -119,8 +119,17 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第一行：交集中元素的个数</span><br><span class="line">第二行：并集中元素的个数</span><br></pre></td></tr></table></figure>
 
 <p><strong>解题思路</strong>: </p>
-<!-- mermaid 图表已移除，见下方描述 -->
-<p>graph LR<br>    A[读入数据] –&gt; B[存入 set 去重]<br>    B –&gt; C[计算交集]<br>    B –&gt; D[计算并集]<br>    C –&gt; E[输出结果]<br>    D –&gt; E</p>
+<div class="mermaid">
+  graph LR
+    A[读入数据] --> B[存入 set 去重]
+    B --> C[计算交集]
+    B --> D[计算并集]
+    C --> E[输出结果]
+    D --> E
+</div>
+
+
+
 <ol>
 <li>使用 C++ STL 的 <code>set</code> 自动去重</li>
 <li>用 <code>set_intersection</code> 和 <code>set_union</code> 计算交集和并集</li>
@@ -353,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch01-practice/" data-id="cmn301ups000dhi5eb3wu6iex" data-title="[练习] 01-集合运算与逻辑推理" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch01-practice/" data-id="cmn323xu3000dys5eh08z5h5v" data-title="[练习] 01-集合运算与逻辑推理" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
