@@ -1,0 +1,13 @@
+# Hexo
+public/
+.db.json
+node_modules/
+
+# 模板文件
+source/templates/
+
+# 进度追踪（不发布）
+source/LS1-PROGRESS.md
+
+# 日志
+*.log
