@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>[练习] 06-函数图像变换分析 | 信息竞赛数学教程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="🎯 例题精讲例题 1：平移变换题目来源: 课本习题 题意分析:  将函数 y &#x3D; x² 的图像向右平移 2 个单位，再向上平移 3 个单位，求变换后的函数解析式。 解题思路:  根据平移规则：  向右平移 2：x → x - 2 向上平移 3：y → y - 3  参考答案: 123456原函数：y &#x3D; x²向右平移 2：y &#x3D; (x - 2)²向上平移 3：y &#x3D; (x - 2)²">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[练习] 06-函数图像变换分析">
+<meta property="og:url" content="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch06-practice/index.html">
+<meta property="og:site_name" content="信息竞赛数学教程">
+<meta property="og:description" content="🎯 例题精讲例题 1：平移变换题目来源: 课本习题 题意分析:  将函数 y &#x3D; x² 的图像向右平移 2 个单位，再向上平移 3 个单位，求变换后的函数解析式。 解题思路:  根据平移规则：  向右平移 2：x → x - 2 向上平移 3：y → y - 3  参考答案: 123456原函数：y &#x3D; x²向右平移 2：y &#x3D; (x - 2)²向上平移 3：y &#x3D; (x - 2)²">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-23T07:30:00.000Z">
+<meta property="article:modified_time" content="2026-03-23T07:30:00.000Z">
+<meta property="article:author" content="杨淮生">
+<meta property="article:tag" content="LS-1">
+<meta property="article:tag" content="练习，代数，函数，图像变换">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="信息竞赛数学教程" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">信息竞赛数学教程</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">从初中数学到信竞高手</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://codefan.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-series/01-LS1-基础代数/ch06-practice" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch06-practice/" class="article-date">
+  <time class="dt-published" datetime="2026-03-23T07:30:00.000Z" itemprop="datePublished">2026-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E6%95%B0/">代数</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      [练习] 06-函数图像变换分析
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="🎯-例题精讲"><a href="#🎯-例题精讲" class="headerlink" title="🎯 例题精讲"></a>🎯 例题精讲</h2><h3 id="例题-1：平移变换"><a href="#例题-1：平移变换" class="headerlink" title="例题 1：平移变换"></a>例题 1：平移变换</h3><p><strong>题目来源</strong>: 课本习题</p>
+<p><strong>题意分析</strong>: </p>
+<p>将函数 y &#x3D; x² 的图像向右平移 2 个单位，再向上平移 3 个单位，求变换后的函数解析式。</p>
+<p><strong>解题思路</strong>: </p>
+<p>根据平移规则：</p>
+<ul>
+<li>向右平移 2：x → x - 2</li>
+<li>向上平移 3：y → y - 3</li>
+</ul>
+<p><strong>参考答案</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">原函数：y = x²</span><br><span class="line"></span><br><span class="line">向右平移 2：y = (x - 2)²</span><br><span class="line">向上平移 3：y = (x - 2)² + 3</span><br><span class="line"></span><br><span class="line">答案：y = (x - 2)² + 3</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="例题-2：对称变换"><a href="#例题-2：对称变换" class="headerlink" title="例题 2：对称变换"></a>例题 2：对称变换</h3><p><strong>题目来源</strong>: 课本习题</p>
+<p><strong>题意分析</strong>: </p>
+<p>已知函数 f(x) &#x3D; 2x + 1，求：</p>
+<ol>
+<li>关于 y 轴对称的函数</li>
+<li>关于 x 轴对称的函数</li>
+<li>关于原点对称的函数</li>
+</ol>
+<p><strong>解题思路</strong>: </p>
+<p>根据对称变换规则：</p>
+<ul>
+<li>关于 y 轴对称：f(x) → f(-x)</li>
+<li>关于 x 轴对称：f(x) → -f(x)</li>
+<li>关于原点对称：f(x) → -f(-x)</li>
+</ul>
+<p><strong>参考答案</strong>:</p>
+<ol>
+<li><p><strong>关于 y 轴对称</strong>：</p>
+<ul>
+<li>f(-x) &#x3D; 2(-x) + 1 &#x3D; -2x + 1</li>
+</ul>
+</li>
+<li><p><strong>关于 x 轴对称</strong>：</p>
+<ul>
+<li>-f(x) &#x3D; -(2x + 1) &#x3D; -2x - 1</li>
+</ul>
+</li>
+<li><p><strong>关于原点对称</strong>：</p>
+<ul>
+<li>-f(-x) &#x3D; -(-2x + 1) &#x3D; 2x - 1</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="例题-3：伸缩变换"><a href="#例题-3：伸缩变换" class="headerlink" title="例题 3：伸缩变换"></a>例题 3：伸缩变换</h3><p><strong>题目来源</strong>: 自编</p>
+<p><strong>题意分析</strong>: </p>
+<p>函数 y &#x3D; sin(x) 经过怎样的变换可以得到 y &#x3D; 2sin(3x)？</p>
+<p><strong>解题思路</strong>: </p>
+<p>对比系数：</p>
+<ul>
+<li>振幅：1 → 2（纵向拉伸 2 倍）</li>
+<li>频率：1 → 3（横向压缩为 1&#x2F;3）</li>
+</ul>
+<p><strong>参考答案</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">变换步骤：</span><br><span class="line">1. 横向压缩为原来的 1/3：y = sin(3x)</span><br><span class="line">2. 纵向拉伸 2 倍：y = 2sin(3x)</span><br><span class="line"></span><br><span class="line">或者：</span><br><span class="line">1. 纵向拉伸 2 倍：y = 2sin(x)</span><br><span class="line">2. 横向压缩为原来的 1/3：y = 2sin(3x)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="✍️-课后习题"><a href="#✍️-课后习题" class="headerlink" title="✍️ 课后习题"></a>✍️ 课后习题</h2><h3 id="📐-数学题"><a href="#📐-数学题" class="headerlink" title="📐 数学题"></a>📐 数学题</h3><p><strong>习题 1</strong>（基础题 ⭐）</p>
+<p>填空：</p>
+<ol>
+<li>将 y &#x3D; x² 向____平移____个单位得到 y &#x3D; (x + 3)²</li>
+<li>将 y &#x3D; x² 向____平移____个单位得到 y &#x3D; x² - 5</li>
+<li>函数 y &#x3D; f(-x) 的图像与 y &#x3D; f(x) 关于____对称</li>
+</ol>
+<hr>
+<p><strong>习题 2</strong>（基础题 ⭐）</p>
+<p>已知 f(x) &#x3D; x² - 2x，求：</p>
+<ol>
+<li>f(-x)</li>
+<li>-f(x)</li>
+<li>-f(-x)</li>
+</ol>
+<hr>
+<p><strong>习题 3</strong>（提高题 ⭐⭐）</p>
+<p>说明下列变换：</p>
+<ol>
+<li>y &#x3D; x² → y &#x3D; (x - 1)² + 2</li>
+<li>y &#x3D; sin(x) → y &#x3D; sin(2x + π)</li>
+<li>y &#x3D; 2^x → y &#x3D; 2^(-x) + 1</li>
+</ol>
+<hr>
+<p><strong>习题 4</strong>（提高题 ⭐⭐）</p>
+<p>已知二次函数 y &#x3D; ax² + bx + c 的顶点为 (2, -3)，且经过点 (0, 1)，求该函数的解析式。</p>
+<hr>
+<p><strong>习题 5</strong>（挑战题 ⭐⭐⭐）</p>
+<p>证明：任何二次函数 y &#x3D; ax² + bx + c 都可以写成顶点式 y &#x3D; a(x - h)² + k 的形式，并给出 h、k 与 a、b、c 的关系。</p>
+<hr>
+<h3 id="💻-编程题"><a href="#💻-编程题" class="headerlink" title="💻 编程题"></a>💻 编程题</h3><p><strong>习题 6</strong>（基础题 ⭐⭐）</p>
+<p><strong>题目来源</strong>: 自编</p>
+<p>实现函数，将点 (x, y) 向右平移 dx，向上平移 dy。</p>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">四个整数：x, y, dx, dy</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">两个整数：平移后的坐标</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>习题 7</strong>（基础题 ⭐⭐）</p>
+<p><strong>题目来源</strong>: 自编</p>
+<p>实现函数，判断点 P(x, y) 关于 y 轴对称的点的坐标。</p>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">两个整数：x, y</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">两个整数：对称点的坐标</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>习题 8</strong>（提高题 ⭐⭐⭐）</p>
+<p><strong>题目来源</strong>: AtCoder ABC</p>
+<p>给定二次函数的一般式 y &#x3D; ax² + bx + c，求顶点坐标。</p>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">三个整数：a, b, c</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">两个浮点数：顶点坐标 (h, k)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>习题 9</strong>（提高题 ⭐⭐⭐）</p>
+<p><strong>题目来源</strong>: 洛谷</p>
+<p>绘制函数 y &#x3D; sin(x) 在 [0, 2π] 区间的 ASCII 图像。</p>
+<p><strong>要求</strong>: 宽度 40 字符，高度 20 字符</p>
+<hr>
+<p><strong>习题 10</strong>（挑战题 ⭐⭐⭐⭐）</p>
+<p><strong>题目来源</strong>: Codeforces</p>
+<p>实现科赫雪花（Koch snowflake）的递归绘制。</p>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">两个点坐标和递归深度</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">绘制图形或输出关键点坐标</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="📊-本章小结"><a href="#📊-本章小结" class="headerlink" title="📊 本章小结"></a>📊 本章小结</h2><h3 id="重点回顾"><a href="#重点回顾" class="headerlink" title="重点回顾"></a>重点回顾</h3><ol>
+<li><strong>平移变换</strong>：左加右减，上加下减</li>
+<li><strong>对称变换</strong>：y 轴对称 f(-x)，x 轴对称 -f(x)，原点对称 -f(-x)</li>
+<li><strong>伸缩变换</strong>：横向 f(ωx)，纵向 Af(x)</li>
+<li><strong>复合变换</strong>：注意顺序，一般形式 y &#x3D; A·f(ωx+φ)+h</li>
+</ol>
+<h3 id="易错点提醒"><a href="#易错点提醒" class="headerlink" title="易错点提醒"></a>易错点提醒</h3><p>⚠️ <strong>平移方向</strong>：f(x-a) 是向右平移 a，不是向左</p>
+<p>⚠️ <strong>变换顺序</strong>：先伸缩后平移，还是先平移后伸缩，结果不同</p>
+<p>⚠️ <strong>符号处理</strong>：关于原点对称是 -f(-x)，不是 -f(x)</p>
+<h3 id="信竞应用总结"><a href="#信竞应用总结" class="headerlink" title="信竞应用总结"></a>信竞应用总结</h3><table>
+<thead>
+<tr>
+<th>知识点</th>
+<th>应用场景</th>
+<th>典型题目</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>坐标平移</td>
+<td>几何变换</td>
+<td>图形移动</td>
+</tr>
+<tr>
+<td>对称变换</td>
+<td>镜像问题</td>
+<td>对称图形</td>
+</tr>
+<tr>
+<td>伸缩变换</td>
+<td>缩放问题</td>
+<td>地图缩放</td>
+</tr>
+<tr>
+<td>二次函数</td>
+<td>抛物线</td>
+<td>物理模拟</td>
+</tr>
+<tr>
+<td>三角函数</td>
+<td>波动问题</td>
+<td>正弦波</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="🔙-上一篇"><a href="#🔙-上一篇" class="headerlink" title="🔙 上一篇"></a>🔙 上一篇</h2><p>[教程] 06-函数的图像变换</p>
+<hr>
+<p><strong>本系列</strong>: <a href="/series/math-tutorial/">信息竞赛数学教程</a><br><strong>上一篇</strong>: [教程] 06-函数的图像变换<br><strong>下一篇</strong>: [教程] 07-零点与函数模型</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch06-practice/" data-id="cmn3vvije0016a35e65ju72xr" data-title="[练习] 06-函数图像变换分析" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LS-1/" rel="tag">LS-1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">练习，代数，函数，图像变换</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch08-tutorial/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          [教程] 08-幂函数与对勾函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch06-tutorial/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">[教程] 06-函数的图像变换</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%A3%E6%95%B0/">代数</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E9%9A%8F%E7%AC%94/">技术随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LS-1/" rel="tag">LS-1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo/" rel="tag">博客，Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BC%80%E7%AF%87/" rel="tag">博客，开篇</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，三角函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag">教程，代数，不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，二次函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" rel="tag">教程，代数，函数，单调性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">教程，代数，函数，图像变换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" rel="tag">教程，代数，函数，奇偶性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，函数，幂函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E9%9B%B6%E7%82%B9/" rel="tag">教程，代数，函数，零点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，对数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，指数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" rel="tag">教程，代数，逻辑，充要条件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">教程，代数，集合，逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，三角函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag">练习，代数，不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，二次函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" rel="tag">练习，代数，函数，单调性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">练习，代数，函数，图像变换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" rel="tag">练习，代数，函数，奇偶性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，函数，幂函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，对数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，指数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" rel="tag">练习，代数，逻辑，充要条件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">练习，代数，集合，逻辑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/LS-1/" style="font-size: 20px;">LS-1</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo/" style="font-size: 10px;">博客，Hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BC%80%E7%AF%87/" style="font-size: 10px;">博客，开篇</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" style="font-size: 10px;">技术分享</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" style="font-size: 16.67px;">教程，代数，三角函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 13.33px;">教程，代数，不等式</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，二次函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" style="font-size: 10px;">教程，代数，函数，单调性</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" style="font-size: 10px;">教程，代数，函数，图像变换</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" style="font-size: 10px;">教程，代数，函数，奇偶性</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，函数，幂函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E9%9B%B6%E7%82%B9/" style="font-size: 10px;">教程，代数，函数，零点</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，对数函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，指数函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">教程，代数，逻辑，充要条件</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" style="font-size: 10px;">教程，代数，集合，逻辑</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" style="font-size: 16.67px;">练习，代数，三角函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 13.33px;">练习，代数，不等式</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，二次函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" style="font-size: 10px;">练习，代数，函数，单调性</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" style="font-size: 10px;">练习，代数，函数，图像变换</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" style="font-size: 10px;">练习，代数，函数，奇偶性</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，函数，幂函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，对数函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，指数函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">练习，代数，逻辑，充要条件</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" style="font-size: 10px;">练习，代数，集合，逻辑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">三月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/03/24/series/MATH-TUTORIAL-INDEX/">信息竞赛数学教程 - 课程索引</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/24/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch16-practice/">[练习] 16-三角函数的图像与性质</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/24/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch16-tutorial/">[教程] 16-三角函数的图像与性质</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch15-practice/">[练习] 15-诱导公式</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch15-tutorial/">[教程] 15-诱导公式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 杨淮生<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

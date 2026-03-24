@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>[教程] 03-函数的概念 | 信息竞赛数学教程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="🎮 情景引入 想象你在玩一个 RPG 游戏，角色有一个经验值系统：  每打一只怪，获得固定经验值 等级 &#x3D; 经验值 ÷ 100（取整）  这里有一个对应关系： 12345经验值 → 等级  0    →   1 100   →   2 200   →   3 520   →   6  关键特性：  ✅ 每个经验值对应唯一的等级 ❌ 但一个等级可能对应多个经验值（100~199 都是 2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[教程] 03-函数的概念">
+<meta property="og:url" content="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch03-tutorial/index.html">
+<meta property="og:site_name" content="信息竞赛数学教程">
+<meta property="og:description" content="🎮 情景引入 想象你在玩一个 RPG 游戏，角色有一个经验值系统：  每打一只怪，获得固定经验值 等级 &#x3D; 经验值 ÷ 100（取整）  这里有一个对应关系： 12345经验值 → 等级  0    →   1 100   →   2 200   →   3 520   →   6  关键特性：  ✅ 每个经验值对应唯一的等级 ❌ 但一个等级可能对应多个经验值（100~199 都是 2">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-23T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-23T04:00:00.000Z">
+<meta property="article:author" content="杨淮生">
+<meta property="article:tag" content="LS-1">
+<meta property="article:tag" content="教程，代数，函数">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="信息竞赛数学教程" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">信息竞赛数学教程</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">从初中数学到信竞高手</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://codefan.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-series/01-LS1-基础代数/ch03-tutorial" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch03-tutorial/" class="article-date">
+  <time class="dt-published" datetime="2026-03-23T04:00:00.000Z" itemprop="datePublished">2026-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E6%95%B0/">代数</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      [教程] 03-函数的概念
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="🎮-情景引入"><a href="#🎮-情景引入" class="headerlink" title="🎮 情景引入"></a>🎮 情景引入</h2><blockquote>
+<p>想象你在玩一个 RPG 游戏，角色有一个<strong>经验值系统</strong>：</p>
+<ul>
+<li>每打一只怪，获得固定经验值</li>
+<li>等级 &#x3D; 经验值 ÷ 100（取整）</li>
+</ul>
+<p>这里有一个<strong>对应关系</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">经验值 → 等级</span><br><span class="line">  0    →   1</span><br><span class="line"> 100   →   2</span><br><span class="line"> 200   →   3</span><br><span class="line"> 520   →   6</span><br></pre></td></tr></table></figure>
+
+<p><strong>关键特性</strong>：</p>
+<ul>
+<li>✅ 每个经验值<strong>对应唯一</strong>的等级</li>
+<li>❌ 但一个等级可能对应多个经验值（100~199 都是 2 级）</li>
+</ul>
+<p>这就是<strong>函数</strong>！在信竞中，函数无处不在——从数学公式到算法复杂度，从状态转移到 DP 方程。</p>
+</blockquote>
+<hr>
+<h2 id="📖-直观理解"><a href="#📖-直观理解" class="headerlink" title="📖 直观理解"></a>📖 直观理解</h2><h3 id="1-什么是函数？"><a href="#1-什么是函数？" class="headerlink" title="1. 什么是函数？"></a>1. 什么是函数？</h3><p><strong>函数</strong>是一种特殊的对应关系：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">定义域（输入） → 对应法则 → 值域（输出）</span><br><span class="line">     x        →    f     →    f(x)</span><br></pre></td></tr></table></figure>
+
+<p><strong>关键特性</strong>：</p>
+<ul>
+<li>✅ <strong>唯一性</strong>：每个输入对应<strong>唯一</strong>的输出</li>
+<li>✅ <strong>确定性</strong>：相同的输入一定得到相同的输出</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>是函数</th>
+<th>不是函数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>学号 → 姓名</td>
+<td>姓名 → 学号（重名）</td>
+</tr>
+<tr>
+<td>时间 → 温度</td>
+<td>温度 → 时间（多时刻）</td>
+</tr>
+<tr>
+<td>x → x²</td>
+<td>x → ±√x（不唯一）</td>
+</tr>
+</tbody></table>
+<h3 id="2-函数的三要素"><a href="#2-函数的三要素" class="headerlink" title="2. 函数的三要素"></a>2. 函数的三要素</h3><div class="mermaid">
+  graph TD
+    A[函数] --> B1[定义域]
+    A --> B2[对应法则]
+    A --> B3[值域]
+    
+    B1 --> C1["x 的取值范围"]
+    B2 --> C2["f: x → f(x)"]
+    B3 --> C3["f(x) 的取值范围"]
+</div>
+
+
+
+<p><strong>1. 定义域</strong>：自变量 x 的取值范围</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f(x) = 1/x  的定义域是 &#123;x | x ≠ 0&#125;</span><br><span class="line">f(x) = √x   的定义域是 &#123;x | x ≥ 0&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 对应法则</strong>：输入到输出的映射规则</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f(x) = x² + 1</span><br><span class="line">g(x) = 2x - 3</span><br><span class="line">h(x) = sin(x)</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 值域</strong>：函数值 f(x) 的取值范围</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f(x) = x²  的值域是 &#123;y | y ≥ 0&#125;</span><br><span class="line">f(x) = 1/x 的值域是 &#123;y | y ≠ 0&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-函数的表示方法"><a href="#3-函数的表示方法" class="headerlink" title="3. 函数的表示方法"></a>3. 函数的表示方法</h3><p><strong>1. 解析法</strong>：用公式表示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(x) = x² + 2x + 1</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 列表法</strong>：用表格表示</p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>f(x)</td>
+<td>2</td>
+<td>4</td>
+<td>6</td>
+<td>8</td>
+<td>10</td>
+</tr>
+</tbody></table>
+<p><strong>3. 图像法</strong>：用图像表示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">y</span><br><span class="line">|     /</span><br><span class="line">|    /</span><br><span class="line">|   /</span><br><span class="line">|  /</span><br><span class="line">| /</span><br><span class="line">+-------- x</span><br></pre></td></tr></table></figure>
+
+<p><strong>4. 信竞中的表示</strong>：函数作为代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// C++ 中的函数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">f</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x + <span class="number">2</span> * x + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="📐-数学定义"><a href="#📐-数学定义" class="headerlink" title="📐 数学定义"></a>📐 数学定义</h2><h3 id="函数的正式定义"><a href="#函数的正式定义" class="headerlink" title="函数的正式定义"></a>函数的正式定义</h3><p>设 A、B 是两个非空数集，如果按照某种<strong>确定的对应关系 f</strong>，使对于集合 A 中的<strong>任意一个数 x</strong>，在集合 B 中都有<strong>唯一确定的数 f(x)</strong> 和它对应，那么就称 f: A → B 为从集合 A 到集合 B 的一个函数。</p>
+<p>记作：<br>$$<br>y &#x3D; f(x), \quad x \in A<br>$$</p>
+<p>其中：</p>
+<ul>
+<li>x 叫做<strong>自变量</strong></li>
+<li>y 叫做<strong>因变量</strong>（或函数值）</li>
+<li>A 叫做函数的<strong>定义域</strong></li>
+<li>{f(x) | x ∈ A} 叫做函数的<strong>值域</strong></li>
+</ul>
+<h3 id="常见函数类型"><a href="#常见函数类型" class="headerlink" title="常见函数类型"></a>常见函数类型</h3><table>
+<thead>
+<tr>
+<th>函数类型</th>
+<th>解析式</th>
+<th>定义域</th>
+<th>图像特征</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一次函数</td>
+<td>f(x) &#x3D; kx + b</td>
+<td>R</td>
+<td>直线</td>
+</tr>
+<tr>
+<td>二次函数</td>
+<td>f(x) &#x3D; ax² + bx + c</td>
+<td>R</td>
+<td>抛物线</td>
+</tr>
+<tr>
+<td>反比例函数</td>
+<td>f(x) &#x3D; k&#x2F;x</td>
+<td>x≠0</td>
+<td>双曲线</td>
+</tr>
+<tr>
+<td>幂函数</td>
+<td>f(x) &#x3D; x^a</td>
+<td>视 a 而定</td>
+<td>多样</td>
+</tr>
+<tr>
+<td>绝对值函数</td>
+<td>f(x) &#x3D; |x|</td>
+<td>R</td>
+<td>V 字形</td>
+</tr>
+</tbody></table>
+<h3 id="分段函数"><a href="#分段函数" class="headerlink" title="分段函数"></a>分段函数</h3><p>在定义域的不同部分，有不同的对应法则：</p>
+<p>$$<br>f(x) &#x3D; \begin{cases}<br>x, &amp; x &lt; 0 \<br>x^2, &amp; 0 \leq x &lt; 1 \<br>2x - 1, &amp; x \geq 1<br>\end{cases}<br>$$</p>
+<p><strong>信竞中的应用</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">piecewise</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (x &lt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> x * x;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span> * x - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="复合函数"><a href="#复合函数" class="headerlink" title="复合函数"></a>复合函数</h3><p><strong>定义</strong>：一个函数的输出作为另一个函数的输入</p>
+<p>$$<br>(f \circ g)(x) &#x3D; f(g(x))<br>$$</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f(x) = x²</span><br><span class="line">g(x) = x + 1</span><br><span class="line"></span><br><span class="line">则：f(g(x)) = (x + 1)²</span><br><span class="line">    g(f(x)) = x² + 1</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：复合函数<strong>不满足交换律</strong>！</p>
+<hr>
+<h2 id="💻-代码实现"><a href="#💻-代码实现" class="headerlink" title="💻 代码实现"></a>💻 代码实现</h2><h3 id="函数的-C-实现"><a href="#函数的-C-实现" class="headerlink" title="函数的 C++ 实现"></a>函数的 C++ 实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 基本函数定义</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">square</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 带默认参数的函数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">power</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> n = <span class="number">2</span>)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> result = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        result *= x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 分段函数</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">piecewise</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">0</span>) <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (x &lt; <span class="number">1</span>) <span class="keyword">return</span> x * x;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">2</span> * x - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 递归函数（斐波那契）</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fibonacci</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">fibonacci</span>(n - <span class="number">1</span>) + <span class="built_in">fibonacci</span>(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. 函数作为参数（回调函数）</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">apply</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> (*func)(<span class="type">int</span>))</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">func</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">square</span>(<span class="number">5</span>) &lt;&lt; endl;        <span class="comment">// 25</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">power</span>(<span class="number">3</span>) &lt;&lt; endl;         <span class="comment">// 9 (默认平方)</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">power</span>(<span class="number">2</span>, <span class="number">3</span>) &lt;&lt; endl;      <span class="comment">// 8</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">piecewise</span>(<span class="number">-2</span>) &lt;&lt; endl;    <span class="comment">// -2</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">fibonacci</span>(<span class="number">10</span>) &lt;&lt; endl;    <span class="comment">// 55</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">apply</span>(<span class="number">4</span>, square) &lt;&lt; endl; <span class="comment">// 16</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数在信竞中的应用"><a href="#函数在信竞中的应用" class="headerlink" title="函数在信竞中的应用"></a>函数在信竞中的应用</h3><p><strong>1. 数学公式直接实现</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 计算两点间距离</span></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">distance</span><span class="params">(<span class="type">double</span> x1, <span class="type">double</span> y1, <span class="type">double</span> x2, <span class="type">double</span> y2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 计算组合数 C(n, m)</span></span><br><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">combination</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (m &gt; n) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (m == <span class="number">0</span> || m == n) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> result = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        result = result * (n - i + <span class="number">1</span>) / i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 状态转移函数（DP）</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 最长上升子序列的状态转移</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lis</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">dp</span><span class="params">(n, <span class="number">1</span>)</span></span>;  <span class="comment">// dp[i] 表示以 nums[i] 结尾的 LIS 长度</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] &lt; nums[i]) &#123;</span><br><span class="line">                dp[i] = <span class="built_in">max</span>(dp[i], dp[j] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> *<span class="built_in">max_element</span>(dp.<span class="built_in">begin</span>(), dp.<span class="built_in">end</span>());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 哈希函数</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 简单的字符串哈希函数</span></span><br><span class="line"><span class="function"><span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> <span class="title">hash_string</span><span class="params">(<span class="type">const</span> string&amp; s)</span> </span>&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> hash = <span class="number">0</span>;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> base = <span class="number">131</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">char</span> c : s) &#123;</span><br><span class="line">        hash = hash * base + c;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> hash;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断两个字符串是否相等（哈希比较）</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">equal_hash</span><span class="params">(<span class="type">const</span> string&amp; a, <span class="type">const</span> string&amp; b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">hash_string</span>(a) == <span class="built_in">hash_string</span>(b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数的时间复杂度分析"><a href="#函数的时间复杂度分析" class="headerlink" title="函数的时间复杂度分析"></a>函数的时间复杂度分析</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// O(1) - 常数时间</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">constant</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// O(n) - 线性时间</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">linear</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        sum += i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// O(n²) - 平方时间</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">quadratic</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">            sum += i * j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// O(log n) - 对数时间</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">logarithmic</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        n /= <span class="number">2</span>;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// O(2^n) - 指数时间</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">exponential</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">exponential</span>(n - <span class="number">1</span>) + <span class="built_in">exponential</span>(n - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🏆-信竞应用"><a href="#🏆-信竞应用" class="headerlink" title="🏆 信竞应用"></a>🏆 信竞应用</h2><h3 id="1-函数思想在算法中的应用"><a href="#1-函数思想在算法中的应用" class="headerlink" title="1. 函数思想在算法中的应用"></a>1. 函数思想在算法中的应用</h3><p><strong>二分查找</strong>：利用函数的单调性</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在有序数组中查找目标值</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">binary_search</span><span class="params">(<span class="type">const</span> vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> left = <span class="number">0</span>, right = nums.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">        <span class="type">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;  <span class="comment">// 找到</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;  <span class="comment">// 在右半部分</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right = mid - <span class="number">1</span>;  <span class="comment">// 在左半部分</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;  <span class="comment">// 未找到</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>核心思想</strong>：将查找问题转化为函数值比较问题。</p>
+<h3 id="2-递推关系（递归函数）"><a href="#2-递推关系（递归函数）" class="headerlink" title="2. 递推关系（递归函数）"></a>2. 递推关系（递归函数）</h3><p><strong>斐波那契数列</strong>：</p>
+<p>$$<br>F(n) &#x3D; \begin{cases}<br>0, &amp; n &#x3D; 0 \<br>1, &amp; n &#x3D; 1 \<br>F(n-1) + F(n-2), &amp; n \geq 2<br>\end{cases}<br>$$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 递归实现（指数时间）</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_recursive</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">fib_recursive</span>(n - <span class="number">1</span>) + <span class="built_in">fib_recursive</span>(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 迭代实现（线性时间）</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_iterative</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">    </span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>, b = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> c = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 矩阵快速幂（对数时间）</span></span><br><span class="line">vector&lt;vector&lt;<span class="type">long</span> <span class="type">long</span>&gt;&gt; <span class="built_in">multiply</span>(<span class="type">const</span> vector&lt;vector&lt;<span class="type">long</span> <span class="type">long</span>&gt;&gt;&amp; a,</span><br><span class="line">                                   <span class="type">const</span> vector&lt;vector&lt;<span class="type">long</span> <span class="type">long</span>&gt;&gt;&amp; b) &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">long</span> <span class="type">long</span>&gt;&gt; <span class="built_in">c</span>(<span class="number">2</span>, <span class="built_in">vector</span>&lt;<span class="type">long</span> <span class="type">long</span>&gt;(<span class="number">2</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; <span class="number">2</span>; k++) &#123;</span><br><span class="line">                c[i][j] += a[i][k] * b[k][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fib_matrix</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">    </span><br><span class="line">    vector&lt;vector&lt;<span class="type">long</span> <span class="type">long</span>&gt;&gt; result = &#123;&#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, <span class="number">1</span>&#125;&#125;;  <span class="comment">// 单位矩阵</span></span><br><span class="line">    vector&lt;vector&lt;<span class="type">long</span> <span class="type">long</span>&gt;&gt; base = &#123;&#123;<span class="number">1</span>, <span class="number">1</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n &amp; <span class="number">1</span>) result = <span class="built_in">multiply</span>(result, base);</span><br><span class="line">        base = <span class="built_in">multiply</span>(base, base);</span><br><span class="line">        n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> result[<span class="number">0</span>][<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-函数在数据结构中的应用"><a href="#3-函数在数据结构中的应用" class="headerlink" title="3. 函数在数据结构中的应用"></a>3. 函数在数据结构中的应用</h3><p><strong>栈的应用</strong>：函数调用栈</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模拟函数调用栈</span></span><br><span class="line">stack&lt;pair&lt;string, <span class="type">int</span>&gt;&gt; call_stack;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">call_function</span><span class="params">(string name, <span class="type">int</span> param)</span> </span>&#123;</span><br><span class="line">    call_stack.<span class="built_in">push</span>(&#123;name, param&#125;);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;调用 &quot;</span> &lt;&lt; name &lt;&lt; <span class="string">&quot;(&quot;</span> &lt;&lt; param &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">return_function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!call_stack.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        <span class="keyword">auto</span> [name, param] = call_stack.<span class="built_in">top</span>();</span><br><span class="line">        call_stack.<span class="built_in">pop</span>();</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;返回 &quot;</span> &lt;&lt; name &lt;&lt; <span class="string">&quot;(&quot;</span> &lt;&lt; param &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-映射（Map）作为函数"><a href="#4-映射（Map）作为函数" class="headerlink" title="4. 映射（Map）作为函数"></a>4. 映射（Map）作为函数</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用 map 表示离散函数</span></span><br><span class="line">map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; f;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义函数值</span></span><br><span class="line">f[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">f[<span class="number">2</span>] = <span class="number">4</span>;</span><br><span class="line">f[<span class="number">3</span>] = <span class="number">6</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询函数值</span></span><br><span class="line"><span class="keyword">if</span> (f.<span class="built_in">count</span>(<span class="number">2</span>)) &#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;f(2) = &quot;</span> &lt;&lt; f[<span class="number">2</span>] &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 遍历函数</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> [x, y] : f) &#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;f(&quot;</span> &lt;&lt; x &lt;&lt; <span class="string">&quot;) = &quot;</span> &lt;&lt; y &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🔗-相关题目"><a href="#🔗-相关题目" class="headerlink" title="🔗 相关题目"></a>🔗 相关题目</h2><blockquote>
+<p>⚠️ 以下题目为经典题型，具体题号请验证后使用</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>题目名称</th>
+<th>来源</th>
+<th>难度</th>
+<th>知识点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数学题</td>
+<td>函数定义域求解</td>
+<td>课本习题</td>
+<td>⭐</td>
+<td>定义域</td>
+</tr>
+<tr>
+<td>数学题</td>
+<td>函数值域计算</td>
+<td>课本习题</td>
+<td>⭐⭐</td>
+<td>值域</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>函数实现</td>
+<td>洛谷</td>
+<td>⭐⭐</td>
+<td>基础函数</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>递归函数</td>
+<td>AtCoder ABC</td>
+<td>⭐⭐⭐</td>
+<td>递归</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>函数迭代</td>
+<td>Codeforces</td>
+<td>⭐⭐⭐</td>
+<td>复合函数</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>映射与函数</td>
+<td>洛谷</td>
+<td>⭐⭐⭐⭐</td>
+<td>map 应用</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="📚-拓展阅读"><a href="#📚-拓展阅读" class="headerlink" title="📚 拓展阅读"></a>📚 拓展阅读</h2><h3 id="进阶知识（选学）"><a href="#进阶知识（选学）" class="headerlink" title="进阶知识（选学）"></a>进阶知识（选学）</h3><ol>
+<li><p><strong>一一映射（双射）</strong></p>
+<ul>
+<li>既是单射（不同输入对应不同输出）</li>
+<li>又是满射（值域等于到达域）</li>
+<li>双射函数有反函数</li>
+</ul>
+</li>
+<li><p><strong>反函数</strong></p>
+<ul>
+<li>如果 f: A → B 是双射，则存在反函数 f⁻¹: B → A</li>
+<li>f(f⁻¹(x)) &#x3D; x, f⁻¹(f(x)) &#x3D; x</li>
+<li>图像关于 y &#x3D; x 对称</li>
+</ul>
+</li>
+<li><p><strong>函数的连续性</strong></p>
+<ul>
+<li>直观理解：图像可以一笔画成</li>
+<li>严格定义：lim(x→a) f(x) &#x3D; f(a)</li>
+</ul>
+</li>
+<li><p><strong>函数的极限</strong></p>
+<ul>
+<li>描述函数在某点附近的变化趋势</li>
+<li>微积分的基础</li>
+</ul>
+</li>
+</ol>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>《算法竞赛入门经典》- 刘汝佳 - 第 8 章 函数与递归</li>
+<li>《高中数学必修一》- 人教 A 版 - 第 3 章 函数</li>
+<li>《具体数学》- 第 2 章 求和</li>
+<li><a target="_blank" rel="noopener" href="https://oi-wiki.org/math/function/">OI Wiki - 函数</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/language/functions">C++ 函数文档</a></li>
+</ul>
+<hr>
+<h2 id="🔜-下一篇"><a href="#🔜-下一篇" class="headerlink" title="🔜 下一篇"></a>🔜 下一篇</h2><p>[练习] 函数概念与表示</p>
+<hr>
+<p><strong>本系列</strong>: <a href="/series/math-tutorial/">信息竞赛数学教程</a><br><strong>上一篇</strong>: [练习] 充要条件判定<br><strong>下一篇</strong>: [练习] 函数概念与表示</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch03-tutorial/" data-id="cmn3vvij5000pa35e1fj0f7ei" data-title="[教程] 03-函数的概念" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LS-1/" rel="tag">LS-1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，函数</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch03-practice/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          [练习] 03-函数概念与表示
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch02-practice/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">[练习] 02-充要条件判定</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%A3%E6%95%B0/">代数</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E9%9A%8F%E7%AC%94/">技术随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LS-1/" rel="tag">LS-1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo/" rel="tag">博客，Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BC%80%E7%AF%87/" rel="tag">博客，开篇</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，三角函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag">教程，代数，不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，二次函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" rel="tag">教程，代数，函数，单调性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">教程，代数，函数，图像变换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" rel="tag">教程，代数，函数，奇偶性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，函数，幂函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E9%9B%B6%E7%82%B9/" rel="tag">教程，代数，函数，零点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，对数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，指数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" rel="tag">教程，代数，逻辑，充要条件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">教程，代数，集合，逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，三角函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag">练习，代数，不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，二次函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" rel="tag">练习，代数，函数，单调性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">练习，代数，函数，图像变换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" rel="tag">练习，代数，函数，奇偶性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，函数，幂函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，对数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，指数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" rel="tag">练习，代数，逻辑，充要条件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">练习，代数，集合，逻辑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/LS-1/" style="font-size: 20px;">LS-1</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo/" style="font-size: 10px;">博客，Hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BC%80%E7%AF%87/" style="font-size: 10px;">博客，开篇</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" style="font-size: 10px;">技术分享</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" style="font-size: 16.67px;">教程，代数，三角函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 13.33px;">教程，代数，不等式</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，二次函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" style="font-size: 10px;">教程，代数，函数，单调性</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" style="font-size: 10px;">教程，代数，函数，图像变换</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" style="font-size: 10px;">教程，代数，函数，奇偶性</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，函数，幂函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E9%9B%B6%E7%82%B9/" style="font-size: 10px;">教程，代数，函数，零点</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，对数函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，指数函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">教程，代数，逻辑，充要条件</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" style="font-size: 10px;">教程，代数，集合，逻辑</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" style="font-size: 16.67px;">练习，代数，三角函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 13.33px;">练习，代数，不等式</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，二次函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" style="font-size: 10px;">练习，代数，函数，单调性</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" style="font-size: 10px;">练习，代数，函数，图像变换</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" style="font-size: 10px;">练习，代数，函数，奇偶性</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，函数，幂函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，对数函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，指数函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">练习，代数，逻辑，充要条件</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" style="font-size: 10px;">练习，代数，集合，逻辑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">三月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/03/24/series/MATH-TUTORIAL-INDEX/">信息竞赛数学教程 - 课程索引</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/24/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch16-practice/">[练习] 16-三角函数的图像与性质</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/24/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch16-tutorial/">[教程] 16-三角函数的图像与性质</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch15-practice/">[练习] 15-诱导公式</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch15-tutorial/">[教程] 15-诱导公式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 杨淮生<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

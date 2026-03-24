@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>信息竞赛数学教程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="面向信息学竞赛的数学基础教程，涵盖代数、几何、数论、组合数学、概率统计等核心内容。循序渐进，通俗易懂，助力初中生攻克高中数学！">
+<meta property="og:type" content="website">
+<meta property="og:title" content="信息竞赛数学教程">
+<meta property="og:url" content="https://codefan.github.io/page/4/index.html">
+<meta property="og:site_name" content="信息竞赛数学教程">
+<meta property="og:description" content="面向信息学竞赛的数学基础教程，涵盖代数、几何、数论、组合数学、概率统计等核心内容。循序渐进，通俗易懂，助力初中生攻克高中数学！">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="杨淮生">
+<meta property="article:tag" content="信息竞赛，NOIP，数学教程，算法竞赛，编程数学，C++">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="信息竞赛数学教程" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">信息竞赛数学教程</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">从初中数学到信竞高手</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://codefan.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-series/01-LS1-基础代数/ch01-practice" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch01-practice/" class="article-date">
+  <time class="dt-published" datetime="2026-03-23T02:30:00.000Z" itemprop="datePublished">2026-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E6%95%B0/">代数</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch01-practice/">[练习] 01-集合运算与逻辑推理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="🎯-例题精讲"><a href="#🎯-例题精讲" class="headerlink" title="🎯 例题精讲"></a>🎯 例题精讲</h2><h3 id="例题-1：集合的交集与并集"><a href="#例题-1：集合的交集与并集" class="headerlink" title="例题 1：集合的交集与并集"></a>例题 1：集合的交集与并集</h3><p><strong>题目来源</strong>: 洛谷</p>
+<p><strong>题意分析</strong>: </p>
+<p>给定两个集合 A 和 B，每个集合包含 n 个整数。请计算：</p>
+<ol>
+<li>A ∩ B（交集）</li>
+<li>A ∪ B（并集）</li>
+</ol>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一行：n (1 ≤ n ≤ 10^5)</span><br><span class="line">第二行：n 个整数，表示集合 A</span><br><span class="line">第三行：n 个整数，表示集合 B</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第一行：交集中元素的个数</span><br><span class="line">第二行：并集中元素的个数</span><br></pre></td></tr></table></figure>
+
+<p><strong>解题思路</strong>: </p>
+<div class="mermaid">
+  graph LR
+    A[读入数据] --> B[存入 set 去重]
+    B --> C[计算交集]
+    B --> D[计算并集]
+    C --> E[输出结果]
+    D --> E
+</div>
+
+
+
+<ol>
+<li>使用 C++ STL 的 <code>set</code> 自动去重</li>
+<li>用 <code>set_intersection</code> 和 <code>set_union</code> 计算交集和并集</li>
+<li>注意：结果也需要去重</li>
+</ol>
+<p><strong>参考思路</strong>:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提示：使用 STL set 和算法库函数</span></span><br><span class="line"><span class="comment">// set_intersection 计算交集</span></span><br><span class="line"><span class="comment">// set_union 计算并集</span></span><br><span class="line"><span class="comment">// 时间复杂度：O(n log n)</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="例题-2：逻辑命题的真假判断"><a href="#例题-2：逻辑命题的真假判断" class="headerlink" title="例题 2：逻辑命题的真假判断"></a>例题 2：逻辑命题的真假判断</h3><p><strong>题目来源</strong>: AtCoder ABC 系列</p>
+<p><strong>题意分析</strong>: </p>
+<p>给定三个布尔值 A, B, C，判断以下命题的真假：</p>
+<ol>
+<li>A ∧ B ∧ C（全为真）</li>
+<li>A ∨ B ∨ C（至少一个为真）</li>
+<li>¬A ∨ ¬B（A 和 B 不同时为真）</li>
+</ol>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一行三个整数 (0 或 1)，表示 A, B, C</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">三行，每行输出 Yes 或 No</span><br></pre></td></tr></table></figure>
+
+<p><strong>解题思路</strong>: </p>
+<p>直接使用逻辑运算符：</p>
+<ul>
+<li><code>&amp;&amp;</code> 表示 ∧（且）</li>
+<li><code>||</code> 表示 ∨（或）</li>
+<li><code>!</code> 表示 ¬（非）</li>
+</ul>
+<p><strong>参考思路</strong>:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提示：直接使用逻辑运算符</span></span><br><span class="line"><span class="comment">// 注意输出格式</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="例题-3：状态压缩入门"><a href="#例题-3：状态压缩入门" class="headerlink" title="例题 3：状态压缩入门"></a>例题 3：状态压缩入门</h3><p><strong>题目来源</strong>: 洛谷</p>
+<p><strong>题意分析</strong>: </p>
+<p>有 n 块奶酪，老鼠从原点出发，要吃掉所有奶酪。问最短路径是多少？</p>
+<p><strong>数据范围</strong>: n ≤ 15（提示：状态压缩）</p>
+<p><strong>解题思路</strong>: </p>
+<ol>
+<li>用二进制位表示”已吃过的奶酪集合”</li>
+<li><code>dp[mask][i]</code> &#x3D; 吃过 mask 表示的奶酪集合，最后在奶酪 i 的最短路径</li>
+<li>状态转移：枚举下一个要吃的奶酪 j</li>
+</ol>
+<p><strong>参考思路</strong>:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提示：</span></span><br><span class="line"><span class="comment">// 1. 用位运算表示集合</span></span><br><span class="line"><span class="comment">// 2. dp[mask][i] 表示状态</span></span><br><span class="line"><span class="comment">// 3. 枚举子集进行转移</span></span><br><span class="line"><span class="comment">// 时间复杂度：O(2^n × n²)</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="例题-4：容斥原理应用"><a href="#例题-4：容斥原理应用" class="headerlink" title="例题 4：容斥原理应用"></a>例题 4：容斥原理应用</h3><p><strong>题目来源</strong>: Codeforces</p>
+<p><strong>题意分析</strong>: </p>
+<p>求 1~n 中能被 a 或 b 或 c 整除的数的个数。</p>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一行四个整数：n, a, b, c (1 ≤ n ≤ 10^9, 1 ≤ a,b,c ≤ 10^9)</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个整数，表示答案</span><br></pre></td></tr></table></figure>
+
+<p><strong>解题思路</strong>: </p>
+<p>使用容斥原理：</p>
+<ul>
+<li>能被 a 整除的数的个数：⌊n&#x2F;a⌋</li>
+<li>能被 a 和 b 同时整除的数的个数：⌊n&#x2F;lcm(a,b)⌋</li>
+<li>应用容斥原理公式</li>
+</ul>
+<p><strong>参考思路</strong>:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提示：</span></span><br><span class="line"><span class="comment">// 1. 使用容斥原理</span></span><br><span class="line"><span class="comment">// 2. 需要计算最小公倍数 lcm</span></span><br><span class="line"><span class="comment">// 3. 注意数据范围，使用 long long</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="✍️-课后习题"><a href="#✍️-课后习题" class="headerlink" title="✍️ 课后习题"></a>✍️ 课后习题</h2><h3 id="📐-数学题"><a href="#📐-数学题" class="headerlink" title="📐 数学题"></a>📐 数学题</h3><p><strong>习题 1</strong>（基础题 ⭐）</p>
+<p>已知集合 A &#x3D; {1,2,3,4,5}, B &#x3D; {4,5,6,7,8}，求：</p>
+<ol>
+<li>A ∩ B</li>
+<li>A ∪ B</li>
+<li>A - B</li>
+<li>B - A</li>
+</ol>
+<hr>
+<p><strong>习题 2</strong>（基础题 ⭐）</p>
+<p>判断下列命题的真假：</p>
+<ol>
+<li>“若 x &gt; 2，则 x² &gt; 4”</li>
+<li>“存在实数 x，使得 x² + 1 &#x3D; 0”</li>
+<li>“对所有整数 n，n² 是偶数当且仅当 n 是偶数”</li>
+<li>“∀x∈R, ∃y∈R, x + y &#x3D; 0”</li>
+</ol>
+<hr>
+<p><strong>习题 3</strong>（提高题 ⭐⭐）</p>
+<p>某班有 50 名学生，其中：</p>
+<ul>
+<li>30 人会编程</li>
+<li>25 人会数学</li>
+<li>15 人两者都会</li>
+</ul>
+<p>问：</p>
+<ol>
+<li>至少会一项的有多少人？</li>
+<li>两项都不会的有多少人？</li>
+<li>只会一项的有多少人？</li>
+</ol>
+<hr>
+<p><strong>习题 4</strong>（提高题 ⭐⭐⭐）</p>
+<p>用德摩根定律化简下列逻辑表达式：</p>
+<ol>
+<li>¬(A ∨ B) ∨ ¬(C ∧ D)</li>
+<li>¬((A ∧ B) ∨ (C ∧ D))</li>
+<li>¬(∀x, P(x) ∧ Q(x))</li>
+<li>¬(∃x, P(x) → Q(x))</li>
+</ol>
+<hr>
+<p><strong>习题 5</strong>（挑战题 ⭐⭐⭐⭐）</p>
+<p>证明：对于任意集合 A, B, C，有<br>$$(A \cup B) \cap C &#x3D; (A \cap C) \cup (B \cap C)$$</p>
+<p>提示：可以用韦恩图或代数法证明。</p>
+<hr>
+<h3 id="💻-编程题"><a href="#💻-编程题" class="headerlink" title="💻 编程题"></a>💻 编程题</h3><p><strong>习题 6</strong>（基础题 ⭐⭐）</p>
+<p><strong>题目来源</strong>: 洛谷</p>
+<p>给定 n 个整数，去重后输出。</p>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第一行：n (1 ≤ n ≤ 10^5)</span><br><span class="line">第二行：n 个整数</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一行，去重后的整数（从小到大排序）</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>习题 7</strong>（提高题 ⭐⭐⭐）</p>
+<p><strong>题目来源</strong>: AtCoder ABC</p>
+<p>给定一个长度为 n 的 01 串，问有多少个子串包含至少一个 ‘1’。</p>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第一行：n (1 ≤ n ≤ 10^5)</span><br><span class="line">第二行：长度为 n 的 01 串</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个整数，表示答案</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示</strong>: 可以用补集思想，先算不含 ‘1’ 的子串数。</p>
+<hr>
+<p><strong>习题 8</strong>（提高题 ⭐⭐⭐）</p>
+<p><strong>题目来源</strong>: 洛谷</p>
+<p>用位运算实现集合的以下操作：</p>
+<ol>
+<li>添加元素</li>
+<li>删除元素</li>
+<li>判断元素是否存在</li>
+<li>计算集合大小</li>
+</ol>
+<p><strong>要求</strong>: 不使用 STL set，只用位运算。</p>
+<hr>
+<p><strong>习题 9</strong>（挑战题 ⭐⭐⭐⭐）</p>
+<p><strong>题目来源</strong>: Codeforces</p>
+<p>给定 n 个集合，每个集合用位掩码表示。求这些集合的并集的大小。</p>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第一行：n (1 ≤ n ≤ 10^5)</span><br><span class="line">接下来 n 行：每行一个整数，表示集合的位掩码</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个整数，表示并集的大小</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>习题 10</strong>（挑战题 ⭐⭐⭐⭐⭐）</p>
+<p><strong>题目来源</strong>: 经典算法题</p>
+<p>实现状态压缩 DP 解决旅行商问题（TSP）：</p>
+<ul>
+<li>n 个城市，从城市 0 出发</li>
+<li>每个城市恰好访问一次</li>
+<li>最后回到城市 0</li>
+<li>求最短路径</li>
+</ul>
+<p><strong>数据范围</strong>: n ≤ 16</p>
+<hr>
+<h2 id="📊-本章小结"><a href="#📊-本章小结" class="headerlink" title="📊 本章小结"></a>📊 本章小结</h2><h3 id="重点回顾"><a href="#重点回顾" class="headerlink" title="重点回顾"></a>重点回顾</h3><ol>
+<li><strong>集合三特性</strong>：确定性、互异性、无序性</li>
+<li><strong>四种运算</strong>：<ul>
+<li>交集：A ∩ B（共有元素）</li>
+<li>并集：A ∪ B（所有元素，去重）</li>
+<li>补集：∁ᵤA（不属于 A 的元素）</li>
+<li>差集：A - B（在 A 中但不在 B 中）</li>
+</ul>
+</li>
+<li><strong>集合运算律</strong>：交换律、结合律、分配律、德摩根定律</li>
+<li><strong>容斥原理</strong>：计算多个集合并集的大小</li>
+<li><strong>逻辑联结词</strong>：∧（且）、∨（或）、¬（非）、→（蕴含）、↔（等价）</li>
+<li><strong>量词</strong>：∀（全称）、∃（存在）、∃!（唯一存在）</li>
+<li><strong>位运算表示集合</strong>：状态压缩的核心思想</li>
+</ol>
+<h3 id="易错点提醒"><a href="#易错点提醒" class="headerlink" title="易错点提醒"></a>易错点提醒</h3><p>⚠️ <strong>集合并集要去重</strong>：{1,2,3} ∪ {2,3,4} &#x3D; {1,2,3,4}（不是 {1,2,3,2,3,4}）</p>
+<p>⚠️ <strong>空集是任何集合的子集</strong>：∅ ⊆ A 恒成立</p>
+<p>⚠️ <strong>量词否定要变号</strong>：</p>
+<ul>
+<li>“所有人都会” 的否定是 “有人不会”（不是 “所有人都不会”）</li>
+<li>“有人会” 的否定是 “所有人都不会”</li>
+</ul>
+<p>⚠️ <strong>蕴含的真值表</strong>：p→q 只有”前真后假”时为假</p>
+<p>⚠️ <strong>量词顺序不能交换</strong>：∀x∃y 和 ∃y∀x 不等价</p>
+<h3 id="信竞应用总结"><a href="#信竞应用总结" class="headerlink" title="信竞应用总结"></a>信竞应用总结</h3><table>
+<thead>
+<tr>
+<th>知识点</th>
+<th>应用场景</th>
+<th>典型题目</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>集合运算</td>
+<td>数据去重、统计</td>
+<td>STL set</td>
+</tr>
+<tr>
+<td>位运算集合</td>
+<td>状态压缩 DP</td>
+<td>旅行商问题</td>
+</tr>
+<tr>
+<td>容斥原理</td>
+<td>计数问题</td>
+<td>整除计数</td>
+</tr>
+<tr>
+<td>逻辑判断</td>
+<td>条件分支、博弈</td>
+<td>AtCoder ABC 系列</td>
+</tr>
+<tr>
+<td>德摩根定律</td>
+<td>条件优化、剪枝</td>
+<td>搜索优化</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="🔙-上一篇"><a href="#🔙-上一篇" class="headerlink" title="🔙 上一篇"></a>🔙 上一篇</h2><p>[教程] 01-集合、命题与逻辑用语</p>
+<hr>
+<p><strong>本系列</strong>: <a href="/series/math-tutorial/">信息竞赛数学教程</a><br><strong>上一篇</strong>: [教程] 01-集合、命题与逻辑用语<br><strong>下一篇</strong>: [教程] 02-充要条件</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch01-practice/" data-id="cmn3vviix000da35ehdyhc4z8" data-title="[练习] 01-集合运算与逻辑推理" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LS-1/" rel="tag">LS-1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">练习，代数，集合，逻辑</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-series/01-LS1-基础代数/ch01-tutorial" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch01-tutorial/" class="article-date">
+  <time class="dt-published" datetime="2026-03-23T02:00:00.000Z" itemprop="datePublished">2026-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E6%95%B0/">代数</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch01-tutorial/">[教程] 01-集合、命题与逻辑用语</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="🎮-情景引入"><a href="#🎮-情景引入" class="headerlink" title="🎮 情景引入"></a>🎮 情景引入</h2><blockquote>
+<p>想象你在玩一个 RPG 游戏，你的背包里有这些装备：</p>
+<ul>
+<li>武器：剑、弓、法杖</li>
+<li>防具：盔甲、盾牌</li>
+<li>药水：生命药水、魔法药水</li>
+</ul>
+<p>你的好友也有一个背包。现在系统要判断：</p>
+<ul>
+<li>你们<strong>共有</strong>的装备有哪些？→ <strong>交集</strong></li>
+<li>你们<strong>所有</strong>的装备合起来有哪些？→ <strong>并集</strong></li>
+<li>你没有但好友有的装备？→ <strong>补集</strong></li>
+</ul>
+<p>这就是集合运算！在信竞中，集合思想无处不在——从状态压缩到位运算，从容斥原理到图论算法。</p>
+</blockquote>
+<hr>
+<h2 id="📖-直观理解"><a href="#📖-直观理解" class="headerlink" title="📖 直观理解"></a>📖 直观理解</h2><h3 id="1-什么是集合？"><a href="#1-什么是集合？" class="headerlink" title="1. 什么是集合？"></a>1. 什么是集合？</h3><p><strong>集合</strong>就是把一些东西放在一起，形成一个整体。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">集合 A = &#123;剑，弓，法杖&#125;</span><br><span class="line">集合 B = &#123;盔甲，盾牌，剑&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>关键特性</strong>：</p>
+<ul>
+<li>✅ <strong>确定性</strong>：一个东西要么在集合里，要么不在（没有”可能在”）</li>
+<li>✅ <strong>互异性</strong>：集合里的东西不能重复（{剑，剑，弓} &#x3D; {剑，弓}）</li>
+<li>✅ <strong>无序性</strong>：{剑，弓} 和 {弓，剑} 是同一个集合</li>
+</ul>
+<h3 id="2-集合的表示方法"><a href="#2-集合的表示方法" class="headerlink" title="2. 集合的表示方法"></a>2. 集合的表示方法</h3><p><strong>列举法</strong>：直接列出所有元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line">B = &#123;红，黄，蓝&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>描述法</strong>：用条件描述</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = &#123;x | x 是正整数，且 x &lt; 6&#125;</span><br><span class="line">B = &#123;x | x 是三原色之一&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>信竞中的集合</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// C++ 中的集合</span></span><br><span class="line">set&lt;<span class="type">int</span>&gt; A = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">set&lt;<span class="type">char</span>&gt; B = &#123;<span class="string">&#x27;R&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;B&#x27;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者用位运算表示集合（状态压缩）</span></span><br><span class="line"><span class="type">int</span> mask = <span class="number">0b11111</span>;  <span class="comment">// 表示集合 &#123;0,1,2,3,4&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-集合的关系"><a href="#3-集合的关系" class="headerlink" title="3. 集合的关系"></a>3. 集合的关系</h3><div class="mermaid">
+  graph TD
+    subgraph 集合关系
+        A[子集 A⊆B] --> B1[A 的所有元素都在 B 中]
+        C[真子集 A⊂B] --> C1[A 是 B 的子集，但 A≠B]
+        D[相等 A=B] --> D1[A 和 B 有完全相同的元素]
+    end
+</div>
+
+
+
+<p><strong>示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A = &#123;1, 2, 3&#125;</span><br><span class="line">B = &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line">C = &#123;1, 2, 3&#125;</span><br><span class="line"></span><br><span class="line">则：A⊆B (A 是 B 的子集)</span><br><span class="line">    A⊂B (A 是 B 的真子集)</span><br><span class="line">    A=C (A 和 C 相等)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-韦恩图（Venn-Diagram）"><a href="#4-韦恩图（Venn-Diagram）" class="headerlink" title="4. 韦恩图（Venn Diagram）"></a>4. 韦恩图（Venn Diagram）</h3><p>韦恩图是表示集合关系的直观工具：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────┐</span><br><span class="line">│      A      │</span><br><span class="line">│   ┌─────┐   │</span><br><span class="line">│   │ A∩B │   │</span><br><span class="line">│   └─────┘   │</span><br><span class="line">│      B      │</span><br><span class="line">└─────────────┘</span><br></pre></td></tr></table></figure>
+
+<p><strong>常见韦恩图</strong>：</p>
+<div class="mermaid">
+  graph TD
+    subgraph 韦恩图示例
+        U1[全集 U] --> A1[A∩B 交集]
+        U1 --> A2[A∪B 并集]
+        U1 --> A3[A-B 差集]
+        U1 --> A4[∁ᵤA 补集]
+    end
+</div>
+
+
+
+<hr>
+<h2 id="📐-数学定义"><a href="#📐-数学定义" class="headerlink" title="📐 数学定义"></a>📐 数学定义</h2><h3 id="集合的基本运算"><a href="#集合的基本运算" class="headerlink" title="集合的基本运算"></a>集合的基本运算</h3><p><strong>1. 交集 (Intersection)<strong>：两个集合</strong>共有</strong>的元素</p>
+<p>$$<br>A \cap B &#x3D; {x \mid x \in A \text{ 且 } x \in B}<br>$$</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A = &#123;1, 2, 3, 4&#125;</span><br><span class="line">B = &#123;3, 4, 5, 6&#125;</span><br><span class="line">A ∩ B = &#123;3, 4&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 并集 (Union)<strong>：两个集合</strong>所有</strong>的元素（去重）</p>
+<p>$$<br>A \cup B &#x3D; {x \mid x \in A \text{ 或 } x \in B}<br>$$</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A = &#123;1, 2, 3&#125;</span><br><span class="line">B = &#123;3, 4, 5&#125;</span><br><span class="line">A ∪ B = &#123;1, 2, 3, 4, 5&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 补集 (Complement)<strong>：在全集中</strong>不属于</strong>某集合的元素</p>
+<p>$$<br>\complement_U A &#x3D; {x \mid x \in U \text{ 且 } x \notin A}<br>$$</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">全集 U = &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line">A = &#123;1, 2, 3&#125;</span><br><span class="line">∁ᵤA = &#123;4, 5&#125;</span><br></pre></td></tr></table></figure>
+
+<p>**4. 差集 (Difference)**：属于 A 但不属于 B 的元素</p>
+<p>$$<br>A - B &#x3D; {x \mid x \in A \text{ 且 } x \notin B}<br>$$</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A = &#123;1, 2, 3, 4&#125;</span><br><span class="line">B = &#123;3, 4, 5&#125;</span><br><span class="line">A - B = &#123;1, 2&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="集合运算律"><a href="#集合运算律" class="headerlink" title="集合运算律"></a>集合运算律</h3><p>集合运算满足以下重要定律（证明用韦恩图或代数法）：</p>
+<p><strong>1. 交换律</strong><br>$$<br>A \cap B &#x3D; B \cap A \<br>A \cup B &#x3D; B \cup A<br>$$</p>
+<p><strong>2. 结合律</strong><br>$$<br>(A \cap B) \cap C &#x3D; A \cap (B \cap C) \<br>(A \cup B) \cup C &#x3D; A \cup (B \cup C)<br>$$</p>
+<p><strong>3. 分配律</strong><br>$$<br>A \cap (B \cup C) &#x3D; (A \cap B) \cup (A \cap C) \<br>A \cup (B \cap C) &#x3D; (A \cup B) \cap (A \cup C)<br>$$</p>
+<p><strong>4. 德摩根定律（De Morgan’s Laws）</strong> ⭐重要</p>
+<p>$$<br>\complement_U(A \cup B) &#x3D; \complement_U A \cap \complement_U B \<br>\complement_U(A \cap B) &#x3D; \complement_U A \cup \complement_U B<br>$$</p>
+<p><strong>通俗理解</strong>：</p>
+<ul>
+<li>“不 (A 或 B)” &#x3D; “非 A 且 非 B”</li>
+<li>“不 (A 且 B)” &#x3D; “非 A 或 非 B”</li>
+</ul>
+<p><strong>编程中的应用</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 德摩根定律在条件判断中的应用</span></span><br><span class="line"><span class="keyword">if</span> (!(a || b))  <span class="comment">// 等价于</span></span><br><span class="line"><span class="keyword">if</span> (!a &amp;&amp; !b)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!(a &amp;&amp; b))  <span class="comment">// 等价于</span></span><br><span class="line"><span class="keyword">if</span> (!a || !b)</span><br></pre></td></tr></table></figure>
+
+<h3 id="集合的基数"><a href="#集合的基数" class="headerlink" title="集合的基数"></a>集合的基数</h3><p><strong>基数</strong>：集合中元素的个数，记作 |A| 或 card(A)</p>
+<p><strong>容斥原理</strong>（两个集合）：<br>$$<br>|A \cup B| &#x3D; |A| + |B| - |A \cap B|<br>$$</p>
+<p><strong>容斥原理</strong>（三个集合）：<br>$$<br>\begin{aligned}<br>|A \cup B \cup C| &#x3D; &amp;|A| + |B| + |C| \<br>&amp;- |A \cap B| - |A \cap C| - |B \cap C| \<br>&amp;+ |A \cap B \cap C|<br>\end{aligned}<br>$$</p>
+<p><strong>示例</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">某班有 50 人，30 人会编程，25 人会数学，15 人两者都会。</span><br><span class="line">问：至少会一项的有多少人？</span><br><span class="line"></span><br><span class="line">|编程 ∪ 数学| = |编程| + |数学| - |编程 ∩ 数学|</span><br><span class="line">             = 30 + 25 - 15 = 40 人</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="💻-代码实现"><a href="#💻-代码实现" class="headerlink" title="💻 代码实现"></a>💻 代码实现</h2><h3 id="C-STL-set-基本操作"><a href="#C-STL-set-基本操作" class="headerlink" title="C++ STL set 基本操作"></a>C++ STL set 基本操作</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建集合</span></span><br><span class="line">    set&lt;<span class="type">int</span>&gt; A = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line">    set&lt;<span class="type">int</span>&gt; B = &#123;<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 1. 交集</span></span><br><span class="line">    set&lt;<span class="type">int</span>&gt; intersection;</span><br><span class="line">    <span class="built_in">set_intersection</span>(A.<span class="built_in">begin</span>(), A.<span class="built_in">end</span>(), </span><br><span class="line">                     B.<span class="built_in">begin</span>(), B.<span class="built_in">end</span>(),</span><br><span class="line">                     <span class="built_in">inserter</span>(intersection, intersection.<span class="built_in">begin</span>()));</span><br><span class="line">    <span class="comment">// intersection = &#123;3, 4&#125;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 2. 并集</span></span><br><span class="line">    set&lt;<span class="type">int</span>&gt; union_set;</span><br><span class="line">    <span class="built_in">set_union</span>(A.<span class="built_in">begin</span>(), A.<span class="built_in">end</span>(),</span><br><span class="line">              B.<span class="built_in">begin</span>(), B.<span class="built_in">end</span>(),</span><br><span class="line">              <span class="built_in">inserter</span>(union_set, union_set.<span class="built_in">begin</span>()));</span><br><span class="line">    <span class="comment">// union_set = &#123;1, 2, 3, 4, 5, 6&#125;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3. 差集 (A - B)</span></span><br><span class="line">    set&lt;<span class="type">int</span>&gt; difference;</span><br><span class="line">    <span class="built_in">set_difference</span>(A.<span class="built_in">begin</span>(), A.<span class="built_in">end</span>(),</span><br><span class="line">                   B.<span class="built_in">begin</span>(), B.<span class="built_in">end</span>(),</span><br><span class="line">                   <span class="built_in">inserter</span>(difference, difference.<span class="built_in">begin</span>()));</span><br><span class="line">    <span class="comment">// difference = &#123;1, 2&#125;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 4. 判断子集</span></span><br><span class="line">    <span class="type">bool</span> is_subset = <span class="built_in">includes</span>(B.<span class="built_in">begin</span>(), B.<span class="built_in">end</span>(), </span><br><span class="line">                              A.<span class="built_in">begin</span>(), A.<span class="built_in">end</span>());</span><br><span class="line">    <span class="comment">// is_subset = false (A 不是 B 的子集)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 5. 集合的基数（元素个数）</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;A 的大小：&quot;</span> &lt;&lt; A.<span class="built_in">size</span>() &lt;&lt; endl;  <span class="comment">// 4</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="位运算表示集合（状态压缩）"><a href="#位运算表示集合（状态压缩）" class="headerlink" title="位运算表示集合（状态压缩）"></a>位运算表示集合（状态压缩）</h3><p>在信竞中，当集合元素是连续整数（如 0~n-1）时，常用<strong>位运算</strong>表示集合：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 用二进制位表示集合</span></span><br><span class="line">    <span class="comment">// 第 i 位为 1 表示元素 i 在集合中</span></span><br><span class="line">    <span class="type">int</span> A = <span class="number">0b01111</span>;  <span class="comment">// 集合 &#123;0, 1, 2, 3&#125;</span></span><br><span class="line">    <span class="type">int</span> B = <span class="number">0b11000</span>;  <span class="comment">// 集合 &#123;3, 4&#125;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 1. 交集：按位与</span></span><br><span class="line">    <span class="type">int</span> intersection = A &amp; B;  <span class="comment">// 0b01000 = &#123;3&#125;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 2. 并集：按位或</span></span><br><span class="line">    <span class="type">int</span> union_set = A | B;     <span class="comment">// 0b11111 = &#123;0,1,2,3,4&#125;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3. 补集：按位取反（需要指定全集）</span></span><br><span class="line">    <span class="type">int</span> U = <span class="number">0b11111</span>;  <span class="comment">// 全集 &#123;0,1,2,3,4&#125;</span></span><br><span class="line">    <span class="type">int</span> complement = (~A) &amp; U;  <span class="comment">// 0b10000 = &#123;4&#125;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 4. 差集：A &amp; (~B)</span></span><br><span class="line">    <span class="type">int</span> difference = A &amp; (~B);  <span class="comment">// 0b00111 = &#123;0,1,2&#125;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 5. 判断元素是否在集合中</span></span><br><span class="line">    <span class="type">bool</span> has_2 = (A &gt;&gt; <span class="number">2</span>) &amp; <span class="number">1</span>;  <span class="comment">// true (第 2 位是 1)</span></span><br><span class="line">    <span class="type">bool</span> has_4 = (A &gt;&gt; <span class="number">4</span>) &amp; <span class="number">1</span>;  <span class="comment">// false (第 4 位是 0)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 6. 添加/删除元素</span></span><br><span class="line">    A |= (<span class="number">1</span> &lt;&lt; <span class="number">4</span>);   <span class="comment">// 添加元素 4: A = &#123;0,1,2,3,4&#125;</span></span><br><span class="line">    A &amp;= ~(<span class="number">1</span> &lt;&lt; <span class="number">2</span>);  <span class="comment">// 删除元素 2: A = &#123;0,1,3,4&#125;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 7. 计算集合的基数（元素个数）</span></span><br><span class="line">    <span class="type">int</span> count = __builtin_popcount(A);  <span class="comment">// GCC 内置函数，返回 1 的个数</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>位运算常用技巧</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>代码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>添加元素 i</td>
+<td>&#96;mask</td>
+<td>&#x3D; (1 &lt;&lt; i)&#96;</td>
+</tr>
+<tr>
+<td>删除元素 i</td>
+<td><code>mask &amp;= ~(1 &lt;&lt; i)</code></td>
+<td>第 i 位置 0</td>
+</tr>
+<tr>
+<td>判断元素 i</td>
+<td><code>(mask &gt;&gt; i) &amp; 1</code></td>
+<td>检查第 i 位</td>
+</tr>
+<tr>
+<td>切换元素 i</td>
+<td><code>mask ^= (1 &lt;&lt; i)</code></td>
+<td>第 i 位取反</td>
+</tr>
+<tr>
+<td>最低位 1</td>
+<td><code>mask &amp; -mask</code></td>
+<td>lowbit 操作</td>
+</tr>
+<tr>
+<td>删除最低位 1</td>
+<td><code>mask &amp;= mask - 1</code></td>
+<td>常用于枚举子集</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="📝-命题与逻辑用语"><a href="#📝-命题与逻辑用语" class="headerlink" title="📝 命题与逻辑用语"></a>📝 命题与逻辑用语</h2><h3 id="什么是命题？"><a href="#什么是命题？" class="headerlink" title="什么是命题？"></a>什么是命题？</h3><p><strong>命题</strong>：可以判断真假的陈述句。</p>
+<p><strong>示例</strong>：</p>
+<ul>
+<li>✅ “2 + 2 &#x3D; 4”（真命题）</li>
+<li>✅ “所有质数都是奇数”（假命题，2 是质数但不是奇数）</li>
+<li>❌ “x &gt; 3”（不是命题，x 未知）</li>
+<li>❌ “你好吗？”（不是命题，是疑问句）</li>
+<li>❌ “请关上门”（不是命题，是祈使句）</li>
+</ul>
+<h3 id="逻辑联结词"><a href="#逻辑联结词" class="headerlink" title="逻辑联结词"></a>逻辑联结词</h3><table>
+<thead>
+<tr>
+<th>联结词</th>
+<th>符号</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>且 (AND)</td>
+<td>∧ 或 &amp;&amp;</td>
+<td>两个都真才真</td>
+<td>p∧q</td>
+</tr>
+<tr>
+<td>或 (OR)</td>
+<td>∨ 或 ||</td>
+<td>一个真就真</td>
+<td>p∨q</td>
+</tr>
+<tr>
+<td>非 (NOT)</td>
+<td>¬ 或 !</td>
+<td>取反</td>
+<td>¬p</td>
+</tr>
+<tr>
+<td>蕴含 (IMPLIES)</td>
+<td>→</td>
+<td>若 p 则 q</td>
+<td>p→q</td>
+</tr>
+<tr>
+<td>等价 (IFF)</td>
+<td>↔</td>
+<td>p 当且仅当 q</td>
+<td>p↔q</td>
+</tr>
+</tbody></table>
+<p><strong>真值表</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>p</th>
+<th>q</th>
+<th>p∧q</th>
+<th>p∨q</th>
+<th>¬p</th>
+<th>p→q</th>
+<th>p↔q</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody></table>
+<p><strong>重要说明</strong>：</p>
+<ul>
+<li><strong>蕴含 p→q</strong>：只有”前真后假”时为假，其余情况都为真<ul>
+<li>“如果太阳从西边出来，那么 1+1&#x3D;3”——这是真命题！（因为前提为假）</li>
+</ul>
+</li>
+<li><strong>等价 p↔q</strong>：p 和 q 同真同假时为真</li>
+</ul>
+<h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><p><strong>全称量词</strong>（∀）：”对所有…”、”任意一个…”</p>
+<p>$$<br>\forall x \in \mathbb{R}, x^2 \geq 0<br>$$</p>
+<p>读作：”对所有实数 x，x 的平方大于等于 0”</p>
+<p><strong>存在量词</strong>（∃）：”存在…”、”至少有一个…”</p>
+<p>$$<br>\exists x \in \mathbb{R}, x^2 &#x3D; 4<br>$$</p>
+<p>读作：”存在实数 x，使得 x 的平方等于 4”（x&#x3D;2 或 x&#x3D;-2）</p>
+<p><strong>唯一存在量词</strong>（∃!）：”存在唯一的…”</p>
+<p>$$<br>\exists! x \in \mathbb{R}, x^2 &#x3D; 0<br>$$</p>
+<p>读作：”存在唯一的实数 x，使得 x 的平方等于 0”（x&#x3D;0）</p>
+<p><strong>量词的否定</strong>：</p>
+<ul>
+<li>¬(∀x, P(x)) ⇔ ∃x, ¬P(x)</li>
+<li>¬(∃x, P(x)) ⇔ ∀x, ¬P(x)</li>
+<li>¬(∃!x, P(x)) ⇔ (∀x, ¬P(x)) ∨ (∃x∃y, x≠y ∧ P(x) ∧ P(y))</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<ul>
+<li>“所有人都会飞”的否定是”存在一个人不会飞”</li>
+<li>“存在一个人数学考满分”的否定是”所有人都没考满分”</li>
+<li>“存在唯一的解”的否定是”无解或有多解”</li>
+</ul>
+<p><strong>嵌套量词</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">∀x ∃y, x + y = 0  // 对任意 x，存在 y 使得 x+y=0（真，y=-x）</span><br><span class="line">∃y ∀x, x + y = 0  // 存在 y 使得对任意 x 都有 x+y=0（假）</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：量词顺序不能随意交换！</p>
+<hr>
+<h2 id="🏆-信竞应用"><a href="#🏆-信竞应用" class="headerlink" title="🏆 信竞应用"></a>🏆 信竞应用</h2><h3 id="1-状态压缩-DP"><a href="#1-状态压缩-DP" class="headerlink" title="1. 状态压缩 DP"></a>1. 状态压缩 DP</h3><p>用二进制位表示集合，解决”选与不选”的问题：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 经典问题：旅行商问题 (TSP) 的状态压缩</span></span><br><span class="line"><span class="comment">// dp[mask][i] 表示访问过 mask 表示的城市集合，当前在城市 i 的最短路径</span></span><br><span class="line"><span class="type">int</span> dp[<span class="number">1</span> &lt;&lt; <span class="number">20</span>][<span class="number">20</span>];</span><br><span class="line"><span class="type">int</span> dist[<span class="number">20</span>][<span class="number">20</span>];</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dp, <span class="number">0x3f</span>, <span class="built_in">sizeof</span>(dp));</span><br><span class="line">    dp[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">0</span>;  <span class="comment">// 从城市 0 出发</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> mask = <span class="number">1</span>; mask &lt; (<span class="number">1</span> &lt;&lt; n); mask++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((mask &gt;&gt; i) &amp; <span class="number">1</span>) &#123;  <span class="comment">// 如果城市 i 在集合中</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!((mask &gt;&gt; j) &amp; <span class="number">1</span>)) &#123;  <span class="comment">// 城市 j 不在集合中</span></span><br><span class="line">                        <span class="type">int</span> new_mask = mask | (<span class="number">1</span> &lt;&lt; j);</span><br><span class="line">                        dp[new_mask][j] = <span class="built_in">min</span>(dp[new_mask][j], </span><br><span class="line">                                              dp[mask][i] + dist[i][j]);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> dp[(<span class="number">1</span> &lt;&lt; n) - <span class="number">1</span>][<span class="number">0</span>];  <span class="comment">// 回到起点</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong>：</p>
+<ul>
+<li>状态数：O(2^n × n)</li>
+<li>转移：O(n)</li>
+<li>总复杂度：O(2^n × n²)</li>
+<li>适用范围：n ≤ 20</li>
+</ul>
+<h3 id="2-容斥原理"><a href="#2-容斥原理" class="headerlink" title="2. 容斥原理"></a>2. 容斥原理</h3><p>计算多个集合的并集大小：</p>
+<p>$$<br>|A \cup B \cup C| &#x3D; |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|<br>$$</p>
+<p><strong>一般形式</strong>（n 个集合）：<br>$$<br>\left|\bigcup_{i&#x3D;1}^n A_i\right| &#x3D; \sum_{S \subseteq {1,\dots,n}, S \neq \emptyset} (-1)^{|S|-1} \left|\bigcap_{i \in S} A_i\right|<br>$$</p>
+<p><strong>应用示例</strong>：求 1~100 中能被 2 或 3 或 5 整除的数的个数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">count</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> n / x;  <span class="comment">// 1~n 中能被 x 整除的数的个数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n = <span class="number">100</span>;</span><br><span class="line">    <span class="comment">// 容斥原理</span></span><br><span class="line">    <span class="type">int</span> ans = <span class="built_in">count</span>(n, <span class="number">2</span>) + <span class="built_in">count</span>(n, <span class="number">3</span>) + <span class="built_in">count</span>(n, <span class="number">5</span>)</span><br><span class="line">            - <span class="built_in">count</span>(n, <span class="number">6</span>) - <span class="built_in">count</span>(n, <span class="number">10</span>) - <span class="built_in">count</span>(n, <span class="number">15</span>)</span><br><span class="line">            + <span class="built_in">count</span>(n, <span class="number">30</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;  <span class="comment">// 74</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>位运算实现容斥原理</strong>（枚举子集）：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 枚举集合 S 的所有非空子集</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">enumerate_subsets</span><span class="params">(<span class="type">int</span> S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> subset = S; subset &gt; <span class="number">0</span>; subset = (subset - <span class="number">1</span>) &amp; S) &#123;</span><br><span class="line">        <span class="comment">// subset 是 S 的一个子集</span></span><br><span class="line">        <span class="comment">// 处理 subset...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-集合判重"><a href="#3-集合判重" class="headerlink" title="3. 集合判重"></a>3. 集合判重</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用 set 自动去重</span></span><br><span class="line">set&lt;string&gt; visited;</span><br><span class="line">visited.<span class="built_in">insert</span>(<span class="string">&quot;state1&quot;</span>);</span><br><span class="line">visited.<span class="built_in">insert</span>(<span class="string">&quot;state2&quot;</span>);</span><br><span class="line">visited.<span class="built_in">insert</span>(<span class="string">&quot;state1&quot;</span>);  <span class="comment">// 重复，不会插入</span></span><br><span class="line"></span><br><span class="line">cout &lt;&lt; visited.<span class="built_in">size</span>();  <span class="comment">// 输出 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查元素是否存在</span></span><br><span class="line"><span class="keyword">if</span> (visited.<span class="built_in">count</span>(<span class="string">&quot;state1&quot;</span>)) &#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;已访问过&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-德摩根定律优化条件判断"><a href="#4-德摩根定律优化条件判断" class="headerlink" title="4. 德摩根定律优化条件判断"></a>4. 德摩根定律优化条件判断</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原条件：不是 (a 或 b 或 c)</span></span><br><span class="line"><span class="keyword">if</span> (!(a || b || c)) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等价于：非 a 且 非 b 且 非 c</span></span><br><span class="line"><span class="keyword">if</span> (!a &amp;&amp; !b &amp;&amp; !c) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在搜索剪枝中的应用</span></span><br><span class="line"><span class="comment">// 原条件：如果 (不满足条件 1 或 不满足条件 2)，剪枝</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">check1</span>(x) || !<span class="built_in">check2</span>(x)) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等价于：如果 不满足 (条件 1 且 条件 2)，剪枝</span></span><br><span class="line"><span class="keyword">if</span> (!(<span class="built_in">check1</span>(x) &amp;&amp; <span class="built_in">check2</span>(x))) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="🔗-相关题目"><a href="#🔗-相关题目" class="headerlink" title="🔗 相关题目"></a>🔗 相关题目</h2><blockquote>
+<p>⚠️ 以下题目为经典题型，具体题号请验证后使用</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>题目名称</th>
+<th>来源</th>
+<th>难度</th>
+<th>知识点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数学题</td>
+<td>集合的基本运算</td>
+<td>课本习题</td>
+<td>⭐</td>
+<td>交集、并集</td>
+</tr>
+<tr>
+<td>数学题</td>
+<td>容斥原理应用</td>
+<td>奥数题</td>
+<td>⭐⭐⭐</td>
+<td>计数问题</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>集合操作</td>
+<td>洛谷</td>
+<td>⭐⭐</td>
+<td>STL set</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>状态压缩入门</td>
+<td>AtCoder ABC</td>
+<td>⭐⭐⭐</td>
+<td>位运算</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>容斥原理</td>
+<td>Codeforces</td>
+<td>⭐⭐⭐⭐</td>
+<td>计数 + 数论</td>
+</tr>
+<tr>
+<td>编程题</td>
+<td>集合与位运算</td>
+<td>洛谷</td>
+<td>⭐⭐⭐⭐</td>
+<td>状态压缩</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="📚-拓展阅读"><a href="#📚-拓展阅读" class="headerlink" title="📚 拓展阅读"></a>📚 拓展阅读</h2><h3 id="进阶知识（选学）"><a href="#进阶知识（选学）" class="headerlink" title="进阶知识（选学）"></a>进阶知识（选学）</h3><ol>
+<li><p><strong>幂集</strong>：集合 A 的所有子集构成的集合，记作 P(A) 或 2^A</p>
+<ul>
+<li>若 |A| &#x3D; n，则 |P(A)| &#x3D; 2^n</li>
+</ul>
+</li>
+<li><p><strong>笛卡尔积</strong>：A × B &#x3D; {(a,b) | a∈A, b∈B}</p>
+<ul>
+<li>若 |A|&#x3D;m, |B|&#x3D;n，则 |A×B| &#x3D; m×n</li>
+</ul>
+</li>
+<li><p><strong>集合的划分</strong>：将集合分成若干不相交的子集，且并集为原集合</p>
+</li>
+<li><p><strong>等价关系与等价类</strong>：自反、对称、传递的关系</p>
+</li>
+</ol>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>《算法竞赛入门经典》- 刘汝佳 - 第 11 章 集合</li>
+<li>《具体数学》- 第 1 章 递归问题</li>
+<li>《离散数学及其应用》- 集合论部分</li>
+<li><a target="_blank" rel="noopener" href="https://oi-wiki.org/math/set/">OI Wiki - 集合</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/container/set">C++ STL set 文档</a></li>
+</ul>
+<hr>
+<h2 id="🔜-下一篇"><a href="#🔜-下一篇" class="headerlink" title="🔜 下一篇"></a>🔜 下一篇</h2><p>[练习] 集合运算与逻辑推理</p>
+<hr>
+<p><strong>本系列</strong>: <a href="/series/math-tutorial/">信息竞赛数学教程</a><br><strong>上一篇</strong>: 无（系列第 1 篇）<br><strong>下一篇</strong>: [练习] 集合运算与逻辑推理</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch01-tutorial/" data-id="cmn3vviiz000ea35e99iphfj8" data-title="[教程] 01-集合、命题与逻辑用语" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LS-1/" rel="tag">LS-1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">教程，代数，集合，逻辑</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/23/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2026-03-23T01:38:35.026Z" itemprop="datePublished">2026-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/23/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://codefan.github.io/2026/03/23/hello-world/" data-id="cmn3vviip0007a35eegit25dj" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-MyBlog3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/18/MyBlog3/" class="article-date">
+  <time class="dt-published" datetime="2026-03-18T09:35:00.000Z" itemprop="datePublished">2026-03-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/18/MyBlog3/">我的第一篇在线编辑文章</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="测试github自动发布博客"><a href="#测试github自动发布博客" class="headerlink" title="测试github自动发布博客"></a>测试github自动发布博客</h1><p>这是我用 GitHub 在线编辑的第一篇文章！</p>
+<h2 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h2><ul>
+<li>很方便</li>
+<li>不需要安装任何东西</li>
+<li>浏览器就能写</li>
+</ul>
+<hr>
+<p><em>测试完成！</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://codefan.github.io/2026/03/18/MyBlog3/" data-id="cmn3vviii0003a35ef6l25o02" data-title="我的第一篇在线编辑文章" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-从-Express-到-Hexo-我的博客迁移之路" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/18/%E4%BB%8E-Express-%E5%88%B0-Hexo-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B9%8B%E8%B7%AF/" class="article-date">
+  <time class="dt-published" datetime="2026-03-18T08:20:54.000Z" itemprop="datePublished">2026-03-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E9%9A%8F%E7%AC%94/">技术随笔</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/18/%E4%BB%8E-Express-%E5%88%B0-Hexo-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B9%8B%E8%B7%AF/">从 Express 到 Hexo - 我的博客迁移之路</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="从-Express-到-Hexo-我的博客迁移之路"><a href="#从-Express-到-Hexo-我的博客迁移之路" class="headerlink" title="从 Express 到 Hexo - 我的博客迁移之路"></a>从 Express 到 Hexo - 我的博客迁移之路</h1><p>今天是我的个人博客正式开通的日子。我想记录一下这次博客系统的选型和搭建过程。</p>
+<hr>
+<h2 id="🤔-为什么搭建博客"><a href="#🤔-为什么搭建博客" class="headerlink" title="🤔 为什么搭建博客"></a>🤔 为什么搭建博客</h2><p>作为一名有 20 多年经验的软件工程师，我一直想有一个自己的技术分享平台。 reasons:</p>
+<ol>
+<li><strong>记录技术成长</strong> - 把工作中的经验和踩过的坑记录下来</li>
+<li><strong>知识沉淀</strong> - 系统整理自己的技术体系</li>
+<li><strong>分享交流</strong> - 和其他开发者交流学习</li>
+<li><strong>个人品牌</strong> - 建立自己的技术影响力</li>
+</ol>
+<hr>
+<h2 id="🎯-技术选型"><a href="#🎯-技术选型" class="headerlink" title="🎯 技术选型"></a>🎯 技术选型</h2><p>在搭建博客之前，我面临两个选择：</p>
+<h3 id="方案-A：动态博客（Express-数据库）"><a href="#方案-A：动态博客（Express-数据库）" class="headerlink" title="方案 A：动态博客（Express + 数据库）"></a>方案 A：动态博客（Express + 数据库）</h3><p><strong>技术栈</strong>：</p>
+<ul>
+<li>Node.js + Express</li>
+<li>PostgreSQL 数据库</li>
+<li>后台管理系统</li>
+</ul>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>可以在线写文章</li>
+<li>有完整的后台管理</li>
+<li>支持用户系统</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>需要服务器</li>
+<li>需要维护数据库</li>
+<li>有成本（约¥50-100&#x2F;月）</li>
+</ul>
+<h3 id="方案-B：静态博客（Hexo-GitHub-Pages）"><a href="#方案-B：静态博客（Hexo-GitHub-Pages）" class="headerlink" title="方案 B：静态博客（Hexo + GitHub Pages）"></a>方案 B：静态博客（Hexo + GitHub Pages）</h3><p><strong>技术栈</strong>：</p>
+<ul>
+<li>Hexo 静态网站生成器</li>
+<li>GitHub Pages 托管</li>
+<li>Markdown 写作</li>
+</ul>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>完全免费</li>
+<li>无需维护服务器</li>
+<li>速度快，CDN 加速</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>需要本地写文章</li>
+<li>没有后台管理</li>
+<li>功能相对简单</li>
+</ul>
+<hr>
+<h2 id="✅-最终选择"><a href="#✅-最终选择" class="headerlink" title="✅ 最终选择"></a>✅ 最终选择</h2><p>经过考虑，我选择了 <strong>方案 B（Hexo）</strong>，原因是：</p>
+<ol>
+<li><strong>零成本启动</strong> - 初期不想投入太多</li>
+<li><strong>专注内容</strong> - 不想花时间维护服务器</li>
+<li><strong>简单够用</strong> - 个人写作不需要复杂功能</li>
+<li><strong>可升级</strong> - 未来需要时可以迁移到动态博客</li>
+</ol>
+<hr>
+<h2 id="🚀-搭建过程"><a href="#🚀-搭建过程" class="headerlink" title="🚀 搭建过程"></a>🚀 搭建过程</h2><h3 id="1-安装-Hexo"><a href="#1-安装-Hexo" class="headerlink" title="1. 安装 Hexo"></a>1. 安装 Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-初始化博客"><a href="#2-初始化博客" class="headerlink" title="2. 初始化博客"></a>2. 初始化博客</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-配置-GitHub-部署"><a href="#3-配置-GitHub-部署" class="headerlink" title="3. 配置 GitHub 部署"></a>3. 配置 GitHub 部署</h3><p>修改 <code>_config.yml</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:codefan/codefan.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-创建第一篇文章"><a href="#4-创建第一篇文章" class="headerlink" title="4. 创建第一篇文章"></a>4. 创建第一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">&quot;Hello World&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-部署上线"><a href="#5-部署上线" class="headerlink" title="5. 部署上线"></a>5. 部署上线</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>就这么简单！几分钟后，博客就上线了。</p>
+<hr>
+<h2 id="📝-写作体验"><a href="#📝-写作体验" class="headerlink" title="📝 写作体验"></a>📝 写作体验</h2><p>使用 Hexo 写作是一种很棒的体验：</p>
+<ul>
+<li><strong>Markdown 格式</strong> - 专注内容，不用管样式</li>
+<li><strong>本地编辑</strong> - 用喜欢的编辑器（我用 VSCode）</li>
+<li><strong>版本控制</strong> - 所有文章都有 Git 历史记录</li>
+<li><strong>快速部署</strong> - 一条命令就上线</li>
+</ul>
+<hr>
+<h2 id="🔮-未来计划"><a href="#🔮-未来计划" class="headerlink" title="🔮 未来计划"></a>🔮 未来计划</h2><p>接下来我会在博客分享：</p>
+<ol>
+<li><strong>技术文章</strong> - 工作中遇到的问题和解决方案</li>
+<li><strong>架构设计</strong> - 多年积累的系统设计经验</li>
+<li><strong>项目管理</strong> - 从程序员到技术管理的心得</li>
+<li><strong>生活随笔</strong> - 工作之外的思考</li>
+</ol>
+<hr>
+<h2 id="💡-给想搭建博客的朋友"><a href="#💡-给想搭建博客的朋友" class="headerlink" title="💡 给想搭建博客的朋友"></a>💡 给想搭建博客的朋友</h2><p>如果你也想搭建个人博客，我的建议是：</p>
+<blockquote>
+<p><strong>先开始，再优化</strong></p>
+</blockquote>
+<p>不要纠结于技术选型、主题美化这些细节。最重要的是：</p>
+<ol>
+<li><strong>尽快上线</strong> - 先有一个能用的版本</li>
+<li><strong>持续写作</strong> - 内容才是博客的核心</li>
+<li><strong>按需升级</strong> - 真正用到时再考虑扩展</li>
+</ol>
+<hr>
+<h2 id="🎉-结语"><a href="#🎉-结语" class="headerlink" title="🎉 结语"></a>🎉 结语</h2><p>博客已经上线了，地址是：<a href="https://codefan.github.io/">https://codefan.github.io</a></p>
+<p>欢迎常来坐坐，一起交流技术，分享经验！</p>
+<hr>
+<p><em>2026 年 3 月 18 日 于南京</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://codefan.github.io/2026/03/18/%E4%BB%8E-Express-%E5%88%B0-Hexo-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E4%B9%8B%E8%B7%AF/" data-id="cmn3vviir0008a35e9vfbdkbu" data-title="从 Express 到 Hexo - 我的博客迁移之路" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo/" rel="tag">博客，Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Hello-World-我的博客开通了" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/18/Hello-World-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86/" class="article-date">
+  <time class="dt-published" datetime="2026-03-18T07:35:00.000Z" itemprop="datePublished">2026-03-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/18/Hello-World-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86/">Hello World - 我的博客开通了</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="🎉-我的博客开通了！"><a href="#🎉-我的博客开通了！" class="headerlink" title="🎉 我的博客开通了！"></a>🎉 我的博客开通了！</h2><p>你好，我是杨淮生。今天是我的个人博客正式开通的日子。</p>
+<hr>
+<h2 id="📖-关于这个博客"><a href="#📖-关于这个博客" class="headerlink" title="📖 关于这个博客"></a>📖 关于这个博客</h2><p>这个博客是我多年技术生涯的一个新起点。作为一名拥有 20 多年经验的软件工程师，我经历过：</p>
+<ul>
+<li>从 C++ 到 Java 的技术栈变迁</li>
+<li>从 C&#x2F;S 架构到 B&#x2F;S 架构的演进</li>
+<li>从单体应用到微服务的转型</li>
+<li>从本地部署到云原生的跨越</li>
+</ul>
+<p>在这里，我会记录：</p>
+<ol>
+<li><strong>技术实践</strong> - 工作中遇到的真实问题和解决方案</li>
+<li><strong>架构思考</strong> - 对软件设计的理解和心得</li>
+<li><strong>学习笔记</strong> - 持续学习过程中的记录</li>
+<li><strong>生活随笔</strong> - 工作之外的思考和感悟</li>
+</ol>
+<hr>
+<h2 id="🚀-技术栈"><a href="#🚀-技术栈" class="headerlink" title="🚀 技术栈"></a>🚀 技术栈</h2><p>这个博客使用 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 静态网站生成器构建，托管在 <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a> 上。</p>
+<ul>
+<li><strong>生成器</strong>: Hexo</li>
+<li><strong>主题</strong>: Landscape (后续会优化)</li>
+<li><strong>托管</strong>: GitHub Pages</li>
+<li><strong>域名</strong>: <a href="https://codefan.github.io/">https://codefan.github.io</a></li>
+</ul>
+<p>选择静态博客的原因很简单：</p>
+<ul>
+<li>✅ 完全免费</li>
+<li>✅ 无需维护服务器</li>
+<li>✅ 速度快</li>
+<li>✅ 专注于内容写作</li>
+</ul>
+<hr>
+<h2 id="📝-后续计划"><a href="#📝-后续计划" class="headerlink" title="📝 后续计划"></a>📝 后续计划</h2><p>接下来我会陆续发布一些文章，包括：</p>
+<ul>
+<li>软件架构设计经验</li>
+<li>企业级项目开发心得</li>
+<li>技术管理实践</li>
+<li>以及更多…</li>
+</ul>
+<hr>
+<h2 id="🙏-感谢"><a href="#🙏-感谢" class="headerlink" title="🙏 感谢"></a>🙏 感谢</h2><p>感谢你的访问！如果你有任何问题或建议，欢迎通过以下方式联系我：</p>
+<ul>
+<li>📧 邮箱：<a href="mailto:&#99;&#x6f;&#100;&#x65;&#x66;&#x61;&#110;&#x40;&#115;&#105;&#110;&#x61;&#x2e;&#x63;&#x6f;&#x6d;">&#99;&#x6f;&#100;&#x65;&#x66;&#x61;&#110;&#x40;&#115;&#105;&#110;&#x61;&#x2e;&#x63;&#x6f;&#x6d;</a></li>
+<li>💬 GitHub: <a target="_blank" rel="noopener" href="https://github.com/codefan">github.com&#x2F;codefan</a></li>
+</ul>
+<p>期待与你交流！</p>
+<hr>
+<p><em>杨淮生 于 南京</em><br><em>2026 年 3 月 18 日</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://codefan.github.io/2026/03/18/Hello-World-%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86/" data-id="cmn3vviic0001a35e95nz9ys0" data-title="Hello World - 我的博客开通了" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BC%80%E7%AF%87/" rel="tag">博客，开篇</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%A3%E6%95%B0/">代数</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E9%9A%8F%E7%AC%94/">技术随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LS-1/" rel="tag">LS-1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo/" rel="tag">博客，Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BC%80%E7%AF%87/" rel="tag">博客，开篇</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，三角函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag">教程，代数，不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，二次函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" rel="tag">教程，代数，函数，单调性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">教程，代数，函数，图像变换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" rel="tag">教程，代数，函数，奇偶性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，函数，幂函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E9%9B%B6%E7%82%B9/" rel="tag">教程，代数，函数，零点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，对数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，指数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" rel="tag">教程，代数，逻辑，充要条件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">教程，代数，集合，逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，三角函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag">练习，代数，不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，二次函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" rel="tag">练习，代数，函数，单调性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">练习，代数，函数，图像变换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" rel="tag">练习，代数，函数，奇偶性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，函数，幂函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，对数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，指数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" rel="tag">练习，代数，逻辑，充要条件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">练习，代数，集合，逻辑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/LS-1/" style="font-size: 20px;">LS-1</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo/" style="font-size: 10px;">博客，Hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BC%80%E7%AF%87/" style="font-size: 10px;">博客，开篇</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" style="font-size: 10px;">技术分享</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" style="font-size: 16.67px;">教程，代数，三角函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 13.33px;">教程，代数，不等式</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，二次函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" style="font-size: 10px;">教程，代数，函数，单调性</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" style="font-size: 10px;">教程，代数，函数，图像变换</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" style="font-size: 10px;">教程，代数，函数，奇偶性</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，函数，幂函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E9%9B%B6%E7%82%B9/" style="font-size: 10px;">教程，代数，函数，零点</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，对数函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，指数函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">教程，代数，逻辑，充要条件</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" style="font-size: 10px;">教程，代数，集合，逻辑</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" style="font-size: 16.67px;">练习，代数，三角函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 13.33px;">练习，代数，不等式</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，二次函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" style="font-size: 10px;">练习，代数，函数，单调性</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" style="font-size: 10px;">练习，代数，函数，图像变换</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" style="font-size: 10px;">练习，代数，函数，奇偶性</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，函数，幂函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，对数函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，指数函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">练习，代数，逻辑，充要条件</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" style="font-size: 10px;">练习，代数，集合，逻辑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">三月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/03/24/series/MATH-TUTORIAL-INDEX/">信息竞赛数学教程 - 课程索引</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/24/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch16-practice/">[练习] 16-三角函数的图像与性质</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/24/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch16-tutorial/">[教程] 16-三角函数的图像与性质</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch15-practice/">[练习] 15-诱导公式</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch15-tutorial/">[教程] 15-诱导公式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 杨淮生<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

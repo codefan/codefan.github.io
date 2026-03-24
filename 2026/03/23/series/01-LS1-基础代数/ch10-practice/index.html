@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>[练习] 10-对数运算与对数函数 | 信息竞赛数学教程</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="🎯 例题精讲例题 1：对数运算题目来源: 课本习题 题意分析:  计算：  log₂(8) log₃(27) log₁₀(1000) log₂(1&#x2F;4)  参考答案:  log₂(8) &#x3D; log₂(2³) &#x3D; 3 log₃(27) &#x3D; log₃(3³) &#x3D; 3 log₁₀(1000) &#x3D; log₁₀(10³) &#x3D; 3 log">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[练习] 10-对数运算与对数函数">
+<meta property="og:url" content="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch10-practice/index.html">
+<meta property="og:site_name" content="信息竞赛数学教程">
+<meta property="og:description" content="🎯 例题精讲例题 1：对数运算题目来源: 课本习题 题意分析:  计算：  log₂(8) log₃(27) log₁₀(1000) log₂(1&#x2F;4)  参考答案:  log₂(8) &#x3D; log₂(2³) &#x3D; 3 log₃(27) &#x3D; log₃(3³) &#x3D; 3 log₁₀(1000) &#x3D; log₁₀(10³) &#x3D; 3 log">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-23T10:30:00.000Z">
+<meta property="article:modified_time" content="2026-03-23T10:30:00.000Z">
+<meta property="article:author" content="杨淮生">
+<meta property="article:tag" content="LS-1">
+<meta property="article:tag" content="练习，代数，对数函数">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="信息竞赛数学教程" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">信息竞赛数学教程</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">从初中数学到信竞高手</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://codefan.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-series/01-LS1-基础代数/ch10-practice" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch10-practice/" class="article-date">
+  <time class="dt-published" datetime="2026-03-23T10:30:00.000Z" itemprop="datePublished">2026-03-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E6%95%B0/">代数</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      [练习] 10-对数运算与对数函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="🎯-例题精讲"><a href="#🎯-例题精讲" class="headerlink" title="🎯 例题精讲"></a>🎯 例题精讲</h2><h3 id="例题-1：对数运算"><a href="#例题-1：对数运算" class="headerlink" title="例题 1：对数运算"></a>例题 1：对数运算</h3><p><strong>题目来源</strong>: 课本习题</p>
+<p><strong>题意分析</strong>: </p>
+<p>计算：</p>
+<ol>
+<li>log₂(8)</li>
+<li>log₃(27)</li>
+<li>log₁₀(1000)</li>
+<li>log₂(1&#x2F;4)</li>
+</ol>
+<p><strong>参考答案</strong>:</p>
+<ol>
+<li>log₂(8) &#x3D; log₂(2³) &#x3D; 3</li>
+<li>log₃(27) &#x3D; log₃(3³) &#x3D; 3</li>
+<li>log₁₀(1000) &#x3D; log₁₀(10³) &#x3D; 3</li>
+<li>log₂(1&#x2F;4) &#x3D; log₂(2⁻²) &#x3D; -2</li>
+</ol>
+<hr>
+<h3 id="例题-2：对数方程"><a href="#例题-2：对数方程" class="headerlink" title="例题 2：对数方程"></a>例题 2：对数方程</h3><p><strong>题目来源</strong>: 自编</p>
+<p><strong>题意分析</strong>: </p>
+<p>解方程：log₂(x) + log₂(x - 2) &#x3D; 3</p>
+<p><strong>解题思路</strong>: </p>
+<p>利用对数运算法则化简。</p>
+<p><strong>参考答案</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">log₂(x) + log₂(x - 2) = 3</span><br><span class="line">log₂(x(x - 2)) = 3</span><br><span class="line">x(x - 2) = 2³ = 8</span><br><span class="line">x² - 2x - 8 = 0</span><br><span class="line">(x - 4)(x + 2) = 0</span><br><span class="line"></span><br><span class="line">解得：x = 4 或 x = -2</span><br><span class="line"></span><br><span class="line">检验：x &gt; 0 且 x - 2 &gt; 0，所以 x = 4</span><br><span class="line"></span><br><span class="line">答案：x = 4</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="✍️-课后习题"><a href="#✍️-课后习题" class="headerlink" title="✍️ 课后习题"></a>✍️ 课后习题</h2><h3 id="📐-数学题"><a href="#📐-数学题" class="headerlink" title="📐 数学题"></a>📐 数学题</h3><p><strong>习题 1</strong>（基础题 ⭐）</p>
+<p>计算：</p>
+<ol>
+<li>log₃(9)</li>
+<li>log₅(125)</li>
+<li>log₁₀(0.01)</li>
+<li>log₂(√2)</li>
+</ol>
+<hr>
+<p><strong>习题 2</strong>（基础题 ⭐）</p>
+<p>化简：</p>
+<ol>
+<li>log₂(8) + log₂(4)</li>
+<li>log₃(27) - log₃(9)</li>
+<li>2·log₅(25)</li>
+<li>log₂(8³)</li>
+</ol>
+<hr>
+<p><strong>习题 3</strong>（提高题 ⭐⭐）</p>
+<p>用换底公式计算 log₂(3)（保留 3 位小数）。</p>
+<hr>
+<p><strong>习题 4</strong>（提高题 ⭐⭐）</p>
+<p>解方程：log₃(x) &#x3D; 2</p>
+<hr>
+<p><strong>习题 5</strong>（挑战题 ⭐⭐⭐）</p>
+<p>证明：logₐ(b) × log_b(a) &#x3D; 1</p>
+<hr>
+<h3 id="💻-编程题"><a href="#💻-编程题" class="headerlink" title="💻 编程题"></a>💻 编程题</h3><p><strong>习题 6</strong>（基础题 ⭐⭐）</p>
+<p><strong>题目来源</strong>: 自编</p>
+<p>计算 log₂(n)，其中 n 是 2 的幂。</p>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个整数：n (n = 2^k, k ≤ 30)</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个整数：k</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>习题 7</strong>（基础题 ⭐⭐）</p>
+<p><strong>题目来源</strong>: 洛谷</p>
+<p>计算 n! 的位数。</p>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个整数：n (n ≤ 1000)</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个整数：n! 的位数</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>习题 8</strong>（提高题 ⭐⭐⭐）</p>
+<p><strong>题目来源</strong>: AtCoder ABC</p>
+<p>实现二分查找，统计比较次数。</p>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第一行：n, target</span><br><span class="line">第二行：n 个整数（有序）</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">两个整数：位置和比较次数</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>习题 9</strong>（提高题 ⭐⭐⭐）</p>
+<p><strong>题目来源</strong>: 自编</p>
+<p>用对数方法计算 a × b × c（避免溢出）。</p>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">三个浮点数：a, b, c</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个浮点数：乘积</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>习题 10</strong>（挑战题 ⭐⭐⭐⭐）</p>
+<p><strong>题目来源</strong>: Codeforces</p>
+<p>计算 1 到 n 所有数的 log₂ 之和。</p>
+<p><strong>输入格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个整数：n (n ≤ 10^6)</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出格式</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个浮点数：Σlog₂(i)，保留 6 位小数</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="📊-本章小结"><a href="#📊-本章小结" class="headerlink" title="📊 本章小结"></a>📊 本章小结</h2><h3 id="重点回顾"><a href="#重点回顾" class="headerlink" title="重点回顾"></a>重点回顾</h3><ol>
+<li><strong>对数定义</strong>：a^x &#x3D; N ⟺ x &#x3D; logₐ(N)</li>
+<li><strong>运算法则</strong>：乘法变加法，除法变减法</li>
+<li><strong>换底公式</strong>：logₐ(b) &#x3D; logₖ(b) &#x2F; logₖ(a)</li>
+<li><strong>对数函数</strong>：定义域 (0, +∞)，过定点 (1, 0)</li>
+</ol>
+<h3 id="易错点提醒"><a href="#易错点提醒" class="headerlink" title="易错点提醒"></a>易错点提醒</h3><p>⚠️ <strong>定义域</strong>：logₐ(x) 要求 x &gt; 0</p>
+<p>⚠️ <strong>底数限制</strong>：a &gt; 0 且 a ≠ 1</p>
+<p>⚠️ <strong>运算顺序</strong>：log(M + N) ≠ log(M) + log(N)</p>
+<h3 id="信竞应用总结"><a href="#信竞应用总结" class="headerlink" title="信竞应用总结"></a>信竞应用总结</h3><table>
+<thead>
+<tr>
+<th>知识点</th>
+<th>应用场景</th>
+<th>典型题目</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>对数计算</td>
+<td>数值计算</td>
+<td>科学计算</td>
+</tr>
+<tr>
+<td>换底公式</td>
+<td>任意底数</td>
+<td>计算器实现</td>
+</tr>
+<tr>
+<td>O(log n)</td>
+<td>复杂度分析</td>
+<td>二分查找</td>
+</tr>
+<tr>
+<td>阶乘位数</td>
+<td>大数问题</td>
+<td>组合数学</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="🔙-上一篇"><a href="#🔙-上一篇" class="headerlink" title="🔙 上一篇"></a>🔙 上一篇</h2><p>[教程] 10-对数运算与对数函数</p>
+<hr>
+<p><strong>本系列</strong>: <a href="/series/math-tutorial/">信息竞赛数学教程</a><br><strong>上一篇</strong>: [教程] 10-对数运算与对数函数<br><strong>下一篇</strong>: [教程] 11-不等式性质与基本不等式</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://codefan.github.io/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch10-practice/" data-id="cmn3vvijn001qa35e8on91jw5" data-title="[练习] 10-对数运算与对数函数" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LS-1/" rel="tag">LS-1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，对数函数</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch11-tutorial/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          [教程] 11-不等式性质与基本不等式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch10-tutorial/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">[教程] 10-对数运算与对数函数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BB%A3%E6%95%B0/">代数</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E9%9A%8F%E7%AC%94/">技术随笔</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LS-1/" rel="tag">LS-1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo/" rel="tag">博客，Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BC%80%E7%AF%87/" rel="tag">博客，开篇</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，三角函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag">教程，代数，不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，二次函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" rel="tag">教程，代数，函数，单调性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">教程，代数，函数，图像变换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" rel="tag">教程，代数，函数，奇偶性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，函数，幂函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E9%9B%B6%E7%82%B9/" rel="tag">教程，代数，函数，零点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，对数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">教程，代数，指数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" rel="tag">教程，代数，逻辑，充要条件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">教程，代数，集合，逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，三角函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag">练习，代数，不等式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，二次函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" rel="tag">练习，代数，函数，单调性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" rel="tag">练习，代数，函数，图像变换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" rel="tag">练习，代数，函数，奇偶性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，函数，幂函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，对数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" rel="tag">练习，代数，指数函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" rel="tag">练习，代数，逻辑，充要条件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" rel="tag">练习，代数，集合，逻辑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/LS-1/" style="font-size: 20px;">LS-1</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo/" style="font-size: 10px;">博客，Hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%BC%80%E7%AF%87/" style="font-size: 10px;">博客，开篇</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" style="font-size: 10px;">技术分享</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" style="font-size: 16.67px;">教程，代数，三角函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 13.33px;">教程，代数，不等式</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，二次函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" style="font-size: 10px;">教程，代数，函数，单调性</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" style="font-size: 10px;">教程，代数，函数，图像变换</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" style="font-size: 10px;">教程，代数，函数，奇偶性</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，函数，幂函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E9%9B%B6%E7%82%B9/" style="font-size: 10px;">教程，代数，函数，零点</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，对数函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">教程，代数，指数函数</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">教程，代数，逻辑，充要条件</a> <a href="/tags/%E6%95%99%E7%A8%8B%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" style="font-size: 10px;">教程，代数，集合，逻辑</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" style="font-size: 16.67px;">练习，代数，三角函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%B8%8D%E7%AD%89%E5%BC%8F/" style="font-size: 13.33px;">练习，代数，不等式</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，二次函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8D%95%E8%B0%83%E6%80%A7/" style="font-size: 10px;">练习，代数，函数，单调性</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%9B%BE%E5%83%8F%E5%8F%98%E6%8D%A2/" style="font-size: 10px;">练习，代数，函数，图像变换</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%A5%87%E5%81%B6%E6%80%A7/" style="font-size: 10px;">练习，代数，函数，奇偶性</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%87%BD%E6%95%B0%EF%BC%8C%E5%B9%82%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，函数，幂函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，对数函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0/" style="font-size: 10px;">练习，代数，指数函数</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%80%BB%E8%BE%91%EF%BC%8C%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6/" style="font-size: 10px;">练习，代数，逻辑，充要条件</a> <a href="/tags/%E7%BB%83%E4%B9%A0%EF%BC%8C%E4%BB%A3%E6%95%B0%EF%BC%8C%E9%9B%86%E5%90%88%EF%BC%8C%E9%80%BB%E8%BE%91/" style="font-size: 10px;">练习，代数，集合，逻辑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">三月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/03/24/series/MATH-TUTORIAL-INDEX/">信息竞赛数学教程 - 课程索引</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/24/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch16-practice/">[练习] 16-三角函数的图像与性质</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/24/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch16-tutorial/">[教程] 16-三角函数的图像与性质</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch15-practice/">[练习] 15-诱导公式</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/23/series/01-LS1-%E5%9F%BA%E7%A1%80%E4%BB%A3%E6%95%B0/ch15-tutorial/">[教程] 15-诱导公式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 杨淮生<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
