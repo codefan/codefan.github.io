@@ -81,12 +81,36 @@ hexo new post "文章标题"
 # 2. 编辑文章
 # 编辑 source/_posts/文章标题.md
 
-# 3. 生成并部署
-hexo clean && hexo g -d
+# 3. 本地编译并部署（推荐）
+hexo clean && hexo generate && hexo deploy
+```
 
-# 或使用两步
-hexo generate
-hexo deploy
+### 📌 部署策略（重要）
+
+**部署模式**: 本地编译 → 直接提交到 GitHub master 分支
+
+**部署流程**:
+1. 在 `source` 分支维护源代码
+2. 执行 `hexo generate` 本地编译生成静态文件到 `public/` 目录
+3. 执行 `hexo deploy` 将 `public/` 内容提交到 GitHub 仓库的 `master` 分支
+4. GitHub Pages 自动从 `master` 分支部署网站
+
+**分支策略**:
+- `source` 分支：Hexo 源代码（Markdown、配置、主题等）
+- `master` 分支：编译后的静态文件（由 hexo deploy 自动管理）
+
+**为什么不用 GitHub Actions 自动构建**:
+- ✅ 本地编译更快速，无需等待 CI
+- ✅ 可以在部署前预览生成的文件
+- ✅ 减少 GitHub Actions 使用量
+- ✅ 更直接的控制和调试能力
+
+**配置位置** (`_config.yml`):
+```yaml
+deploy:
+  type: git
+  repo: git@github.com:codefan/codefan.github.io.git
+  branch: master
 ```
 
 ### 优势
